@@ -1,0 +1,20 @@
+Handwriting recognition model used by the Haoke build of Stroke Input Method
+
+PP-OCRv6_rec_small.onnx, ppocrv6_dict.txt
+  Model: PP-OCRv6 text recognition, small tier, from PaddleOCR v3.7.0
+         https://github.com/PaddlePaddle/PaddleOCR
+         Copyright (c) PaddlePaddle Authors. Licensed under the Apache License 2.0.
+  ONNX conversion and dictionary file: RapidOCR v3.10.0
+         https://github.com/RapidAI/RapidOCR
+         https://www.modelscope.cn/models/RapidAI/RapidOCR (onnx/PP-OCRv6/rec/PP-OCRv6_rec_small.onnx)
+         Copyright (c) 2021 RapidOCR Authors. Licensed under the Apache License 2.0.
+  SHA-256 of PP-OCRv6_rec_small.onnx:
+         6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884
+  The files are used unchanged. Recognition runs entirely on the device; no ink or text leaves it.
+
+Runtime: ONNX Runtime for Android 1.31.1
+         https://github.com/microsoft/onnxruntime
+         Copyright (c) Microsoft Corporation. Licensed under the MIT License.
+
+Apache License 2.0: https://www.apache.org/licenses/LICENSE-2.0
+MIT License: https://opensource.org/licenses/MIT

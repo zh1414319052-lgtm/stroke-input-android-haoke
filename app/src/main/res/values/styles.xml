@@ -1,42 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <style name="MainActivityText">
-    <item name="android:layout_height">match_parent</item>
+  <!--
+    Settings page (Haoke design, design/stroke-input.haoke-ui.json board "settings").
+    Sizes are dp/sp at a 360 dp wide board; colours and text sizes come from the theme (themes.xml).
+  -->
+  <style name="SettingsTextView" parent="Widget.AppCompat.TextView">
+    <item name="android:fontFamily">@font/ui_typeface</item>
+    <item name="android:includeFontPadding">false</item>
+  </style>
+  <style name="SettingsSectionLabel">
     <item name="android:layout_width">match_parent</item>
-    <item name="android:maxWidth">@dimen/max_width__main_activity</item>
-    <item name="android:textSize">@dimen/font_size__main_activity</item>
-    <item name="android:paddingTop">@dimen/padding_top__main_activity__text</item>
-    <item name="android:paddingLeft">@dimen/padding_horizontal__main_activity__text</item>
-    <item name="android:paddingRight">@dimen/padding_horizontal__main_activity__text</item>
-    <item name="android:paddingBottom">@dimen/padding_bottom__main_activity__text</item>
-  </style>
-  <style name="MainActivityButton">
     <item name="android:layout_height">wrap_content</item>
+    <item name="android:textSize">?attr/settingsSectionSize</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">?attr/settingsLabel</item>
+    <item name="android:paddingLeft">@dimen/padding_horizontal__settings_section</item>
+    <item name="android:paddingRight">@dimen/padding_horizontal__settings_section</item>
+    <item name="android:paddingTop">@dimen/padding_top__settings_section</item>
+    <item name="android:paddingBottom">@dimen/padding_bottom__settings_section</item>
+  </style>
+  <style name="SettingsCard">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:orientation">vertical</item>
+    <item name="android:background">@drawable/settings_card</item>
+  </style>
+  <style name="SettingsRow">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:minHeight">@dimen/min_height__settings_row</item>
+    <item name="android:orientation">horizontal</item>
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:paddingLeft">@dimen/padding_horizontal__settings_row</item>
+    <item name="android:paddingRight">@dimen/padding_horizontal__settings_row_end</item>
+    <item name="android:background">?attr/selectableItemBackground</item>
+    <item name="android:clickable">true</item>
+    <item name="android:focusable">true</item>
+  </style>
+  <style name="SettingsRowTitle">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_weight">1</item>
+    <item name="android:textSize">?attr/settingsRowTitleSize</item>
+    <item name="android:textColor">?attr/settingsText</item>
+    <item name="android:fontFamily">@font/ui_typeface</item>
+    <item name="android:textStyle">bold</item>
+  </style>
+  <style name="SettingsRowTitleBlock" parent="SettingsRowTitle">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_weight">0</item>
+  </style>
+  <style name="SettingsLinkRow">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:minHeight">@dimen/min_height__settings_row_link</item>
+    <item name="android:gravity">center_vertical</item>
+    <item name="android:paddingStart">@dimen/padding_horizontal__settings_row</item>
+    <item name="android:paddingEnd">@dimen/padding_horizontal__settings_row_end</item>
+    <item name="android:drawablePadding">@dimen/margin_start__settings_row_icon</item>
+    <item name="android:textSize">?attr/settingsRowTitleSize</item>
+    <item name="android:textColor">?attr/settingsText</item>
+    <item name="android:fontFamily">@font/ui_typeface</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:background">?attr/selectableItemBackground</item>
+    <item name="android:clickable">true</item>
+    <item name="android:focusable">true</item>
+  </style>
+  <style name="SettingsRowDescription" parent="SettingsRowSummary">
+    <item name="android:layout_marginTop">2dp</item>
+    <item name="android:textSize">14sp</item>
+  </style>
+  <style name="SettingsRowValue">
     <item name="android:layout_width">wrap_content</item>
-    <item name="android:textSize">@dimen/font_size__main_activity__button</item>
-    <item name="android:insetTop">@dimen/inset_vertical__main_activity__button</item>
-    <item name="android:insetBottom">@dimen/inset_vertical__main_activity__button</item>
-    <item name="android:minHeight">@dimen/min_height__main_activity__button</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:maxWidth">@dimen/max_width__settings_row_value</item>
+    <item name="android:gravity">end</item>
+    <item name="android:textSize">@dimen/font_size__settings_row_value</item>
+    <item name="android:textColor">?attr/settingsText2</item>
   </style>
-  <style name="MainActivitySeekBar">
-    <item name="android:thumbTint">@color/umbrella_orange</item>
-    <item name="android:progressTint">@color/umbrella_orange</item>
-    <item name="android:progressBackgroundTint">@color/umbrella_grey</item>
+  <style name="SettingsRowSummary">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginTop">@dimen/margin_top__settings_row_summary</item>
+    <item name="android:textSize">?attr/settingsSummarySize</item>
+    <item name="android:textColor">?attr/settingsText2</item>
   </style>
+  <style name="SettingsRowIcon">
+    <item name="android:layout_width">@dimen/size__settings_row_icon</item>
+    <item name="android:layout_height">@dimen/size__settings_row_icon</item>
+    <item name="android:layout_marginLeft">@dimen/margin_start__settings_row_icon</item>
+    <item name="android:importantForAccessibility">no</item>
+  </style>
+  <style name="SettingsDivider">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">1dp</item>
+    <item name="android:layout_marginLeft">@dimen/padding_horizontal__settings_row</item>
+    <item name="android:layout_marginRight">@dimen/padding_horizontal__settings_row</item>
+    <item name="android:background">?attr/settingsDivider</item>
+  </style>
+  <style name="SettingsStepButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">@dimen/height__settings_step_button</item>
+    <item name="android:minWidth">@dimen/min_width__settings_step_button</item>
+    <item name="android:insetTop">0dp</item>
+    <item name="android:insetBottom">0dp</item>
+    <item name="android:paddingLeft">@dimen/padding_horizontal__settings_button</item>
+    <item name="android:paddingRight">@dimen/padding_horizontal__settings_button</item>
+    <item name="android:textSize">?attr/settingsButtonSize</item>
+    <item name="android:includeFontPadding">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:letterSpacing">0</item>
+    <item name="android:textColor">?attr/settingsAccent</item>
+    <item name="cornerRadius">@dimen/radius__settings_step_button</item>
+    <item name="strokeColor">?attr/settingsAccent</item>
+    <item name="strokeWidth">@dimen/stroke__settings_button</item>
+  </style>
+  <style name="SettingsFilledButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">@dimen/height__settings_filled_button</item>
+    <item name="android:insetTop">0dp</item>
+    <item name="android:insetBottom">0dp</item>
+    <item name="android:textSize">?attr/settingsButtonSize</item>
+    <item name="android:includeFontPadding">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:letterSpacing">0</item>
+    <item name="android:textColor">?attr/settingsOnAccent</item>
+    <item name="backgroundTint">?attr/settingsAccent</item>
+    <item name="cornerRadius">@dimen/radius__settings_filled_button</item>
+  </style>
+  <style name="SettingsField">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:minHeight">@dimen/min_height__settings_field</item>
+    <item name="android:paddingTop">12dp</item>
+    <item name="android:paddingBottom">12dp</item>
+    <item name="android:background">@drawable/settings_field</item>
+    <item name="android:paddingLeft">@dimen/padding_horizontal__settings_row</item>
+    <item name="android:paddingRight">@dimen/padding_horizontal__settings_row</item>
+    <item name="android:textSize">@dimen/font_size__settings_field</item>
+    <item name="android:textColor">?attr/settingsText</item>
+    <item name="android:textColorHint">?attr/settingsText3</item>
+  </style>
+  <style name="SettingsSwitch">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginLeft">@dimen/margin_start__settings_row_icon</item>
+    <item name="android:minWidth">48dp</item>
+    <item name="android:minHeight">48dp</item>
+    <item name="thumbTint">@color/settings_switch_thumb</item>
+    <item name="trackTint">@color/settings_switch_track</item>
+  </style>
+  <style name="SettingsSeekBar">
+    <item name="android:thumbTint">?attr/settingsAccent</item>
+    <item name="android:progressTint">?attr/settingsAccent</item>
+    <item name="android:progressBackgroundTint">?attr/settingsDivider</item>
+  </style>
+  <!-- Optional (rare) candidate switches inside the collapsible advanced section -->
   <style name="MainActivitySwitch">
     <item name="android:textSize">@dimen/font_size__main_activity</item>
-    <item name="android:textColor">@color/umbrella_orange</item>
+    <item name="android:textColor">?attr/settingsText</item>
     <item name="android:layout_marginTop">@dimen/margin_top__main_activity__switch</item>
-    <item name="android:layout_marginLeft">@dimen/margin_horizontal__main_activity__switch</item>
-    <item name="android:layout_marginRight">@dimen/margin_horizontal__main_activity__switch</item>
-  </style>
-  <style name="MainActivityInput">
-    <item name="android:layout_height">match_parent</item>
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:textSize">@dimen/font_size__main_activity</item>
-    <item name="android:paddingLeft">@dimen/padding_horizontal__main_activity__text</item>
-    <item name="android:paddingRight">@dimen/padding_horizontal__main_activity__text</item>
-    <item name="android:minHeight">@dimen/min_height__main_activity__input</item>
+    <item name="android:layout_marginLeft">@dimen/padding_horizontal__settings_row</item>
+    <item name="android:layout_marginRight">@dimen/padding_horizontal__settings_row</item>
+    <item name="thumbTint">@color/settings_switch_thumb</item>
+    <item name="trackTint">@color/settings_switch_track</item>
   </style>
   <style name="CandidateButton">
     <item name="android:layout_height">@dimen/height__candidate_button</item>
@@ -48,27 +175,30 @@
     <item name="android:paddingLeft">@dimen/padding_horizontal__candidate_button</item>
     <item name="android:paddingRight">@dimen/padding_horizontal__candidate_button</item>
   </style>
-  <style name="StrokeInputDialogButton" parent="Theme.StrokeInput">
+  <!-- Dialog styles carry no parent theme: they overlay the activity theme, so they follow the chosen theme -->
+  <style name="StrokeInputDialogButton">
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_width">match_parent</item>
     <item name="android:textSize">@dimen/font_size__dialog_button</item>
     <item name="android:padding">@dimen/padding__dialog_button</item>
+    <item name="android:textColor">?attr/settingsText</item>
   </style>
-  <style name="StrokeInputAlert" parent="Theme.StrokeInput">
+  <style name="StrokeInputAlert">
     <item name="android:windowIsFloating">true</item>
-    <item name="android:windowBackground">@color/very_dark_grey</item>
+    <item name="android:windowBackground">@drawable/dialog_background</item>
     <item name="android:backgroundDimEnabled">true</item>
+    <item name="android:textColorAlertDialogListItem">?attr/settingsText</item>
+    <item name="android:textColorPrimary">?attr/settingsText</item>
   </style>
-  <style name="StrokeInputMessage" parent="Theme.StrokeInput">
+  <style name="StrokeInputMessage">
     <item name="android:textSize">@dimen/font_size__error_message</item>
     <item name="android:paddingLeft">@dimen/padding_horizontal__error_message</item>
     <item name="android:paddingRight">@dimen/padding_horizontal__error_message</item>
     <item name="android:paddingTop">@dimen/padding_top__error_message</item>
   </style>
   <style name="StrokeInputText" parent="android:Widget.EditText">
+    <item name="android:fontFamily">@font/ui_typeface</item>
+    <item name="android:includeFontPadding">false</item>
     <item name="android:textColor">?android:textColor</item>
-  </style>
-  <style name="StrokeInputToolbar" parent="Widget.MaterialComponents.Toolbar">
-    <item name="titleTextColor">?attr/colorOnPrimary</item>
   </style>
 </resources>

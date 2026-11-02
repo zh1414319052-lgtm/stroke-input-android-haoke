@@ -33,6 +33,7 @@
       app:keyDisplayText="@string/stroke_1"
       app:keyTextSize="@dimen/font_size__strokes_stroke"
       app:keyTextColour="@color/stroke_key_text"
+      app:keyFillColour="@color/key_fill_stroke"
     />
     <!-- Stroke 2 -->
     <Key
@@ -40,6 +41,7 @@
       app:keyDisplayText="@string/stroke_2"
       app:keyTextSize="@dimen/font_size__strokes_stroke"
       app:keyTextColour="@color/stroke_key_text"
+      app:keyFillColour="@color/key_fill_stroke"
     />
     <!-- Stroke 3 -->
     <Key
@@ -47,6 +49,7 @@
       app:keyDisplayText="@string/stroke_3"
       app:keyTextSize="@dimen/font_size__strokes_stroke"
       app:keyTextColour="@color/stroke_key_text"
+      app:keyFillColour="@color/key_fill_stroke"
     />
     <!-- Backspace -->
     <Key
@@ -55,6 +58,7 @@
       app:keyIsRepeatable="true"
       app:keyTextSize="@dimen/font_size__strokes_backspace"
       app:keyIsPreviewable="false"
+      app:keyFillColour="@color/key_fill_function"
     />
   </Row>
   <Row app:keyWidth="@dimen/key_width__strokes_stroke">
@@ -66,6 +70,7 @@
       app:keyDisplayText="@string/stroke_4"
       app:keyTextSize="@dimen/font_size__strokes_stroke"
       app:keyTextColour="@color/stroke_key_text"
+      app:keyFillColour="@color/key_fill_stroke"
     />
     <!-- Stroke 5 -->
     <Key
@@ -73,11 +78,26 @@
       app:keyDisplayText="@string/stroke_5"
       app:keyTextSize="@dimen/font_size__strokes_stroke"
       app:keyTextColour="@color/stroke_key_text"
+      app:keyFillColour="@color/key_fill_stroke"
+    />
+    <!-- Haoke: wildcard stroke (matches any one stroke) -->
+    <Key
+      app:keyValueText="STROKE_6"
+      app:keyDisplayText="@string/display_text__stroke_wildcard"
+      app:keyTextSize="@dimen/font_size__strokes_wildcard"
+      app:keyTextColour="@color/stroke_key_text"
+      app:keyFillColour="@color/key_fill_stroke"
     />
     <!-- U+FF1F FULLWIDTH QUESTION MARK -->
-    <Key app:keyValueText="？" />
+    <Key
+      app:keyValueText="？"
+      app:keyWidth="@dimen/key_width__digit"
+    />
     <!-- U+FF01 FULLWIDTH EXCLAMATION MARK -->
-    <Key app:keyValueText="！" />
+    <Key
+      app:keyValueText="！"
+      app:keyWidth="@dimen/key_width__digit"
+    />
   </Row>
   <Row
     app:keyHeight="@dimen/key_height__strokes_space_bar"
@@ -90,6 +110,7 @@
       app:keyTextSize="@dimen/font_size__switch_key"
       app:keyTextOffsetY="@dimen/baseline_correction__switch_key"
       app:keyIsPreviewable="false"
+      app:keyFillColour="@color/key_fill_function"
     />
     <!-- Comma -->
     <Key

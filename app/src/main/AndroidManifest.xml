@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Copyright 2021–2023 Conway
+  Modified 2026-10-29 by Haoke Tools (浩科工具站): microphone for offline voice input;
+  Internet only for signed Haoke version checks, with ONNX Runtime telemetry disabled.
   Licensed under the GNU General Public License v3.0 (GPL-3.0-only).
   This is free software with NO WARRANTY etc. etc.,
   see LICENSE or <https://www.gnu.org/licenses/>.
@@ -13,6 +15,11 @@
     android:name="${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
     tools:node="remove"
   />
+  <!-- Haoke: voice input records speech and recognises it on the device (asked for on first use) -->
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <!-- Haoke: only the foreground settings updater uses Internet; input and models stay offline. -->
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" tools:node="remove" />
   <application
     android:allowBackup="false"
     android:fullBackupContent="false"
@@ -48,5 +55,20 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <!-- Haoke: asks for the microphone on behalf of the input method, then closes -->
+    <activity
+      android:name=".VoicePermissionActivity"
+      android:exported="false"
+      android:excludeFromRecents="true"
+      android:noHistory="true"
+      android:taskAffinity=""
+      android:theme="@android:style/Theme.Translucent.NoTitleBar"
+    />
+    <!-- Haoke: no ONNX Runtime telemetry (it would start at app launch and send usage data) -->
+    <provider
+      android:name="ai.onnxruntime.TelemetryInitializer"
+      android:authorities="${applicationId}.onnxruntime_telemetry_initializer"
+      tools:node="remove"
+    />
   </application>
 </manifest>

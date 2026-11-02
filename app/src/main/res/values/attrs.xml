@@ -45,6 +45,7 @@
     <attr name="keyValueText" format="string" />
     <attr name="keyDisplayText" format="string" />
     <attr name="keyValueTextShifted" format="string" />
+    <attr name="keyHintText" format="string" />
     <attr name="keyWidth" />
     <attr name="keyHeight" />
     <attr name="keyFillColour" />
@@ -62,4 +63,26 @@
     <attr name="minimumCandidate" format="string" />
     <attr name="maximumCandidate" format="string" />
   </declare-styleable>
+  <!-- Settings page theme (Haoke themes Paper, Sky, Night; see themes.xml) -->
+  <attr name="settingsBackground" format="color" />
+  <attr name="settingsSurface" format="color" />
+  <attr name="settingsSurfaceStroke" format="color" />
+  <attr name="settingsSurfaceStrokeWidth" format="dimension" />
+  <attr name="settingsSurfaceRadius" format="dimension" />
+  <attr name="settingsDivider" format="color" />
+  <attr name="settingsText" format="color" />
+  <attr name="settingsText2" format="color" />
+  <attr name="settingsText3" format="color" />
+  <attr name="settingsLabel" format="color" />
+  <attr name="settingsAccent" format="color" />
+  <attr name="settingsOnAccent" format="color" />
+  <attr name="settingsSuccess" format="color" />
+  <attr name="settingsStatusDone" format="color" />
+  <attr name="settingsField" format="color" />
+  <attr name="settingsDialog" format="color" />
+  <attr name="settingsTitleSize" format="dimension" />
+  <attr name="settingsSectionSize" format="dimension" />
+  <attr name="settingsRowTitleSize" format="dimension" />
+  <attr name="settingsSummarySize" format="dimension" />
+  <attr name="settingsButtonSize" format="dimension" />
 </resources>

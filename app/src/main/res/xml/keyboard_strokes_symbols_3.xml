@@ -36,16 +36,18 @@
       app:keyIsRepeatable="true"
       app:keyTextSize="@dimen/font_size__strokes_backspace"
       app:keyIsPreviewable="false"
+      app:keyFillColour="@color/key_fill_function"
     />
   </Row>
   <Row>
     <!-- Switch to strokes symbols 1 keyboard -->
     <Key
       app:keyValueText="SWITCH_TO_STROKES_SYMBOLS_1"
-      app:keyDisplayText="3/3"
+      app:keyDisplayText="6/6"
       app:keyTextSize="@dimen/font_size__switch_key"
       app:keyTextOffsetY="@dimen/baseline_correction__switch_key"
       app:keyIsPreviewable="false"
+      app:keyFillColour="@color/key_fill_function"
     />
     <!-- Ideographic description characters: U+2FF8 to U+2FFB -->
     <Key app:keyValueText="⿸" />
@@ -65,6 +67,7 @@
       app:keyTextSize="@dimen/font_size__switch_key"
       app:keyTextOffsetY="@dimen/baseline_correction__switch_key"
       app:keyIsPreviewable="false"
+      app:keyFillColour="@color/key_fill_function"
     />
     <!-- Comma -->
     <Key

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Haoke settings design: design/stroke-input.haoke-ui.json -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+  <solid android:color="@color/stroke_sequence_bar_fill" />
+  <corners android:radius="14dp" />
+</shape>

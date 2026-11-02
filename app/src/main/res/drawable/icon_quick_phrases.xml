@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Haoke settings design: design/stroke-input.haoke-ui.json -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+  android:width="24dp"
+  android:height="24dp"
+  android:viewportWidth="24"
+  android:viewportHeight="24"
+>
+  <path
+    android:pathData="M4,5 H20 V16 H9 L5,20 V16 H4 Z M8,9 H16 M8,12.5 H13"
+    android:fillColor="#00000000"
+    android:strokeColor="@color/umbrella_orange"
+    android:strokeWidth="1.8"
+    android:strokeLineCap="round"
+    android:strokeLineJoin="round"
+  />
+</vector>

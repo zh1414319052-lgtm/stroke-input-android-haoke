@@ -19,3 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# ONNX Runtime (handwriting): Java classes are looked up from native code
+-keep class ai.onnxruntime.** { *; }
+
+# sherpa-onnx (voice): native code reads the Kotlin config classes' fields by name
+-keep class com.k2fsa.sherpa.onnx.** { *; }

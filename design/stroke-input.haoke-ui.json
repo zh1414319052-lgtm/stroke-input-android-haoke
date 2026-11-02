@@ -1,0 +1,5433 @@
+{
+  "format": "haoke-ui-design",
+  "version": 1,
+  "id": "stroke-input-haoke-ui",
+  "name": "笔画输入法 · 浩科界面设计",
+  "revision": 2,
+  "tokens": {
+    "bg": "#1A1A1A",
+    "surface": "#262626",
+    "surface2": "#313131",
+    "divider": "#383838",
+    "text": "#F4F4EF",
+    "text2": "#BDBDB5",
+    "text3": "#93938C",
+    "yellow": "#FFFF80",
+    "onYellow": "#1A1A1A",
+    "orange": "#FFCE73",
+    "green": "#6EDB8F",
+    "scrim": "#000000A6",
+    "dialog": "#2C2C2C",
+    "kbBg": "#101010",
+    "keyStroke": "#343434",
+    "keyChar": "#292929",
+    "keyFunc": "#1E1E1E",
+    "keyEnter": "#1FAF57",
+    "keyText": "#F2F2F2",
+    "spaceText": "#A6A6A6",
+    "candBg": "#151515",
+    "candText": "#FFCE73",
+    "candFirst": "#FFFF80",
+    "pill": "#000000D9",
+    "radiusCard": 16,
+    "radiusKey": 6,
+    "radiusField": 12
+  },
+  "components": {},
+  "boards": [
+    {
+      "id": "settings",
+      "name": "设置主页 · 已就绪（完整长页）",
+      "width": 360,
+      "height": 1858,
+      "background": "$bg",
+      "unit": "dp",
+      "scale": 1,
+      "state": "ready: enabled and selected; large layout, extra large candidates",
+      "code": "MainActivity / main_activity.xml",
+      "children": [
+        {
+          "id": "page-bg",
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 1858,
+          "fill": "$bg"
+        },
+        {
+          "id": "status-bar",
+          "type": "group",
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 24,
+          "children": [
+            {
+              "id": "status-bg",
+              "type": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 360,
+              "height": 24,
+              "fill": "$bg"
+            },
+            {
+              "id": "status-time",
+              "type": "text",
+              "x": 16,
+              "y": 2,
+              "width": 60,
+              "height": 20,
+              "text": "16:38",
+              "fontSize": 13,
+              "fontWeight": 500,
+              "fill": "$text2",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4
+            },
+            {
+              "id": "status-signal",
+              "type": "rect",
+              "x": 302,
+              "y": 8,
+              "width": 14,
+              "height": 9,
+              "fill": "$text2",
+              "radius": 2
+            },
+            {
+              "id": "status-battery",
+              "type": "rect",
+              "x": 322,
+              "y": 7,
+              "width": 20,
+              "height": 10,
+              "fill": "#00000000",
+              "radius": 2,
+              "stroke": "$text2",
+              "strokeWidth": 1.4
+            },
+            {
+              "id": "status-battery-level",
+              "type": "rect",
+              "x": 324,
+              "y": 9,
+              "width": 13,
+              "height": 6,
+              "fill": "$text2",
+              "radius": 1
+            }
+          ],
+          "state": "system status bar (drawn by Android, not the app)"
+        },
+        {
+          "id": "header",
+          "type": "group",
+          "x": 0,
+          "y": 24,
+          "width": 360,
+          "height": 84,
+          "children": [
+            {
+              "id": "app-icon",
+              "type": "image",
+              "x": 16,
+              "y": 16,
+              "width": 48,
+              "height": 48,
+              "radius": 12,
+              "src": "data:image/png;base64,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",
+              "code": "@mipmap/icon_launcher"
+            },
+            {
+              "id": "app-title",
+              "type": "text",
+              "x": 76,
+              "y": 10,
+              "width": 268,
+              "height": 34,
+              "text": "笔画输入法",
+              "fontSize": 23,
+              "fontWeight": 700,
+              "fill": "$text",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4,
+              "code": "@string/app_name"
+            },
+            {
+              "id": "app-subtitle",
+              "type": "text",
+              "x": 76,
+              "y": 46,
+              "width": 268,
+              "height": 20,
+              "text": "浩科社区优化版 · 按笔画顺序打字",
+              "fontSize": 13,
+              "fontWeight": 400,
+              "fill": "$text2",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4,
+              "code": "@string/text__main_activity__subtitle"
+            }
+          ],
+          "code": "main_activity.xml#header"
+        },
+        {
+          "id": "label-setup",
+          "type": "text",
+          "x": 28,
+          "y": 112,
+          "width": 304,
+          "height": 22,
+          "text": "开始使用",
+          "fontSize": 14,
+          "fontWeight": 700,
+          "fill": "$orange",
+          "align": "left",
+          "verticalAlign": "top",
+          "lineHeight": 1.4,
+          "code": "style/SettingsSectionLabel"
+        },
+        {
+          "id": "card-setup",
+          "type": "group",
+          "x": 16,
+          "y": 140,
+          "width": 328,
+          "height": 248,
+          "children": [
+            {
+              "id": "card-setup-bg",
+              "type": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 328,
+              "height": 248,
+              "fill": "$surface",
+              "radius": "$radiusCard"
+            },
+            {
+              "id": "step-enable",
+              "type": "group",
+              "x": 0,
+              "y": 0,
+              "width": 328,
+              "height": 76,
+              "children": [
+                {
+                  "id": "step-enable-badge",
+                  "type": "group",
+                  "x": 16,
+                  "y": 22,
+                  "width": 28,
+                  "height": 28,
+                  "children": [
+                    {
+                      "id": "step-enable-badge-bg",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "width": 28,
+                      "height": 28,
+                      "fill": "$green"
+                    },
+                    {
+                      "id": "step-enable-badge-check",
+                      "type": "path",
+                      "x": 5,
+                      "y": 5,
+                      "width": 18,
+                      "height": 18,
+                      "d": "M 4 12 L 9.5 17.5 L 20 6.5",
+                      "fill": "#00000000",
+                      "stroke": "$onYellow",
+                      "strokeWidth": 2.6
+                    }
+                  ]
+                },
+                {
+                  "id": "step-enable-title",
+                  "type": "text",
+                  "x": 56,
+                  "y": 14,
+                  "width": 150,
+                  "height": 26,
+                  "text": "启用笔画输入法",
+                  "fontSize": 17,
+                  "fontWeight": 600,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "step-enable-status",
+                  "type": "text",
+                  "x": 56,
+                  "y": 40,
+                  "width": 150,
+                  "height": 22,
+                  "text": "已在系统中启用",
+                  "fontSize": 13.5,
+                  "fontWeight": 400,
+                  "fill": "$green",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "step-enable-button",
+                  "type": "group",
+                  "x": 212,
+                  "y": 18,
+                  "width": 100,
+                  "height": 40,
+                  "children": [
+                    {
+                      "id": "step-enable-button-bg",
+                      "type": "rect",
+                      "x": 0,
+                      "y": 0,
+                      "width": 100,
+                      "height": 40,
+                      "fill": "#00000000",
+                      "radius": 20.0,
+                      "stroke": "$yellow",
+                      "strokeWidth": 1.5
+                    },
+                    {
+                      "id": "step-enable-button-label",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 100,
+                      "height": 40,
+                      "text": "输入法设置",
+                      "fontSize": 15,
+                      "fontWeight": 600,
+                      "fill": "$yellow",
+                      "align": "center",
+                      "verticalAlign": "center",
+                      "lineHeight": 1.4
+                    }
+                  ],
+                  "code": "input_method_settings_button#button",
+                  "state": "outline"
+                }
+              ],
+              "code": "input_method_settings_button",
+              "state": "done"
+            },
+            {
+              "id": "divider",
+              "type": "rect",
+              "x": 16,
+              "y": 76,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "step-switch",
+              "type": "group",
+              "x": 0,
+              "y": 77,
+              "width": 328,
+              "height": 76,
+              "children": [
+                {
+                  "id": "step-switch-badge",
+                  "type": "group",
+                  "x": 16,
+                  "y": 22,
+                  "width": 28,
+                  "height": 28,
+                  "children": [
+                    {
+                      "id": "step-switch-badge-bg",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "width": 28,
+                      "height": 28,
+                      "fill": "$green"
+                    },
+                    {
+                      "id": "step-switch-badge-check",
+                      "type": "path",
+                      "x": 5,
+                      "y": 5,
+                      "width": 18,
+                      "height": 18,
+                      "d": "M 4 12 L 9.5 17.5 L 20 6.5",
+                      "fill": "#00000000",
+                      "stroke": "$onYellow",
+                      "strokeWidth": 2.6
+                    }
+                  ]
+                },
+                {
+                  "id": "step-switch-title",
+                  "type": "text",
+                  "x": 56,
+                  "y": 14,
+                  "width": 150,
+                  "height": 26,
+                  "text": "切换到笔画输入法",
+                  "fontSize": 17,
+                  "fontWeight": 600,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "step-switch-status",
+                  "type": "text",
+                  "x": 56,
+                  "y": 40,
+                  "width": 150,
+                  "height": 22,
+                  "text": "当前正在使用",
+                  "fontSize": 13.5,
+                  "fontWeight": 400,
+                  "fill": "$green",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "step-switch-button",
+                  "type": "group",
+                  "x": 212,
+                  "y": 18,
+                  "width": 100,
+                  "height": 40,
+                  "children": [
+                    {
+                      "id": "step-switch-button-bg",
+                      "type": "rect",
+                      "x": 0,
+                      "y": 0,
+                      "width": 100,
+                      "height": 40,
+                      "fill": "#00000000",
+                      "radius": 20.0,
+                      "stroke": "$yellow",
+                      "strokeWidth": 1.5
+                    },
+                    {
+                      "id": "step-switch-button-label",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 100,
+                      "height": 40,
+                      "text": "切换键盘",
+                      "fontSize": 15,
+                      "fontWeight": 600,
+                      "fill": "$yellow",
+                      "align": "center",
+                      "verticalAlign": "center",
+                      "lineHeight": 1.4
+                    }
+                  ],
+                  "code": "change_keyboard_button#button",
+                  "state": "outline"
+                }
+              ],
+              "code": "change_keyboard_button",
+              "state": "done"
+            },
+            {
+              "id": "divider-2",
+              "type": "rect",
+              "x": 16,
+              "y": 153,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "test-area",
+              "type": "group",
+              "x": 0,
+              "y": 154,
+              "width": 328,
+              "height": 86,
+              "children": [
+                {
+                  "id": "test-label",
+                  "type": "text",
+                  "x": 16,
+                  "y": 6,
+                  "width": 296,
+                  "height": 22,
+                  "text": "试一试",
+                  "fontSize": 14,
+                  "fontWeight": 500,
+                  "fill": "$text2",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "test-field-bg",
+                  "type": "rect",
+                  "x": 16,
+                  "y": 32,
+                  "width": 296,
+                  "height": 48,
+                  "fill": "$surface2",
+                  "radius": "$radiusField",
+                  "code": "test_input"
+                },
+                {
+                  "id": "test-hint",
+                  "type": "text",
+                  "x": 32,
+                  "y": 32,
+                  "width": 270,
+                  "height": 48,
+                  "text": "在这里试打字",
+                  "fontSize": 16,
+                  "fontWeight": 400,
+                  "fill": "$text3",
+                  "align": "left",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4,
+                  "code": "@string/hint__main_activity__test_input"
+                }
+              ],
+              "code": "test_input"
+            }
+          ],
+          "code": "drawable/settings_card"
+        },
+        {
+          "id": "label-keyboard",
+          "type": "text",
+          "x": 28,
+          "y": 408,
+          "width": 304,
+          "height": 22,
+          "text": "键盘",
+          "fontSize": 14,
+          "fontWeight": 700,
+          "fill": "$orange",
+          "align": "left",
+          "verticalAlign": "top",
+          "lineHeight": 1.4,
+          "code": "style/SettingsSectionLabel"
+        },
+        {
+          "id": "card-keyboard",
+          "type": "group",
+          "x": 16,
+          "y": 436,
+          "width": 328,
+          "height": 278,
+          "children": [
+            {
+              "id": "card-keyboard-bg",
+              "type": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 328,
+              "height": 278,
+              "fill": "$surface",
+              "radius": "$radiusCard"
+            },
+            {
+              "id": "row-layout",
+              "type": "group",
+              "x": 0,
+              "y": 0,
+              "width": 328,
+              "height": 64,
+              "children": [
+                {
+                  "id": "row-layout-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 0,
+                  "width": 150,
+                  "height": 64,
+                  "text": "键盘布局",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-layout-value",
+                  "type": "text",
+                  "x": 150,
+                  "y": 0,
+                  "width": 136,
+                  "height": 64,
+                  "text": "大按键（老手机式）",
+                  "fontSize": 15,
+                  "fontWeight": 400,
+                  "fill": "$text2",
+                  "align": "right",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-layout-chevron",
+                  "type": "path",
+                  "x": 292,
+                  "y": 20.0,
+                  "width": 24,
+                  "height": 24,
+                  "d": "M 8 5 L 15 12 L 8 19",
+                  "fill": "#00000000",
+                  "stroke": "$text3",
+                  "strokeWidth": 2
+                }
+              ],
+              "code": "keyboard_layout_button"
+            },
+            {
+              "id": "divider-3",
+              "type": "rect",
+              "x": 16,
+              "y": 64,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "row-candidate-size",
+              "type": "group",
+              "x": 0,
+              "y": 65,
+              "width": 328,
+              "height": 64,
+              "children": [
+                {
+                  "id": "row-candidate-size-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 0,
+                  "width": 150,
+                  "height": 64,
+                  "text": "候选字大小",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-candidate-size-value",
+                  "type": "text",
+                  "x": 150,
+                  "y": 0,
+                  "width": 136,
+                  "height": 64,
+                  "text": "特大",
+                  "fontSize": 15,
+                  "fontWeight": 400,
+                  "fill": "$text2",
+                  "align": "right",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-candidate-size-chevron",
+                  "type": "path",
+                  "x": 292,
+                  "y": 20.0,
+                  "width": 24,
+                  "height": 24,
+                  "d": "M 8 5 L 15 12 L 8 19",
+                  "fill": "#00000000",
+                  "stroke": "$text3",
+                  "strokeWidth": 2
+                }
+              ],
+              "code": "candidate_size_button"
+            },
+            {
+              "id": "divider-4",
+              "type": "rect",
+              "x": 16,
+              "y": 129,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "row-keyboard-height",
+              "type": "group",
+              "x": 0,
+              "y": 129,
+              "width": 328,
+              "height": 84,
+              "children": [
+                {
+                  "id": "height-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 12,
+                  "width": 200,
+                  "height": 26,
+                  "text": "键盘高度",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "height-value",
+                  "type": "text",
+                  "x": 220,
+                  "y": 12,
+                  "width": 92,
+                  "height": 26,
+                  "text": "× 1.0",
+                  "fontSize": 15,
+                  "fontWeight": 400,
+                  "fill": "$text2",
+                  "align": "right",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "height-track",
+                  "type": "rect",
+                  "x": 16,
+                  "y": 54,
+                  "width": 296,
+                  "height": 4,
+                  "fill": "$divider",
+                  "radius": 2
+                },
+                {
+                  "id": "height-active",
+                  "type": "rect",
+                  "x": 16,
+                  "y": 54,
+                  "width": 148,
+                  "height": 4,
+                  "fill": "$yellow",
+                  "radius": 2
+                },
+                {
+                  "id": "height-thumb",
+                  "type": "ellipse",
+                  "x": 154,
+                  "y": 46,
+                  "width": 20,
+                  "height": 20,
+                  "fill": "$yellow"
+                }
+              ],
+              "code": "keyboard_height_adjustment_seek_bar"
+            },
+            {
+              "id": "divider-5",
+              "type": "rect",
+              "x": 16,
+              "y": 213,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "row-candidate-order",
+              "type": "group",
+              "x": 0,
+              "y": 214,
+              "width": 328,
+              "height": 64,
+              "children": [
+                {
+                  "id": "row-candidate-order-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 0,
+                  "width": 150,
+                  "height": 64,
+                  "text": "候选字顺序",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-candidate-order-value",
+                  "type": "text",
+                  "x": 150,
+                  "y": 0,
+                  "width": 136,
+                  "height": 64,
+                  "text": "繁体字优先",
+                  "fontSize": 15,
+                  "fontWeight": 400,
+                  "fill": "$text2",
+                  "align": "right",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-candidate-order-chevron",
+                  "type": "path",
+                  "x": 292,
+                  "y": 20.0,
+                  "width": 24,
+                  "height": 24,
+                  "d": "M 8 5 L 15 12 L 8 19",
+                  "fill": "#00000000",
+                  "stroke": "$text3",
+                  "strokeWidth": 2
+                }
+              ],
+              "code": "candidate_order_button"
+            }
+          ],
+          "code": "drawable/settings_card"
+        },
+        {
+          "id": "label-aids",
+          "type": "text",
+          "x": 28,
+          "y": 734,
+          "width": 304,
+          "height": 22,
+          "text": "输入辅助",
+          "fontSize": 14,
+          "fontWeight": 700,
+          "fill": "$orange",
+          "align": "left",
+          "verticalAlign": "top",
+          "lineHeight": 1.4,
+          "code": "style/SettingsSectionLabel"
+        },
+        {
+          "id": "card-aids",
+          "type": "group",
+          "x": 16,
+          "y": 762,
+          "width": 328,
+          "height": 230,
+          "children": [
+            {
+              "id": "card-aids-bg",
+              "type": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 328,
+              "height": 230,
+              "fill": "$surface",
+              "radius": "$radiusCard"
+            },
+            {
+              "id": "row-vibration",
+              "type": "group",
+              "x": 0,
+              "y": 0,
+              "width": 328,
+              "height": 76,
+              "children": [
+                {
+                  "id": "row-vibration-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 14,
+                  "width": 236,
+                  "height": 26,
+                  "text": "按键振动",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-vibration-summary",
+                  "type": "text",
+                  "x": 16,
+                  "y": 40,
+                  "width": 236,
+                  "height": 22,
+                  "text": "需先开启系统的触摸振动",
+                  "fontSize": 13.5,
+                  "fontWeight": 400,
+                  "fill": "$text2",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-vibration-switch",
+                  "type": "group",
+                  "x": 264,
+                  "y": 24.0,
+                  "width": 48,
+                  "height": 28,
+                  "children": [
+                    {
+                      "id": "row-vibration-switch-track",
+                      "type": "rect",
+                      "x": 0,
+                      "y": 0,
+                      "width": 48,
+                      "height": 28,
+                      "fill": "$yellow",
+                      "radius": 14
+                    },
+                    {
+                      "id": "row-vibration-switch-knob",
+                      "type": "ellipse",
+                      "x": 24,
+                      "y": 4,
+                      "width": 20,
+                      "height": 20,
+                      "fill": "$onYellow"
+                    }
+                  ],
+                  "state": "on"
+                }
+              ],
+              "code": "key_vibration_switch",
+              "state": "on"
+            },
+            {
+              "id": "divider-6",
+              "type": "rect",
+              "x": 16,
+              "y": 76,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "row-sound",
+              "type": "group",
+              "x": 0,
+              "y": 77,
+              "width": 328,
+              "height": 76,
+              "children": [
+                {
+                  "id": "row-sound-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 14,
+                  "width": 236,
+                  "height": 26,
+                  "text": "按键音",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-sound-summary",
+                  "type": "text",
+                  "x": 16,
+                  "y": 40,
+                  "width": 236,
+                  "height": 22,
+                  "text": "按键时发出提示音",
+                  "fontSize": 13.5,
+                  "fontWeight": 400,
+                  "fill": "$text2",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-sound-switch",
+                  "type": "group",
+                  "x": 264,
+                  "y": 24.0,
+                  "width": 48,
+                  "height": 28,
+                  "children": [
+                    {
+                      "id": "row-sound-switch-track",
+                      "type": "rect",
+                      "x": 0,
+                      "y": 0,
+                      "width": 48,
+                      "height": 28,
+                      "fill": "$divider",
+                      "radius": 14
+                    },
+                    {
+                      "id": "row-sound-switch-knob",
+                      "type": "ellipse",
+                      "x": 4,
+                      "y": 4,
+                      "width": 20,
+                      "height": 20,
+                      "fill": "$text2"
+                    }
+                  ],
+                  "state": "off"
+                }
+              ],
+              "code": "key_sound_switch",
+              "state": "off"
+            },
+            {
+              "id": "divider-7",
+              "type": "rect",
+              "x": 16,
+              "y": 153,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "row-tolerance",
+              "type": "group",
+              "x": 0,
+              "y": 154,
+              "width": 328,
+              "height": 76,
+              "children": [
+                {
+                  "id": "row-tolerance-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 14,
+                  "width": 236,
+                  "height": 26,
+                  "text": "笔顺容错",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-tolerance-summary",
+                  "type": "text",
+                  "x": 16,
+                  "y": 40,
+                  "width": 236,
+                  "height": 22,
+                  "text": "相邻两笔顺序打反也能出字",
+                  "fontSize": 13.5,
+                  "fontWeight": 400,
+                  "fill": "$text2",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-tolerance-switch",
+                  "type": "group",
+                  "x": 264,
+                  "y": 24.0,
+                  "width": 48,
+                  "height": 28,
+                  "children": [
+                    {
+                      "id": "row-tolerance-switch-track",
+                      "type": "rect",
+                      "x": 0,
+                      "y": 0,
+                      "width": 48,
+                      "height": 28,
+                      "fill": "$yellow",
+                      "radius": 14
+                    },
+                    {
+                      "id": "row-tolerance-switch-knob",
+                      "type": "ellipse",
+                      "x": 24,
+                      "y": 4,
+                      "width": 20,
+                      "height": 20,
+                      "fill": "$onYellow"
+                    }
+                  ],
+                  "state": "on"
+                }
+              ],
+              "code": "stroke_tolerance_switch",
+              "state": "on"
+            }
+          ],
+          "code": "drawable/settings_card"
+        },
+        {
+          "id": "label-phrases",
+          "type": "text",
+          "x": 28,
+          "y": 1012,
+          "width": 304,
+          "height": 22,
+          "text": "常用语",
+          "fontSize": 14,
+          "fontWeight": 700,
+          "fill": "$orange",
+          "align": "left",
+          "verticalAlign": "top",
+          "lineHeight": 1.4,
+          "code": "style/SettingsSectionLabel"
+        },
+        {
+          "id": "card-phrases",
+          "type": "group",
+          "x": 16,
+          "y": 1040,
+          "width": 328,
+          "height": 282,
+          "children": [
+            {
+              "id": "card-phrases-bg",
+              "type": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 328,
+              "height": 282,
+              "fill": "$surface",
+              "radius": "$radiusCard"
+            },
+            {
+              "id": "phrases-summary",
+              "type": "text",
+              "x": 16,
+              "y": 12,
+              "width": 296,
+              "height": 44,
+              "text": "每行一条，最多 50 条。\n在键盘上方点“常用语”即可选用。",
+              "fontSize": 13.5,
+              "fontWeight": 400,
+              "fill": "$text2",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.45
+            },
+            {
+              "id": "phrases-field-bg",
+              "type": "rect",
+              "x": 16,
+              "y": 60,
+              "width": 296,
+              "height": 150,
+              "fill": "$surface2",
+              "radius": "$radiusField",
+              "code": "quick_phrases_input"
+            },
+            {
+              "id": "phrases-text",
+              "type": "text",
+              "x": 32,
+              "y": 70,
+              "width": 264,
+              "height": 132,
+              "text": "好的\n谢谢！\n我马上到。\n稍后给你回电话。\n13800000000",
+              "fontSize": 16,
+              "fontWeight": 400,
+              "fill": "$text",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.55
+            },
+            {
+              "id": "button-save-phrases",
+              "type": "group",
+              "x": 16,
+              "y": 222,
+              "width": 296,
+              "height": 44,
+              "children": [
+                {
+                  "id": "button-save-phrases-bg",
+                  "type": "rect",
+                  "x": 0,
+                  "y": 0,
+                  "width": 296,
+                  "height": 44,
+                  "fill": "$yellow",
+                  "radius": 22.0
+                },
+                {
+                  "id": "button-save-phrases-label",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 296,
+                  "height": 44,
+                  "text": "保存常用语",
+                  "fontSize": 15,
+                  "fontWeight": 600,
+                  "fill": "$onYellow",
+                  "align": "center",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                }
+              ],
+              "code": "save_quick_phrases_button",
+              "state": "filled"
+            }
+          ],
+          "code": "drawable/settings_card"
+        },
+        {
+          "id": "label-advanced",
+          "type": "text",
+          "x": 28,
+          "y": 1342,
+          "width": 304,
+          "height": 22,
+          "text": "高级",
+          "fontSize": 14,
+          "fontWeight": 700,
+          "fill": "$orange",
+          "align": "left",
+          "verticalAlign": "top",
+          "lineHeight": 1.4,
+          "code": "style/SettingsSectionLabel"
+        },
+        {
+          "id": "card-advanced",
+          "type": "group",
+          "x": 16,
+          "y": 1370,
+          "width": 328,
+          "height": 76,
+          "children": [
+            {
+              "id": "card-advanced-bg",
+              "type": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 328,
+              "height": 76,
+              "fill": "$surface",
+              "radius": "$radiusCard"
+            },
+            {
+              "id": "row-advanced",
+              "type": "group",
+              "x": 0,
+              "y": 0,
+              "width": 328,
+              "height": 76,
+              "children": [
+                {
+                  "id": "advanced-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 14,
+                  "width": 260,
+                  "height": 26,
+                  "text": "生僻字候选",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "advanced-summary",
+                  "type": "text",
+                  "x": 16,
+                  "y": 40,
+                  "width": 260,
+                  "height": 22,
+                  "text": "系统字体可能显示不了，已允许 1 组",
+                  "fontSize": 13.5,
+                  "fontWeight": 400,
+                  "fill": "$text2",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "advanced-chevron",
+                  "type": "path",
+                  "x": 292,
+                  "y": 26,
+                  "width": 24,
+                  "height": 24,
+                  "d": "M 5 9 L 12 16 L 19 9",
+                  "fill": "#00000000",
+                  "stroke": "$text3",
+                  "strokeWidth": 2
+                }
+              ],
+              "code": "optional_candidates_header",
+              "state": "collapsed"
+            }
+          ],
+          "code": "drawable/settings_card"
+        },
+        {
+          "id": "label-help",
+          "type": "text",
+          "x": 28,
+          "y": 1466,
+          "width": 304,
+          "height": 22,
+          "text": "帮助与关于",
+          "fontSize": 14,
+          "fontWeight": 700,
+          "fill": "$orange",
+          "align": "left",
+          "verticalAlign": "top",
+          "lineHeight": 1.4,
+          "code": "style/SettingsSectionLabel"
+        },
+        {
+          "id": "card-help",
+          "type": "group",
+          "x": 16,
+          "y": 1494,
+          "width": 328,
+          "height": 284,
+          "children": [
+            {
+              "id": "card-help-bg",
+              "type": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 328,
+              "height": 284,
+              "fill": "$surface",
+              "radius": "$radiusCard"
+            },
+            {
+              "id": "row-help-0",
+              "type": "group",
+              "x": 0,
+              "y": 0,
+              "width": 328,
+              "height": 56,
+              "children": [
+                {
+                  "id": "help-0-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 0,
+                  "width": 250,
+                  "height": 56,
+                  "text": "使用说明",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "help-0-icon",
+                  "type": "path",
+                  "x": 290,
+                  "y": 16,
+                  "width": 24,
+                  "height": 24,
+                  "d": "M 8 5 L 15 12 L 8 19",
+                  "fill": "#00000000",
+                  "stroke": "$text3",
+                  "strokeWidth": 2
+                }
+              ],
+              "code": "help_button"
+            },
+            {
+              "id": "divider-8",
+              "type": "rect",
+              "x": 16,
+              "y": 56,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "row-help-1",
+              "type": "group",
+              "x": 0,
+              "y": 57,
+              "width": 328,
+              "height": 56,
+              "children": [
+                {
+                  "id": "help-1-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 0,
+                  "width": 250,
+                  "height": 56,
+                  "text": "关于",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "help-1-icon",
+                  "type": "path",
+                  "x": 290,
+                  "y": 16,
+                  "width": 24,
+                  "height": 24,
+                  "d": "M 8 5 L 15 12 L 8 19",
+                  "fill": "#00000000",
+                  "stroke": "$text3",
+                  "strokeWidth": 2
+                }
+              ],
+              "code": "about_button"
+            },
+            {
+              "id": "divider-9",
+              "type": "rect",
+              "x": 16,
+              "y": 113,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "row-help-2",
+              "type": "group",
+              "x": 0,
+              "y": 114,
+              "width": 328,
+              "height": 56,
+              "children": [
+                {
+                  "id": "help-2-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 0,
+                  "width": 250,
+                  "height": 56,
+                  "text": "源代码",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "help-2-icon",
+                  "type": "path",
+                  "x": 290,
+                  "y": 16,
+                  "width": 24,
+                  "height": 24,
+                  "d": "M 10 5 H 5 V 19 H 19 V 14 M 13 5 H 19 V 11 M 19 5 L 11 13",
+                  "fill": "#00000000",
+                  "stroke": "$text3",
+                  "strokeWidth": 2
+                }
+              ],
+              "code": "source_code_button"
+            },
+            {
+              "id": "divider-10",
+              "type": "rect",
+              "x": 16,
+              "y": 170,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "row-help-3",
+              "type": "group",
+              "x": 0,
+              "y": 171,
+              "width": 328,
+              "height": 56,
+              "children": [
+                {
+                  "id": "help-3-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 0,
+                  "width": 250,
+                  "height": 56,
+                  "text": "隐私政策",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "help-3-icon",
+                  "type": "path",
+                  "x": 290,
+                  "y": 16,
+                  "width": 24,
+                  "height": 24,
+                  "d": "M 10 5 H 5 V 19 H 19 V 14 M 13 5 H 19 V 11 M 19 5 L 11 13",
+                  "fill": "#00000000",
+                  "stroke": "$text3",
+                  "strokeWidth": 2
+                }
+              ],
+              "code": "privacy_button"
+            },
+            {
+              "id": "divider-11",
+              "type": "rect",
+              "x": 16,
+              "y": 227,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "row-help-4",
+              "type": "group",
+              "x": 0,
+              "y": 228,
+              "width": 328,
+              "height": 56,
+              "children": [
+                {
+                  "id": "help-4-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 0,
+                  "width": 250,
+                  "height": 56,
+                  "text": "浩科工具站",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "help-4-icon",
+                  "type": "path",
+                  "x": 290,
+                  "y": 16,
+                  "width": 24,
+                  "height": 24,
+                  "d": "M 10 5 H 5 V 19 H 19 V 14 M 13 5 H 19 V 11 M 19 5 L 11 13",
+                  "fill": "#00000000",
+                  "stroke": "$text3",
+                  "strokeWidth": 2
+                }
+              ],
+              "code": "haoke_tools_button"
+            }
+          ],
+          "code": "drawable/settings_card"
+        },
+        {
+          "id": "edition-notice",
+          "type": "text",
+          "x": 32,
+          "y": 1794,
+          "width": 296,
+          "height": 40,
+          "text": "浩科社区优化版，基于 Conway 的开源项目 Stroke Input Method（GPL-3.0）。",
+          "fontSize": 12,
+          "fontWeight": 400,
+          "fill": "$text3",
+          "align": "center",
+          "verticalAlign": "top",
+          "lineHeight": 1.5,
+          "code": "@string/text__main_activity__edition_notice"
+        }
+      ]
+    },
+    {
+      "id": "settings-first-run",
+      "name": "设置主页 · 首次使用",
+      "width": 360,
+      "height": 640,
+      "background": "$bg",
+      "unit": "dp",
+      "scale": 1,
+      "state": "first run: IME not enabled",
+      "code": "MainActivity / main_activity.xml",
+      "children": [
+        {
+          "id": "page-bg",
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 640,
+          "fill": "$bg"
+        },
+        {
+          "id": "status-bar",
+          "type": "group",
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 24,
+          "children": [
+            {
+              "id": "status-bg",
+              "type": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 360,
+              "height": 24,
+              "fill": "$bg"
+            },
+            {
+              "id": "status-time",
+              "type": "text",
+              "x": 16,
+              "y": 2,
+              "width": 60,
+              "height": 20,
+              "text": "16:38",
+              "fontSize": 13,
+              "fontWeight": 500,
+              "fill": "$text2",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4
+            },
+            {
+              "id": "status-signal",
+              "type": "rect",
+              "x": 302,
+              "y": 8,
+              "width": 14,
+              "height": 9,
+              "fill": "$text2",
+              "radius": 2
+            },
+            {
+              "id": "status-battery",
+              "type": "rect",
+              "x": 322,
+              "y": 7,
+              "width": 20,
+              "height": 10,
+              "fill": "#00000000",
+              "radius": 2,
+              "stroke": "$text2",
+              "strokeWidth": 1.4
+            },
+            {
+              "id": "status-battery-level",
+              "type": "rect",
+              "x": 324,
+              "y": 9,
+              "width": 13,
+              "height": 6,
+              "fill": "$text2",
+              "radius": 1
+            }
+          ],
+          "state": "system status bar (drawn by Android, not the app)"
+        },
+        {
+          "id": "header",
+          "type": "group",
+          "x": 0,
+          "y": 24,
+          "width": 360,
+          "height": 84,
+          "children": [
+            {
+              "id": "app-icon",
+              "type": "image",
+              "x": 16,
+              "y": 16,
+              "width": 48,
+              "height": 48,
+              "radius": 12,
+              "src": "data:image/png;base64,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",
+              "code": "@mipmap/icon_launcher"
+            },
+            {
+              "id": "app-title",
+              "type": "text",
+              "x": 76,
+              "y": 10,
+              "width": 268,
+              "height": 34,
+              "text": "笔画输入法",
+              "fontSize": 23,
+              "fontWeight": 700,
+              "fill": "$text",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4,
+              "code": "@string/app_name"
+            },
+            {
+              "id": "app-subtitle",
+              "type": "text",
+              "x": 76,
+              "y": 46,
+              "width": 268,
+              "height": 20,
+              "text": "浩科社区优化版 · 按笔画顺序打字",
+              "fontSize": 13,
+              "fontWeight": 400,
+              "fill": "$text2",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4,
+              "code": "@string/text__main_activity__subtitle"
+            }
+          ],
+          "code": "main_activity.xml#header"
+        },
+        {
+          "id": "label-setup",
+          "type": "text",
+          "x": 28,
+          "y": 112,
+          "width": 304,
+          "height": 22,
+          "text": "开始使用",
+          "fontSize": 14,
+          "fontWeight": 700,
+          "fill": "$orange",
+          "align": "left",
+          "verticalAlign": "top",
+          "lineHeight": 1.4,
+          "code": "style/SettingsSectionLabel"
+        },
+        {
+          "id": "card-setup",
+          "type": "group",
+          "x": 16,
+          "y": 140,
+          "width": 328,
+          "height": 248,
+          "children": [
+            {
+              "id": "card-setup-bg",
+              "type": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 328,
+              "height": 248,
+              "fill": "$surface",
+              "radius": "$radiusCard"
+            },
+            {
+              "id": "step-enable",
+              "type": "group",
+              "x": 0,
+              "y": 0,
+              "width": 328,
+              "height": 76,
+              "children": [
+                {
+                  "id": "step-enable-badge",
+                  "type": "group",
+                  "x": 16,
+                  "y": 22,
+                  "width": 28,
+                  "height": 28,
+                  "children": [
+                    {
+                      "id": "step-enable-badge-bg",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "width": 28,
+                      "height": 28,
+                      "fill": "$yellow"
+                    },
+                    {
+                      "id": "step-enable-badge-num",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 28,
+                      "height": 28,
+                      "text": "1",
+                      "fontSize": 15,
+                      "fontWeight": 700,
+                      "fill": "$onYellow",
+                      "align": "center",
+                      "verticalAlign": "center",
+                      "lineHeight": 1.4
+                    }
+                  ]
+                },
+                {
+                  "id": "step-enable-title",
+                  "type": "text",
+                  "x": 56,
+                  "y": 14,
+                  "width": 150,
+                  "height": 26,
+                  "text": "启用笔画输入法",
+                  "fontSize": 17,
+                  "fontWeight": 600,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "step-enable-status",
+                  "type": "text",
+                  "x": 56,
+                  "y": 40,
+                  "width": 150,
+                  "height": 22,
+                  "text": "尚未启用",
+                  "fontSize": 13.5,
+                  "fontWeight": 400,
+                  "fill": "$orange",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "step-enable-button",
+                  "type": "group",
+                  "x": 212,
+                  "y": 18,
+                  "width": 100,
+                  "height": 40,
+                  "children": [
+                    {
+                      "id": "step-enable-button-bg",
+                      "type": "rect",
+                      "x": 0,
+                      "y": 0,
+                      "width": 100,
+                      "height": 40,
+                      "fill": "$yellow",
+                      "radius": 20.0
+                    },
+                    {
+                      "id": "step-enable-button-label",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 100,
+                      "height": 40,
+                      "text": "去启用",
+                      "fontSize": 15,
+                      "fontWeight": 600,
+                      "fill": "$onYellow",
+                      "align": "center",
+                      "verticalAlign": "center",
+                      "lineHeight": 1.4
+                    }
+                  ],
+                  "code": "input_method_settings_button#button",
+                  "state": "filled"
+                }
+              ],
+              "code": "input_method_settings_button",
+              "state": "pending"
+            },
+            {
+              "id": "divider",
+              "type": "rect",
+              "x": 16,
+              "y": 76,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "step-switch",
+              "type": "group",
+              "x": 0,
+              "y": 77,
+              "width": 328,
+              "height": 76,
+              "children": [
+                {
+                  "id": "step-switch-badge",
+                  "type": "group",
+                  "x": 16,
+                  "y": 22,
+                  "width": 28,
+                  "height": 28,
+                  "children": [
+                    {
+                      "id": "step-switch-badge-bg",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "width": 28,
+                      "height": 28,
+                      "fill": "$yellow"
+                    },
+                    {
+                      "id": "step-switch-badge-num",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 28,
+                      "height": 28,
+                      "text": "2",
+                      "fontSize": 15,
+                      "fontWeight": 700,
+                      "fill": "$onYellow",
+                      "align": "center",
+                      "verticalAlign": "center",
+                      "lineHeight": 1.4
+                    }
+                  ]
+                },
+                {
+                  "id": "step-switch-title",
+                  "type": "text",
+                  "x": 56,
+                  "y": 14,
+                  "width": 150,
+                  "height": 26,
+                  "text": "切换到笔画输入法",
+                  "fontSize": 17,
+                  "fontWeight": 600,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "step-switch-status",
+                  "type": "text",
+                  "x": 56,
+                  "y": 40,
+                  "width": 150,
+                  "height": 22,
+                  "text": "请先完成第 1 步",
+                  "fontSize": 13.5,
+                  "fontWeight": 400,
+                  "fill": "$text3",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "step-switch-button",
+                  "type": "group",
+                  "x": 212,
+                  "y": 18,
+                  "width": 100,
+                  "height": 40,
+                  "children": [
+                    {
+                      "id": "step-switch-button-bg",
+                      "type": "rect",
+                      "x": 0,
+                      "y": 0,
+                      "width": 100,
+                      "height": 40,
+                      "fill": "#00000000",
+                      "radius": 20.0,
+                      "stroke": "$yellow",
+                      "strokeWidth": 1.5
+                    },
+                    {
+                      "id": "step-switch-button-label",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 100,
+                      "height": 40,
+                      "text": "去切换",
+                      "fontSize": 15,
+                      "fontWeight": 600,
+                      "fill": "$yellow",
+                      "align": "center",
+                      "verticalAlign": "center",
+                      "lineHeight": 1.4
+                    }
+                  ],
+                  "code": "change_keyboard_button#button",
+                  "state": "outline"
+                }
+              ],
+              "code": "change_keyboard_button",
+              "state": "pending"
+            },
+            {
+              "id": "divider-2",
+              "type": "rect",
+              "x": 16,
+              "y": 153,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "test-area",
+              "type": "group",
+              "x": 0,
+              "y": 154,
+              "width": 328,
+              "height": 86,
+              "children": [
+                {
+                  "id": "test-label",
+                  "type": "text",
+                  "x": 16,
+                  "y": 6,
+                  "width": 296,
+                  "height": 22,
+                  "text": "试一试",
+                  "fontSize": 14,
+                  "fontWeight": 500,
+                  "fill": "$text2",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "test-field-bg",
+                  "type": "rect",
+                  "x": 16,
+                  "y": 32,
+                  "width": 296,
+                  "height": 48,
+                  "fill": "$surface2",
+                  "radius": "$radiusField",
+                  "code": "test_input"
+                },
+                {
+                  "id": "test-hint",
+                  "type": "text",
+                  "x": 32,
+                  "y": 32,
+                  "width": 270,
+                  "height": 48,
+                  "text": "在这里试打字",
+                  "fontSize": 16,
+                  "fontWeight": 400,
+                  "fill": "$text3",
+                  "align": "left",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4,
+                  "code": "@string/hint__main_activity__test_input"
+                }
+              ],
+              "code": "test_input"
+            }
+          ],
+          "code": "drawable/settings_card"
+        },
+        {
+          "id": "label-keyboard",
+          "type": "text",
+          "x": 28,
+          "y": 408,
+          "width": 304,
+          "height": 22,
+          "text": "键盘",
+          "fontSize": 14,
+          "fontWeight": 700,
+          "fill": "$orange",
+          "align": "left",
+          "verticalAlign": "top",
+          "lineHeight": 1.4,
+          "code": "style/SettingsSectionLabel"
+        },
+        {
+          "id": "card-keyboard",
+          "type": "group",
+          "x": 16,
+          "y": 436,
+          "width": 328,
+          "height": 278,
+          "children": [
+            {
+              "id": "card-keyboard-bg",
+              "type": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 328,
+              "height": 278,
+              "fill": "$surface",
+              "radius": "$radiusCard"
+            },
+            {
+              "id": "row-layout",
+              "type": "group",
+              "x": 0,
+              "y": 0,
+              "width": 328,
+              "height": 64,
+              "children": [
+                {
+                  "id": "row-layout-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 0,
+                  "width": 150,
+                  "height": 64,
+                  "text": "键盘布局",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-layout-value",
+                  "type": "text",
+                  "x": 150,
+                  "y": 0,
+                  "width": 136,
+                  "height": 64,
+                  "text": "大按键（老手机式）",
+                  "fontSize": 15,
+                  "fontWeight": 400,
+                  "fill": "$text2",
+                  "align": "right",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-layout-chevron",
+                  "type": "path",
+                  "x": 292,
+                  "y": 20.0,
+                  "width": 24,
+                  "height": 24,
+                  "d": "M 8 5 L 15 12 L 8 19",
+                  "fill": "#00000000",
+                  "stroke": "$text3",
+                  "strokeWidth": 2
+                }
+              ],
+              "code": "keyboard_layout_button"
+            },
+            {
+              "id": "divider-3",
+              "type": "rect",
+              "x": 16,
+              "y": 64,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "row-candidate-size",
+              "type": "group",
+              "x": 0,
+              "y": 65,
+              "width": 328,
+              "height": 64,
+              "children": [
+                {
+                  "id": "row-candidate-size-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 0,
+                  "width": 150,
+                  "height": 64,
+                  "text": "候选字大小",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-candidate-size-value",
+                  "type": "text",
+                  "x": 150,
+                  "y": 0,
+                  "width": 136,
+                  "height": 64,
+                  "text": "特大",
+                  "fontSize": 15,
+                  "fontWeight": 400,
+                  "fill": "$text2",
+                  "align": "right",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-candidate-size-chevron",
+                  "type": "path",
+                  "x": 292,
+                  "y": 20.0,
+                  "width": 24,
+                  "height": 24,
+                  "d": "M 8 5 L 15 12 L 8 19",
+                  "fill": "#00000000",
+                  "stroke": "$text3",
+                  "strokeWidth": 2
+                }
+              ],
+              "code": "candidate_size_button"
+            },
+            {
+              "id": "divider-4",
+              "type": "rect",
+              "x": 16,
+              "y": 129,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "row-keyboard-height",
+              "type": "group",
+              "x": 0,
+              "y": 129,
+              "width": 328,
+              "height": 84,
+              "children": [
+                {
+                  "id": "height-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 12,
+                  "width": 200,
+                  "height": 26,
+                  "text": "键盘高度",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "height-value",
+                  "type": "text",
+                  "x": 220,
+                  "y": 12,
+                  "width": 92,
+                  "height": 26,
+                  "text": "× 1.0",
+                  "fontSize": 15,
+                  "fontWeight": 400,
+                  "fill": "$text2",
+                  "align": "right",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "height-track",
+                  "type": "rect",
+                  "x": 16,
+                  "y": 54,
+                  "width": 296,
+                  "height": 4,
+                  "fill": "$divider",
+                  "radius": 2
+                },
+                {
+                  "id": "height-active",
+                  "type": "rect",
+                  "x": 16,
+                  "y": 54,
+                  "width": 148,
+                  "height": 4,
+                  "fill": "$yellow",
+                  "radius": 2
+                },
+                {
+                  "id": "height-thumb",
+                  "type": "ellipse",
+                  "x": 154,
+                  "y": 46,
+                  "width": 20,
+                  "height": 20,
+                  "fill": "$yellow"
+                }
+              ],
+              "code": "keyboard_height_adjustment_seek_bar"
+            },
+            {
+              "id": "divider-5",
+              "type": "rect",
+              "x": 16,
+              "y": 213,
+              "width": 296,
+              "height": 1,
+              "fill": "$divider"
+            },
+            {
+              "id": "row-candidate-order",
+              "type": "group",
+              "x": 0,
+              "y": 214,
+              "width": 328,
+              "height": 64,
+              "children": [
+                {
+                  "id": "row-candidate-order-title",
+                  "type": "text",
+                  "x": 16,
+                  "y": 0,
+                  "width": 150,
+                  "height": 64,
+                  "text": "候选字顺序",
+                  "fontSize": 17,
+                  "fontWeight": 500,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-candidate-order-value",
+                  "type": "text",
+                  "x": 150,
+                  "y": 0,
+                  "width": 136,
+                  "height": 64,
+                  "text": "繁体字优先",
+                  "fontSize": 15,
+                  "fontWeight": 400,
+                  "fill": "$text2",
+                  "align": "right",
+                  "verticalAlign": "center",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "row-candidate-order-chevron",
+                  "type": "path",
+                  "x": 292,
+                  "y": 20.0,
+                  "width": 24,
+                  "height": 24,
+                  "d": "M 8 5 L 15 12 L 8 19",
+                  "fill": "#00000000",
+                  "stroke": "$text3",
+                  "strokeWidth": 2
+                }
+              ],
+              "code": "candidate_order_button"
+            }
+          ],
+          "code": "drawable/settings_card"
+        }
+      ]
+    },
+    {
+      "id": "keyboard-typing",
+      "name": "键盘 · 标准布局 · 用通配符输入",
+      "width": 360,
+      "height": 640,
+      "background": "$bg",
+      "unit": "dp",
+      "scale": 1,
+      "state": "standard layout, strokes ㇐ wildcard ㇒ ㇔ typed",
+      "code": "input_container.xml / keyboard_strokes.xml",
+      "children": [
+        {
+          "id": "host-bg",
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 640,
+          "fill": "$bg"
+        },
+        {
+          "id": "status-bar",
+          "type": "group",
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 24,
+          "children": [
+            {
+              "id": "status-bg",
+              "type": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 360,
+              "height": 24,
+              "fill": "$bg"
+            },
+            {
+              "id": "status-time",
+              "type": "text",
+              "x": 16,
+              "y": 2,
+              "width": 60,
+              "height": 20,
+              "text": "16:38",
+              "fontSize": 13,
+              "fontWeight": 500,
+              "fill": "$text2",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4
+            },
+            {
+              "id": "status-signal",
+              "type": "rect",
+              "x": 302,
+              "y": 8,
+              "width": 14,
+              "height": 9,
+              "fill": "$text2",
+              "radius": 2
+            },
+            {
+              "id": "status-battery",
+              "type": "rect",
+              "x": 322,
+              "y": 7,
+              "width": 20,
+              "height": 10,
+              "fill": "#00000000",
+              "radius": 2,
+              "stroke": "$text2",
+              "strokeWidth": 1.4
+            },
+            {
+              "id": "status-battery-level",
+              "type": "rect",
+              "x": 324,
+              "y": 9,
+              "width": 13,
+              "height": 6,
+              "fill": "$text2",
+              "radius": 1
+            }
+          ],
+          "state": "system status bar (drawn by Android, not the app)"
+        },
+        {
+          "id": "host-label",
+          "type": "text",
+          "x": 16,
+          "y": 40,
+          "width": 328,
+          "height": 28,
+          "text": "试一试",
+          "fontSize": 14,
+          "fontWeight": 500,
+          "fill": "$text2",
+          "align": "left",
+          "verticalAlign": "top",
+          "lineHeight": 1.4
+        },
+        {
+          "id": "host-field",
+          "type": "rect",
+          "x": 16,
+          "y": 68,
+          "width": 328,
+          "height": 52,
+          "fill": "$surface2",
+          "radius": "$radiusField",
+          "stroke": "$yellow",
+          "strokeWidth": 1.5
+        },
+        {
+          "id": "host-field-text",
+          "type": "text",
+          "x": 32,
+          "y": 68,
+          "width": 300,
+          "height": 52,
+          "text": "我马上到。",
+          "fontSize": 17,
+          "fontWeight": 400,
+          "fill": "$text",
+          "align": "left",
+          "verticalAlign": "center",
+          "lineHeight": 1.4
+        },
+        {
+          "id": "cand-bg",
+          "type": "rect",
+          "x": 0,
+          "y": 336,
+          "width": 360,
+          "height": 40.0,
+          "fill": "$candBg",
+          "code": "candidates_view"
+        },
+        {
+          "id": "cand-0",
+          "type": "text",
+          "x": 0,
+          "y": 336,
+          "width": 53.0,
+          "height": 40.0,
+          "text": "天",
+          "fontSize": 21.0,
+          "fontWeight": 700,
+          "fill": "$candFirst",
+          "align": "center",
+          "verticalAlign": "center",
+          "lineHeight": 1.2,
+          "code": "candidate_button (first)"
+        },
+        {
+          "id": "cand-1",
+          "type": "text",
+          "x": 53.0,
+          "y": 336,
+          "width": 53.0,
+          "height": 40.0,
+          "text": "木",
+          "fontSize": 21.0,
+          "fontWeight": 500,
+          "fill": "$candText",
+          "align": "center",
+          "verticalAlign": "center",
+          "lineHeight": 1.2,
+          "code": "candidate_button"
+        },
+        {
+          "id": "cand-2",
+          "type": "text",
+          "x": 106.0,
+          "y": 336,
+          "width": 53.0,
+          "height": 40.0,
+          "text": "夫",
+          "fontSize": 21.0,
+          "fontWeight": 500,
+          "fill": "$candText",
+          "align": "center",
+          "verticalAlign": "center",
+          "lineHeight": 1.2,
+          "code": "candidate_button"
+        },
+        {
+          "id": "cand-3",
+          "type": "text",
+          "x": 159.0,
+          "y": 336,
+          "width": 53.0,
+          "height": 40.0,
+          "text": "戈",
+          "fontSize": 21.0,
+          "fontWeight": 500,
+          "fill": "$candText",
+          "align": "center",
+          "verticalAlign": "center",
+          "lineHeight": 1.2,
+          "code": "candidate_button"
+        },
+        {
+          "id": "cand-4",
+          "type": "text",
+          "x": 212.0,
+          "y": 336,
+          "width": 53.0,
+          "height": 40.0,
+          "text": "仄",
+          "fontSize": 21.0,
+          "fontWeight": 500,
+          "fill": "$candText",
+          "align": "center",
+          "verticalAlign": "center",
+          "lineHeight": 1.2,
+          "code": "candidate_button"
+        },
+        {
+          "id": "cand-5",
+          "type": "text",
+          "x": 265.0,
+          "y": 336,
+          "width": 53.0,
+          "height": 40.0,
+          "text": "朩",
+          "fontSize": 21.0,
+          "fontWeight": 500,
+          "fill": "$candText",
+          "align": "center",
+          "verticalAlign": "center",
+          "lineHeight": 1.2,
+          "code": "candidate_button"
+        },
+        {
+          "id": "stroke-sequence-pill",
+          "type": "group",
+          "x": 8,
+          "y": 302,
+          "width": 112,
+          "height": 28,
+          "children": [
+            {
+              "id": "pill-bg",
+              "type": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 112,
+              "height": 28,
+              "fill": "$pill",
+              "radius": 14
+            },
+            {
+              "id": "pill-text",
+              "type": "text",
+              "x": 12,
+              "y": 0,
+              "width": 92,
+              "height": 28,
+              "text": "㇐＊㇒㇔",
+              "fontSize": 16,
+              "fontWeight": 500,
+              "fill": "$yellow",
+              "align": "left",
+              "verticalAlign": "center",
+              "lineHeight": 1.1
+            }
+          ],
+          "code": "stroke_sequence_bar",
+          "state": "typing ㇐ wildcard ㇒ ㇔"
+        },
+        {
+          "id": "kb-bg",
+          "type": "rect",
+          "x": 0,
+          "y": 376,
+          "width": 360,
+          "height": 264,
+          "fill": "$kbBg"
+        },
+        {
+          "id": "key-digit-1",
+          "type": "group",
+          "x": 0,
+          "y": 380,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-1-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-1-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "1",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-1",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-2",
+          "type": "group",
+          "x": 36,
+          "y": 380,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-2-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-2-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "2",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-2",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-3",
+          "type": "group",
+          "x": 72,
+          "y": 380,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-3-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-3-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "3",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-3",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-4",
+          "type": "group",
+          "x": 108,
+          "y": 380,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-4-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-4-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "4",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-4",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-5",
+          "type": "group",
+          "x": 144,
+          "y": 380,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-5-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-5-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "5",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-5",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-6",
+          "type": "group",
+          "x": 180,
+          "y": 380,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-6-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-6-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "6",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-6",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-7",
+          "type": "group",
+          "x": 216,
+          "y": 380,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-7-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-7-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "7",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-7",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-8",
+          "type": "group",
+          "x": 252,
+          "y": 380,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-8-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-8-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "8",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-8",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-9",
+          "type": "group",
+          "x": 288,
+          "y": 380,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-9-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-9-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "9",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-9",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-0",
+          "type": "group",
+          "x": 324,
+          "y": 380,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-0-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-0-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "0",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-0",
+          "state": "char"
+        },
+        {
+          "id": "key-r1-0",
+          "type": "group",
+          "x": 0,
+          "y": 440,
+          "width": 72,
+          "height": 70,
+          "children": [
+            {
+              "id": "key-r1-0-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-r1-0-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "text": "；",
+              "fontSize": 24,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-r1-0",
+          "state": "char"
+        },
+        {
+          "id": "key-r1-1",
+          "type": "group",
+          "x": 72,
+          "y": 440,
+          "width": 72,
+          "height": 70,
+          "children": [
+            {
+              "id": "key-r1-1-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "fill": "$keyStroke",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-r1-1-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "text": "㇐",
+              "fontSize": 30,
+              "fontWeight": 400,
+              "fill": "$yellow",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-r1-1",
+          "state": "stroke"
+        },
+        {
+          "id": "key-r1-2",
+          "type": "group",
+          "x": 144,
+          "y": 440,
+          "width": 72,
+          "height": 70,
+          "children": [
+            {
+              "id": "key-r1-2-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "fill": "$keyStroke",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-r1-2-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "text": "㇑",
+              "fontSize": 30,
+              "fontWeight": 400,
+              "fill": "$yellow",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-r1-2",
+          "state": "stroke"
+        },
+        {
+          "id": "key-r1-3",
+          "type": "group",
+          "x": 216,
+          "y": 440,
+          "width": 72,
+          "height": 70,
+          "children": [
+            {
+              "id": "key-r1-3-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "fill": "$keyStroke",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-r1-3-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "text": "㇒",
+              "fontSize": 30,
+              "fontWeight": 400,
+              "fill": "$yellow",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-r1-3",
+          "state": "stroke"
+        },
+        {
+          "id": "key-r1-4",
+          "type": "group",
+          "x": 288,
+          "y": 440,
+          "width": 72,
+          "height": 70,
+          "children": [
+            {
+              "id": "key-r1-4-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "fill": "$keyFunc",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-r1-4-icon",
+              "type": "path",
+              "x": 23.0,
+              "y": 22.0,
+              "width": 26,
+              "height": 26,
+              "d": "M 9 5 H 21 V 19 H 9 L 3 12 Z M 12 9 L 17 15 M 17 9 L 12 15",
+              "fill": "#00000000",
+              "stroke": "$keyText",
+              "strokeWidth": 2
+            }
+          ],
+          "code": "KeyboardView key key-r1-4",
+          "state": "func"
+        },
+        {
+          "id": "key-r2-0",
+          "type": "group",
+          "x": 0,
+          "y": 510,
+          "width": 72,
+          "height": 70,
+          "children": [
+            {
+              "id": "key-r2-0-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-r2-0-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "text": "、",
+              "fontSize": 22,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-r2-0",
+          "state": "char"
+        },
+        {
+          "id": "key-r2-1",
+          "type": "group",
+          "x": 72,
+          "y": 510,
+          "width": 72,
+          "height": 70,
+          "children": [
+            {
+              "id": "key-r2-1-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "fill": "$keyStroke",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-r2-1-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "text": "㇔",
+              "fontSize": 30,
+              "fontWeight": 400,
+              "fill": "$yellow",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-r2-1",
+          "state": "stroke"
+        },
+        {
+          "id": "key-r2-2",
+          "type": "group",
+          "x": 144,
+          "y": 510,
+          "width": 72,
+          "height": 70,
+          "children": [
+            {
+              "id": "key-r2-2-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "fill": "$keyStroke",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-r2-2-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "text": "㇖",
+              "fontSize": 30,
+              "fontWeight": 400,
+              "fill": "$yellow",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-r2-2",
+          "state": "stroke"
+        },
+        {
+          "id": "key-r2-3",
+          "type": "group",
+          "x": 216,
+          "y": 510,
+          "width": 72,
+          "height": 70,
+          "children": [
+            {
+              "id": "key-r2-3-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "fill": "$keyStroke",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-r2-3-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 66,
+              "text": "通配",
+              "fontSize": 20,
+              "fontWeight": 500,
+              "fill": "$yellow",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-r2-3",
+          "state": "stroke"
+        },
+        {
+          "id": "key-r2-4",
+          "type": "group",
+          "x": 288,
+          "y": 510,
+          "width": 36,
+          "height": 70,
+          "children": [
+            {
+              "id": "key-r2-4-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 66,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-r2-4-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 66,
+              "text": "？",
+              "fontSize": 22,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-r2-4",
+          "state": "char"
+        },
+        {
+          "id": "key-r2-5",
+          "type": "group",
+          "x": 324,
+          "y": 510,
+          "width": 36,
+          "height": 70,
+          "children": [
+            {
+              "id": "key-r2-5-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 66,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-r2-5-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 66,
+              "text": "！",
+              "fontSize": 22,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-r2-5",
+          "state": "char"
+        },
+        {
+          "id": "key-symbols",
+          "type": "group",
+          "x": 0,
+          "y": 580,
+          "width": 72,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-symbols-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 56,
+              "fill": "$keyFunc",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-symbols-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 56,
+              "text": "（）：",
+              "fontSize": 17,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-symbols",
+          "state": "func"
+        },
+        {
+          "id": "key-comma",
+          "type": "group",
+          "x": 72,
+          "y": 580,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-comma-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-comma-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "，",
+              "fontSize": 22,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-comma",
+          "state": "char"
+        },
+        {
+          "id": "key-space",
+          "type": "group",
+          "x": 108,
+          "y": 580,
+          "width": 144,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-space-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 140,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-space-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 140,
+              "height": 56,
+              "text": "◀ 中文 ▶",
+              "fontSize": 15,
+              "fontWeight": 400,
+              "fill": "$spaceText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-space",
+          "state": "char"
+        },
+        {
+          "id": "key-period",
+          "type": "group",
+          "x": 252,
+          "y": 580,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-period-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-period-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "。",
+              "fontSize": 22,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-period",
+          "state": "char"
+        },
+        {
+          "id": "key-enter",
+          "type": "group",
+          "x": 288,
+          "y": 580,
+          "width": 72,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-enter-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 56,
+              "fill": "$keyEnter",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-enter-icon",
+              "type": "path",
+              "x": 23.0,
+              "y": 17.0,
+              "width": 26,
+              "height": 26,
+              "d": "M 20 5 V 12 H 6 M 10 8 L 6 12 L 10 16",
+              "fill": "#00000000",
+              "stroke": "#FFFFFF",
+              "strokeWidth": 2
+            }
+          ],
+          "code": "KeyboardView key key-enter",
+          "state": "enter"
+        }
+      ]
+    },
+    {
+      "id": "keyboard-large",
+      "name": "键盘 · 大按键（老手机式）· 空闲工具栏",
+      "width": 360,
+      "height": 640,
+      "background": "$bg",
+      "unit": "dp",
+      "scale": 1,
+      "state": "large layout, no candidates: toolbar shown",
+      "code": "input_container.xml / keyboard_strokes_large.xml",
+      "children": [
+        {
+          "id": "host-bg",
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 640,
+          "fill": "$bg"
+        },
+        {
+          "id": "status-bar",
+          "type": "group",
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 24,
+          "children": [
+            {
+              "id": "status-bg",
+              "type": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 360,
+              "height": 24,
+              "fill": "$bg"
+            },
+            {
+              "id": "status-time",
+              "type": "text",
+              "x": 16,
+              "y": 2,
+              "width": 60,
+              "height": 20,
+              "text": "16:38",
+              "fontSize": 13,
+              "fontWeight": 500,
+              "fill": "$text2",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4
+            },
+            {
+              "id": "status-signal",
+              "type": "rect",
+              "x": 302,
+              "y": 8,
+              "width": 14,
+              "height": 9,
+              "fill": "$text2",
+              "radius": 2
+            },
+            {
+              "id": "status-battery",
+              "type": "rect",
+              "x": 322,
+              "y": 7,
+              "width": 20,
+              "height": 10,
+              "fill": "#00000000",
+              "radius": 2,
+              "stroke": "$text2",
+              "strokeWidth": 1.4
+            },
+            {
+              "id": "status-battery-level",
+              "type": "rect",
+              "x": 324,
+              "y": 9,
+              "width": 13,
+              "height": 6,
+              "fill": "$text2",
+              "radius": 1
+            }
+          ],
+          "state": "system status bar (drawn by Android, not the app)"
+        },
+        {
+          "id": "host-label",
+          "type": "text",
+          "x": 16,
+          "y": 40,
+          "width": 328,
+          "height": 28,
+          "text": "试一试",
+          "fontSize": 14,
+          "fontWeight": 500,
+          "fill": "$text2",
+          "align": "left",
+          "verticalAlign": "top",
+          "lineHeight": 1.4
+        },
+        {
+          "id": "host-field",
+          "type": "rect",
+          "x": 16,
+          "y": 68,
+          "width": 328,
+          "height": 52,
+          "fill": "$surface2",
+          "radius": "$radiusField",
+          "stroke": "$yellow",
+          "strokeWidth": 1.5
+        },
+        {
+          "id": "host-field-text",
+          "type": "text",
+          "x": 32,
+          "y": 68,
+          "width": 300,
+          "height": 52,
+          "text": "我马上到。天",
+          "fontSize": 17,
+          "fontWeight": 400,
+          "fill": "$text",
+          "align": "left",
+          "verticalAlign": "center",
+          "lineHeight": 1.4
+        },
+        {
+          "id": "toolbar-bg",
+          "type": "rect",
+          "x": 0,
+          "y": 316,
+          "width": 360,
+          "height": 48,
+          "fill": "$candBg",
+          "code": "candidates_toolbar"
+        },
+        {
+          "id": "tool-phrases",
+          "type": "group",
+          "x": 4,
+          "y": 316,
+          "width": 132,
+          "height": 48,
+          "children": [
+            {
+              "id": "tool-phrases-icon",
+              "type": "path",
+              "x": 12,
+              "y": 12,
+              "width": 24,
+              "height": 24,
+              "d": "M 4 5 H 20 V 16 H 9 L 5 20 V 16 H 4 Z M 8 9 H 16 M 8 12.5 H 13",
+              "fill": "#00000000",
+              "stroke": "$candText",
+              "strokeWidth": 1.8
+            },
+            {
+              "id": "tool-phrases-label",
+              "type": "text",
+              "x": 42,
+              "y": 0,
+              "width": 86,
+              "height": 48,
+              "text": "常用语",
+              "fontSize": 17,
+              "fontWeight": 600,
+              "fill": "$candText",
+              "align": "left",
+              "verticalAlign": "center",
+              "lineHeight": 1.4
+            }
+          ],
+          "code": "quick_phrases_tool"
+        },
+        {
+          "id": "tool-hide",
+          "type": "group",
+          "x": 220,
+          "y": 316,
+          "width": 136,
+          "height": 48,
+          "children": [
+            {
+              "id": "tool-hide-label",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": 96,
+              "height": 48,
+              "text": "收起键盘",
+              "fontSize": 17,
+              "fontWeight": 600,
+              "fill": "$candText",
+              "align": "right",
+              "verticalAlign": "center",
+              "lineHeight": 1.4
+            },
+            {
+              "id": "tool-hide-icon",
+              "type": "path",
+              "x": 102,
+              "y": 12,
+              "width": 24,
+              "height": 24,
+              "d": "M 5 9 L 12 16 L 19 9",
+              "fill": "#00000000",
+              "stroke": "$candText",
+              "strokeWidth": 2
+            }
+          ],
+          "code": "hide_keyboard_tool"
+        },
+        {
+          "id": "kb-bg",
+          "type": "rect",
+          "x": 0,
+          "y": 364,
+          "width": 360,
+          "height": 276,
+          "fill": "$kbBg"
+        },
+        {
+          "id": "key-digit-1",
+          "type": "group",
+          "x": 0,
+          "y": 368,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-1-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-1-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "1",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-1",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-2",
+          "type": "group",
+          "x": 36,
+          "y": 368,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-2-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-2-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "2",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-2",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-3",
+          "type": "group",
+          "x": 72,
+          "y": 368,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-3-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-3-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "3",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-3",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-4",
+          "type": "group",
+          "x": 108,
+          "y": 368,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-4-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-4-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "4",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-4",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-5",
+          "type": "group",
+          "x": 144,
+          "y": 368,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-5-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-5-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "5",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-5",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-6",
+          "type": "group",
+          "x": 180,
+          "y": 368,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-6-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-6-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "6",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-6",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-7",
+          "type": "group",
+          "x": 216,
+          "y": 368,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-7-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-7-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "7",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-7",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-8",
+          "type": "group",
+          "x": 252,
+          "y": 368,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-8-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-8-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "8",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-8",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-9",
+          "type": "group",
+          "x": 288,
+          "y": 368,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-9-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-9-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "9",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-9",
+          "state": "char"
+        },
+        {
+          "id": "key-digit-0",
+          "type": "group",
+          "x": 324,
+          "y": 368,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-digit-0-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-digit-0-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "0",
+              "fontSize": 20,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-digit-0",
+          "state": "char"
+        },
+        {
+          "id": "key-l1-0",
+          "type": "group",
+          "x": 0,
+          "y": 428,
+          "width": 90,
+          "height": 76,
+          "children": [
+            {
+              "id": "key-l1-0-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 86,
+              "height": 72,
+              "fill": "$keyStroke",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-l1-0-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 86,
+              "height": 72,
+              "text": "㇐",
+              "fontSize": 36,
+              "fontWeight": 400,
+              "fill": "$yellow",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            },
+            {
+              "id": "key-l1-0-hint",
+              "type": "text",
+              "x": 8,
+              "y": 6,
+              "width": 20,
+              "height": 16,
+              "text": "1",
+              "fontSize": 11,
+              "fontWeight": 500,
+              "fill": "$text3",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4
+            }
+          ],
+          "code": "KeyboardView key key-l1-0",
+          "state": "stroke"
+        },
+        {
+          "id": "key-l1-1",
+          "type": "group",
+          "x": 90,
+          "y": 428,
+          "width": 90,
+          "height": 76,
+          "children": [
+            {
+              "id": "key-l1-1-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 86,
+              "height": 72,
+              "fill": "$keyStroke",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-l1-1-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 86,
+              "height": 72,
+              "text": "㇑",
+              "fontSize": 36,
+              "fontWeight": 400,
+              "fill": "$yellow",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            },
+            {
+              "id": "key-l1-1-hint",
+              "type": "text",
+              "x": 8,
+              "y": 6,
+              "width": 20,
+              "height": 16,
+              "text": "2",
+              "fontSize": 11,
+              "fontWeight": 500,
+              "fill": "$text3",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4
+            }
+          ],
+          "code": "KeyboardView key key-l1-1",
+          "state": "stroke"
+        },
+        {
+          "id": "key-l1-2",
+          "type": "group",
+          "x": 180,
+          "y": 428,
+          "width": 90,
+          "height": 76,
+          "children": [
+            {
+              "id": "key-l1-2-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 86,
+              "height": 72,
+              "fill": "$keyStroke",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-l1-2-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 86,
+              "height": 72,
+              "text": "㇒",
+              "fontSize": 36,
+              "fontWeight": 400,
+              "fill": "$yellow",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            },
+            {
+              "id": "key-l1-2-hint",
+              "type": "text",
+              "x": 8,
+              "y": 6,
+              "width": 20,
+              "height": 16,
+              "text": "3",
+              "fontSize": 11,
+              "fontWeight": 500,
+              "fill": "$text3",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4
+            }
+          ],
+          "code": "KeyboardView key key-l1-2",
+          "state": "stroke"
+        },
+        {
+          "id": "key-backspace",
+          "type": "group",
+          "x": 270,
+          "y": 428,
+          "width": 90,
+          "height": 76,
+          "children": [
+            {
+              "id": "key-backspace-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 86,
+              "height": 72,
+              "fill": "$keyFunc",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-backspace-icon",
+              "type": "path",
+              "x": 32.0,
+              "y": 25.0,
+              "width": 26,
+              "height": 26,
+              "d": "M 9 5 H 21 V 19 H 9 L 3 12 Z M 12 9 L 17 15 M 17 9 L 12 15",
+              "fill": "#00000000",
+              "stroke": "$keyText",
+              "strokeWidth": 2
+            }
+          ],
+          "code": "KeyboardView key key-backspace",
+          "state": "func"
+        },
+        {
+          "id": "key-l2-0",
+          "type": "group",
+          "x": 0,
+          "y": 504,
+          "width": 90,
+          "height": 76,
+          "children": [
+            {
+              "id": "key-l2-0-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 86,
+              "height": 72,
+              "fill": "$keyStroke",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-l2-0-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 86,
+              "height": 72,
+              "text": "㇔",
+              "fontSize": 36,
+              "fontWeight": 400,
+              "fill": "$yellow",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            },
+            {
+              "id": "key-l2-0-hint",
+              "type": "text",
+              "x": 8,
+              "y": 6,
+              "width": 20,
+              "height": 16,
+              "text": "4",
+              "fontSize": 11,
+              "fontWeight": 500,
+              "fill": "$text3",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4
+            }
+          ],
+          "code": "KeyboardView key key-l2-0",
+          "state": "stroke"
+        },
+        {
+          "id": "key-l2-1",
+          "type": "group",
+          "x": 90,
+          "y": 504,
+          "width": 90,
+          "height": 76,
+          "children": [
+            {
+              "id": "key-l2-1-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 86,
+              "height": 72,
+              "fill": "$keyStroke",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-l2-1-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 86,
+              "height": 72,
+              "text": "㇖",
+              "fontSize": 36,
+              "fontWeight": 400,
+              "fill": "$yellow",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            },
+            {
+              "id": "key-l2-1-hint",
+              "type": "text",
+              "x": 8,
+              "y": 6,
+              "width": 20,
+              "height": 16,
+              "text": "5",
+              "fontSize": 11,
+              "fontWeight": 500,
+              "fill": "$text3",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4
+            }
+          ],
+          "code": "KeyboardView key key-l2-1",
+          "state": "stroke"
+        },
+        {
+          "id": "key-l2-2",
+          "type": "group",
+          "x": 180,
+          "y": 504,
+          "width": 90,
+          "height": 76,
+          "children": [
+            {
+              "id": "key-l2-2-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 86,
+              "height": 72,
+              "fill": "$keyStroke",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-l2-2-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 86,
+              "height": 72,
+              "text": "通配",
+              "fontSize": 24,
+              "fontWeight": 500,
+              "fill": "$yellow",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            },
+            {
+              "id": "key-l2-2-hint",
+              "type": "text",
+              "x": 8,
+              "y": 6,
+              "width": 20,
+              "height": 16,
+              "text": "6",
+              "fontSize": 11,
+              "fontWeight": 500,
+              "fill": "$text3",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4
+            }
+          ],
+          "code": "KeyboardView key key-l2-2",
+          "state": "stroke"
+        },
+        {
+          "id": "key-question",
+          "type": "group",
+          "x": 270,
+          "y": 504,
+          "width": 45,
+          "height": 76,
+          "children": [
+            {
+              "id": "key-question-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 41,
+              "height": 72,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-question-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 41,
+              "height": 72,
+              "text": "？",
+              "fontSize": 22,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-question",
+          "state": "char"
+        },
+        {
+          "id": "key-exclamation",
+          "type": "group",
+          "x": 315,
+          "y": 504,
+          "width": 45,
+          "height": 76,
+          "children": [
+            {
+              "id": "key-exclamation-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 41,
+              "height": 72,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-exclamation-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 41,
+              "height": 72,
+              "text": "！",
+              "fontSize": 22,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-exclamation",
+          "state": "char"
+        },
+        {
+          "id": "key-symbols",
+          "type": "group",
+          "x": 0,
+          "y": 580,
+          "width": 54,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-symbols-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 50,
+              "height": 56,
+              "fill": "$keyFunc",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-symbols-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 50,
+              "height": 56,
+              "text": "（）：",
+              "fontSize": 15,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-symbols",
+          "state": "func"
+        },
+        {
+          "id": "key-ideographic-comma",
+          "type": "group",
+          "x": 54,
+          "y": 580,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-ideographic-comma-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-ideographic-comma-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "、",
+              "fontSize": 22,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-ideographic-comma",
+          "state": "char"
+        },
+        {
+          "id": "key-comma",
+          "type": "group",
+          "x": 90,
+          "y": 580,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-comma-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-comma-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "，",
+              "fontSize": 22,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-comma",
+          "state": "char"
+        },
+        {
+          "id": "key-space",
+          "type": "group",
+          "x": 126,
+          "y": 580,
+          "width": 126,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-space-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 122,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-space-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 122,
+              "height": 56,
+              "text": "◀ 中文 ▶",
+              "fontSize": 15,
+              "fontWeight": 400,
+              "fill": "$spaceText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-space",
+          "state": "char"
+        },
+        {
+          "id": "key-period",
+          "type": "group",
+          "x": 252,
+          "y": 580,
+          "width": 36,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-period-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "fill": "$keyChar",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-period-label",
+              "type": "text",
+              "x": 2,
+              "y": 2,
+              "width": 32,
+              "height": 56,
+              "text": "。",
+              "fontSize": 22,
+              "fontWeight": 400,
+              "fill": "$keyText",
+              "align": "center",
+              "verticalAlign": "center",
+              "lineHeight": 1.2
+            }
+          ],
+          "code": "KeyboardView key key-period",
+          "state": "char"
+        },
+        {
+          "id": "key-enter",
+          "type": "group",
+          "x": 288,
+          "y": 580,
+          "width": 72,
+          "height": 60,
+          "children": [
+            {
+              "id": "key-enter-bg",
+              "type": "rect",
+              "x": 2,
+              "y": 2,
+              "width": 68,
+              "height": 56,
+              "fill": "$keyEnter",
+              "radius": "$radiusKey"
+            },
+            {
+              "id": "key-enter-icon",
+              "type": "path",
+              "x": 23.0,
+              "y": 17.0,
+              "width": 26,
+              "height": 26,
+              "d": "M 20 5 V 12 H 6 M 10 8 L 6 12 L 10 16",
+              "fill": "#00000000",
+              "stroke": "#FFFFFF",
+              "strokeWidth": 2
+            }
+          ],
+          "code": "KeyboardView key key-enter",
+          "state": "enter"
+        }
+      ]
+    },
+    {
+      "id": "dialog-layout",
+      "name": "选择对话框 · 键盘布局",
+      "width": 360,
+      "height": 640,
+      "background": "$bg",
+      "unit": "dp",
+      "scale": 1,
+      "state": "choice dialog open over settings",
+      "code": "MainActivity.showKeyboardLayoutDialog",
+      "children": [
+        {
+          "id": "behind",
+          "type": "group",
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 640,
+          "children": [
+            {
+              "id": "page-bg",
+              "type": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 360,
+              "height": 1858,
+              "fill": "$bg"
+            },
+            {
+              "id": "status-bar",
+              "type": "group",
+              "x": 0,
+              "y": 0,
+              "width": 360,
+              "height": 24,
+              "children": [
+                {
+                  "id": "status-bg",
+                  "type": "rect",
+                  "x": 0,
+                  "y": 0,
+                  "width": 360,
+                  "height": 24,
+                  "fill": "$bg"
+                },
+                {
+                  "id": "status-time",
+                  "type": "text",
+                  "x": 16,
+                  "y": 2,
+                  "width": 60,
+                  "height": 20,
+                  "text": "16:38",
+                  "fontSize": 13,
+                  "fontWeight": 500,
+                  "fill": "$text2",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4
+                },
+                {
+                  "id": "status-signal",
+                  "type": "rect",
+                  "x": 302,
+                  "y": 8,
+                  "width": 14,
+                  "height": 9,
+                  "fill": "$text2",
+                  "radius": 2
+                },
+                {
+                  "id": "status-battery",
+                  "type": "rect",
+                  "x": 322,
+                  "y": 7,
+                  "width": 20,
+                  "height": 10,
+                  "fill": "#00000000",
+                  "radius": 2,
+                  "stroke": "$text2",
+                  "strokeWidth": 1.4
+                },
+                {
+                  "id": "status-battery-level",
+                  "type": "rect",
+                  "x": 324,
+                  "y": 9,
+                  "width": 13,
+                  "height": 6,
+                  "fill": "$text2",
+                  "radius": 1
+                }
+              ],
+              "state": "system status bar (drawn by Android, not the app)"
+            },
+            {
+              "id": "header",
+              "type": "group",
+              "x": 0,
+              "y": 24,
+              "width": 360,
+              "height": 84,
+              "children": [
+                {
+                  "id": "app-icon",
+                  "type": "image",
+                  "x": 16,
+                  "y": 16,
+                  "width": 48,
+                  "height": 48,
+                  "radius": 12,
+                  "src": "data:image/png;base64,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",
+                  "code": "@mipmap/icon_launcher"
+                },
+                {
+                  "id": "app-title",
+                  "type": "text",
+                  "x": 76,
+                  "y": 10,
+                  "width": 268,
+                  "height": 34,
+                  "text": "笔画输入法",
+                  "fontSize": 23,
+                  "fontWeight": 700,
+                  "fill": "$text",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4,
+                  "code": "@string/app_name"
+                },
+                {
+                  "id": "app-subtitle",
+                  "type": "text",
+                  "x": 76,
+                  "y": 46,
+                  "width": 268,
+                  "height": 20,
+                  "text": "浩科社区优化版 · 按笔画顺序打字",
+                  "fontSize": 13,
+                  "fontWeight": 400,
+                  "fill": "$text2",
+                  "align": "left",
+                  "verticalAlign": "top",
+                  "lineHeight": 1.4,
+                  "code": "@string/text__main_activity__subtitle"
+                }
+              ],
+              "code": "main_activity.xml#header"
+            },
+            {
+              "id": "label-setup",
+              "type": "text",
+              "x": 28,
+              "y": 112,
+              "width": 304,
+              "height": 22,
+              "text": "开始使用",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "fill": "$orange",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4,
+              "code": "style/SettingsSectionLabel"
+            },
+            {
+              "id": "card-setup",
+              "type": "group",
+              "x": 16,
+              "y": 140,
+              "width": 328,
+              "height": 248,
+              "children": [
+                {
+                  "id": "card-setup-bg",
+                  "type": "rect",
+                  "x": 0,
+                  "y": 0,
+                  "width": 328,
+                  "height": 248,
+                  "fill": "$surface",
+                  "radius": "$radiusCard"
+                },
+                {
+                  "id": "step-enable",
+                  "type": "group",
+                  "x": 0,
+                  "y": 0,
+                  "width": 328,
+                  "height": 76,
+                  "children": [
+                    {
+                      "id": "step-enable-badge",
+                      "type": "group",
+                      "x": 16,
+                      "y": 22,
+                      "width": 28,
+                      "height": 28,
+                      "children": [
+                        {
+                          "id": "step-enable-badge-bg",
+                          "type": "ellipse",
+                          "x": 0,
+                          "y": 0,
+                          "width": 28,
+                          "height": 28,
+                          "fill": "$green"
+                        },
+                        {
+                          "id": "step-enable-badge-check",
+                          "type": "path",
+                          "x": 5,
+                          "y": 5,
+                          "width": 18,
+                          "height": 18,
+                          "d": "M 4 12 L 9.5 17.5 L 20 6.5",
+                          "fill": "#00000000",
+                          "stroke": "$onYellow",
+                          "strokeWidth": 2.6
+                        }
+                      ]
+                    },
+                    {
+                      "id": "step-enable-title",
+                      "type": "text",
+                      "x": 56,
+                      "y": 14,
+                      "width": 150,
+                      "height": 26,
+                      "text": "启用笔画输入法",
+                      "fontSize": 17,
+                      "fontWeight": 600,
+                      "fill": "$text",
+                      "align": "left",
+                      "verticalAlign": "top",
+                      "lineHeight": 1.4
+                    },
+                    {
+                      "id": "step-enable-status",
+                      "type": "text",
+                      "x": 56,
+                      "y": 40,
+                      "width": 150,
+                      "height": 22,
+                      "text": "已在系统中启用",
+                      "fontSize": 13.5,
+                      "fontWeight": 400,
+                      "fill": "$green",
+                      "align": "left",
+                      "verticalAlign": "top",
+                      "lineHeight": 1.4
+                    },
+                    {
+                      "id": "step-enable-button",
+                      "type": "group",
+                      "x": 212,
+                      "y": 18,
+                      "width": 100,
+                      "height": 40,
+                      "children": [
+                        {
+                          "id": "step-enable-button-bg",
+                          "type": "rect",
+                          "x": 0,
+                          "y": 0,
+                          "width": 100,
+                          "height": 40,
+                          "fill": "#00000000",
+                          "radius": 20.0,
+                          "stroke": "$yellow",
+                          "strokeWidth": 1.5
+                        },
+                        {
+                          "id": "step-enable-button-label",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": 100,
+                          "height": 40,
+                          "text": "输入法设置",
+                          "fontSize": 15,
+                          "fontWeight": 600,
+                          "fill": "$yellow",
+                          "align": "center",
+                          "verticalAlign": "center",
+                          "lineHeight": 1.4
+                        }
+                      ],
+                      "code": "input_method_settings_button#button",
+                      "state": "outline"
+                    }
+                  ],
+                  "code": "input_method_settings_button",
+                  "state": "done"
+                },
+                {
+                  "id": "divider",
+                  "type": "rect",
+                  "x": 16,
+                  "y": 76,
+                  "width": 296,
+                  "height": 1,
+                  "fill": "$divider"
+                },
+                {
+                  "id": "step-switch",
+                  "type": "group",
+                  "x": 0,
+                  "y": 77,
+                  "width": 328,
+                  "height": 76,
+                  "children": [
+                    {
+                      "id": "step-switch-badge",
+                      "type": "group",
+                      "x": 16,
+                      "y": 22,
+                      "width": 28,
+                      "height": 28,
+                      "children": [
+                        {
+                          "id": "step-switch-badge-bg",
+                          "type": "ellipse",
+                          "x": 0,
+                          "y": 0,
+                          "width": 28,
+                          "height": 28,
+                          "fill": "$green"
+                        },
+                        {
+                          "id": "step-switch-badge-check",
+                          "type": "path",
+                          "x": 5,
+                          "y": 5,
+                          "width": 18,
+                          "height": 18,
+                          "d": "M 4 12 L 9.5 17.5 L 20 6.5",
+                          "fill": "#00000000",
+                          "stroke": "$onYellow",
+                          "strokeWidth": 2.6
+                        }
+                      ]
+                    },
+                    {
+                      "id": "step-switch-title",
+                      "type": "text",
+                      "x": 56,
+                      "y": 14,
+                      "width": 150,
+                      "height": 26,
+                      "text": "切换到笔画输入法",
+                      "fontSize": 17,
+                      "fontWeight": 600,
+                      "fill": "$text",
+                      "align": "left",
+                      "verticalAlign": "top",
+                      "lineHeight": 1.4
+                    },
+                    {
+                      "id": "step-switch-status",
+                      "type": "text",
+                      "x": 56,
+                      "y": 40,
+                      "width": 150,
+                      "height": 22,
+                      "text": "当前正在使用",
+                      "fontSize": 13.5,
+                      "fontWeight": 400,
+                      "fill": "$green",
+                      "align": "left",
+                      "verticalAlign": "top",
+                      "lineHeight": 1.4
+                    },
+                    {
+                      "id": "step-switch-button",
+                      "type": "group",
+                      "x": 212,
+                      "y": 18,
+                      "width": 100,
+                      "height": 40,
+                      "children": [
+                        {
+                          "id": "step-switch-button-bg",
+                          "type": "rect",
+                          "x": 0,
+                          "y": 0,
+                          "width": 100,
+                          "height": 40,
+                          "fill": "#00000000",
+                          "radius": 20.0,
+                          "stroke": "$yellow",
+                          "strokeWidth": 1.5
+                        },
+                        {
+                          "id": "step-switch-button-label",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": 100,
+                          "height": 40,
+                          "text": "切换键盘",
+                          "fontSize": 15,
+                          "fontWeight": 600,
+                          "fill": "$yellow",
+                          "align": "center",
+                          "verticalAlign": "center",
+                          "lineHeight": 1.4
+                        }
+                      ],
+                      "code": "change_keyboard_button#button",
+                      "state": "outline"
+                    }
+                  ],
+                  "code": "change_keyboard_button",
+                  "state": "done"
+                },
+                {
+                  "id": "divider-2",
+                  "type": "rect",
+                  "x": 16,
+                  "y": 153,
+                  "width": 296,
+                  "height": 1,
+                  "fill": "$divider"
+                },
+                {
+                  "id": "test-area",
+                  "type": "group",
+                  "x": 0,
+                  "y": 154,
+                  "width": 328,
+                  "height": 86,
+                  "children": [
+                    {
+                      "id": "test-label",
+                      "type": "text",
+                      "x": 16,
+                      "y": 6,
+                      "width": 296,
+                      "height": 22,
+                      "text": "试一试",
+                      "fontSize": 14,
+                      "fontWeight": 500,
+                      "fill": "$text2",
+                      "align": "left",
+                      "verticalAlign": "top",
+                      "lineHeight": 1.4
+                    },
+                    {
+                      "id": "test-field-bg",
+                      "type": "rect",
+                      "x": 16,
+                      "y": 32,
+                      "width": 296,
+                      "height": 48,
+                      "fill": "$surface2",
+                      "radius": "$radiusField",
+                      "code": "test_input"
+                    },
+                    {
+                      "id": "test-hint",
+                      "type": "text",
+                      "x": 32,
+                      "y": 32,
+                      "width": 270,
+                      "height": 48,
+                      "text": "在这里试打字",
+                      "fontSize": 16,
+                      "fontWeight": 400,
+                      "fill": "$text3",
+                      "align": "left",
+                      "verticalAlign": "center",
+                      "lineHeight": 1.4,
+                      "code": "@string/hint__main_activity__test_input"
+                    }
+                  ],
+                  "code": "test_input"
+                }
+              ],
+              "code": "drawable/settings_card"
+            },
+            {
+              "id": "label-keyboard",
+              "type": "text",
+              "x": 28,
+              "y": 408,
+              "width": 304,
+              "height": 22,
+              "text": "键盘",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "fill": "$orange",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4,
+              "code": "style/SettingsSectionLabel"
+            }
+          ]
+        },
+        {
+          "id": "scrim",
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "width": 360,
+          "height": 640,
+          "fill": "$scrim"
+        },
+        {
+          "id": "dialog",
+          "type": "group",
+          "x": 24,
+          "y": 196,
+          "width": 312,
+          "height": 212,
+          "children": [
+            {
+              "id": "dialog-bg",
+              "type": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 312,
+              "height": 212,
+              "fill": "$dialog",
+              "radius": 20,
+              "code": "drawable/dialog_background"
+            },
+            {
+              "id": "dialog-title",
+              "type": "text",
+              "x": 24,
+              "y": 20,
+              "width": 264,
+              "height": 30,
+              "text": "键盘布局",
+              "fontSize": 20,
+              "fontWeight": 700,
+              "fill": "$text",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4,
+              "code": "@string/label__main_activity__keyboard_layout"
+            },
+            {
+              "id": "radio-0-ring",
+              "type": "ellipse",
+              "x": 24,
+              "y": 80,
+              "width": 24,
+              "height": 24,
+              "fill": "#00000000",
+              "stroke": "$text3",
+              "strokeWidth": 2
+            },
+            {
+              "id": "option-0",
+              "type": "text",
+              "x": 64,
+              "y": 64,
+              "width": 228,
+              "height": 56,
+              "text": "标准布局",
+              "fontSize": 17,
+              "fontWeight": 400,
+              "fill": "$text",
+              "align": "left",
+              "verticalAlign": "center",
+              "lineHeight": 1.4
+            },
+            {
+              "id": "radio-1-ring",
+              "type": "ellipse",
+              "x": 24,
+              "y": 136,
+              "width": 24,
+              "height": 24,
+              "fill": "#00000000",
+              "stroke": "$yellow",
+              "strokeWidth": 2
+            },
+            {
+              "id": "radio-1-dot",
+              "type": "ellipse",
+              "x": 30,
+              "y": 142,
+              "width": 12,
+              "height": 12,
+              "fill": "$yellow"
+            },
+            {
+              "id": "option-1",
+              "type": "text",
+              "x": 64,
+              "y": 120,
+              "width": 228,
+              "height": 56,
+              "text": "大按键（老手机式）",
+              "fontSize": 17,
+              "fontWeight": 500,
+              "fill": "$text",
+              "align": "left",
+              "verticalAlign": "center",
+              "lineHeight": 1.4
+            },
+            {
+              "id": "dialog-note",
+              "type": "text",
+              "x": 24,
+              "y": 176,
+              "width": 264,
+              "height": 24,
+              "text": "点选后立即生效，可在“试一试”里查看",
+              "fontSize": 13,
+              "fontWeight": 400,
+              "fill": "$text3",
+              "align": "left",
+              "verticalAlign": "top",
+              "lineHeight": 1.4
+            }
+          ],
+          "code": "AlertDialog (StrokeInputAlert)"
+        }
+      ]
+    }
+  ]
+}

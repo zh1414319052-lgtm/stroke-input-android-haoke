@@ -2,33 +2,113 @@
   <!-- Main activity -->
   <string name="app_name">Stroke Input Method</string>
   <string name="label__main_activity__welcome">Welcome to Stroke Input Method!</string>
-  <string name="label__main_activity__source_code_button">Source Code</string>
+  <string name="text__main_activity__subtitle">Strokes · handwriting · offline voice</string>
+  <string name="label__main_activity__source_code_button">Optimized edition source</string>
   <string name="label__main_activity__help_button">Help</string>
   <string name="label__main_activity__about_button">About</string>
   <string name="label__main_activity__privacy_button">Privacy Policy</string>
-  <string name="text__main_activity__input_method_settings">
-    1. If you have newly installed Stroke Input Method,
-    you must manually enable it in the system settings before it can be used:
-  </string>
-  <string name="label__main_activity__input_method_settings_button">Input method settings</string>
-  <string name="text__main_activity__change_keyboard">
-    2. If your existing input method provides no means of changing keyboards:
-  </string>
-  <string name="label__main_activity__change_keyboard_button">Change keyboard</string>
-  <string name="text__main_activity__candidate_order">
-    3. Candidate order:
-  </string>
+  <!-- Settings sections -->
+  <string name="label__settings__section_setup">Get started</string>
+  <string name="label__settings__section_theme">Appearance</string>
+  <string name="label__toolbar__handwriting">Write</string>
+  <string name="label__toolbar__voice">Voice</string>
+  <string name="status__voice_loading">Preparing voice recognition…</string>
+  <string name="status__voice_ready">Tap to talk, or hold while speaking</string>
+  <string name="status__voice_listening">Listening… tap again to finish</string>
+  <string name="status__voice_listening_hold">Listening… let go to finish</string>
+  <string name="status__voice_recognising">Recognising…</string>
+  <string name="status__voice_no_permission">Tap here to allow the microphone</string>
+  <string name="status__voice_unavailable">Voice recognition could not start</string>
+  <string name="status__voice_microphone_busy">The microphone is busy, try again later</string>
+  <string name="status__voice_nothing_heard">Nothing recognised, please say it again</string>
+  <string name="message__voice_permission_granted">Microphone allowed. Tap the voice pad to talk.</string>
+  <string name="message__voice_permission_denied">Voice input needs the microphone.</string>
+  <string name="label__toolbar__handwriting_full_screen">Full</string>
+  <string name="label__toolbar__handwriting_half_screen">Half</string>
+  <string name="hint__handwriting_full_screen">Full screen: write anywhere above the candidates</string>
+  <string name="hint__handwriting_pad">Write here — several characters in a row are fine</string>
+  <string name="hint__handwriting_loading">Preparing handwriting recognition…</string>
+  <string name="hint__handwriting_unavailable">Handwriting recognition could not start</string>
+  <string name="label__theme__paper">Rice paper</string>
+  <string name="label__theme__sky">Clear sky</string>
+  <string name="label__theme__night">Night teal</string>
+  <string name="text__settings__theme_note">Changes the keyboard and this page at once</string>
+  <string name="label__settings__section_keyboard">Keyboard settings</string>
+  <string name="label__settings__section_aids">Typing aids</string>
+  <string name="label__settings__section_phrases">Quick phrases</string>
+  <string name="label__settings__section_advanced">Advanced</string>
+  <string name="label__settings__section_help">Help and about</string>
+  <!-- Setup steps (status is read from the system each time the page is shown) -->
+  <string name="label__setup__enable_title">Enable the keyboard</string>
+  <string name="text__setup__enable_done">Enabled in system settings</string>
+  <string name="text__setup__enable_pending">Not enabled yet</string>
+  <string name="label__setup__enable_button_pending">Enable</string>
+  <string name="label__main_activity__input_method_settings_button">Manage</string>
+  <string name="label__setup__switch_title">Switch to it</string>
+  <string name="text__setup__switch_done">In use now</string>
+  <string name="text__setup__switch_pending">Not selected yet</string>
+  <string name="text__setup__switch_after_enable">Complete step 1 first</string>
+  <string name="label__setup__switch_button_pending">Switch</string>
+  <string name="label__main_activity__change_keyboard_button">Switch</string>
+  <string name="label__setup__test">Try it</string>
+  <string name="hint__main_activity__test_input">Tap to try strokes or handwriting</string>
+  <!-- Keyboard section -->
   <string name="label__main_activity__candidate_order">Candidate order</string>
   <string name="label__main_activity__traditional_first">Traditional first</string>
   <string name="label__main_activity__simplified_first">Simplified first</string>
-  <string name="text__main_activity__keyboard_height_adjustment">
-    4. Adjust keyboard height (capped at taking up half the screen, not counting the candidates bar):
-  </string>
-  <string name="hint__main_activity__test_input">5. Test input here</string>
+  <string name="label__main_activity__keyboard_layout">Keyboard layout</string>
+  <string name="label__main_activity__layout_standard">Standard</string>
+  <string name="label__main_activity__layout_large">Large keys (classic phone)</string>
+  <string name="label__settings__keyboard_height">Keyboard height</string>
+  <string name="label__settings__handwriting_on_keyboard">Handwrite on the keyboard</string>
+  <string name="text__settings__handwriting_on_keyboard_summary">Tap keys to type; slide across ordinary keys to write. “Full” expands the writing area.</string>
+  <string name="label__main_activity__candidate_size">Candidate size</string>
+  <string name="label__main_activity__size_standard">Standard</string>
+  <string name="label__main_activity__size_large">Large</string>
+  <string name="label__main_activity__size_extra_large">Extra large</string>
+  <!-- Typing aids -->
+  <string name="label__main_activity__key_vibration">Vibrate on key press</string>
+  <string name="text__settings__key_vibration_summary">Needs the system touch vibration on</string>
+  <string name="label__main_activity__key_sound">Sound on key press</string>
+  <string name="text__settings__key_sound_summary">Plays a click on each key</string>
+  <string name="label__main_activity__stroke_tolerance">Stroke-order tolerance</string>
+  <string name="text__settings__stroke_tolerance_summary">Finds characters with two neighbouring strokes swapped</string>
+  <!-- Quick phrases -->
+  <string name="text__main_activity__quick_phrases">One phrase per line, up to 50.\nTap “Phrases” above the keyboard to insert one.</string>
+  <string name="hint__main_activity__quick_phrases">For example: home address, phone number</string>
+  <string name="label__main_activity__save_quick_phrases">Save quick phrases</string>
+  <plurals name="message__main_activity__quick_phrases_saved">
+    <item quantity="one">Saved %d quick phrase.</item>
+    <item quantity="other">Saved %d quick phrases.</item>
+  </plurals>
+  <!-- Advanced: optional (rare) candidates, collapsed by default -->
+  <string name="label__settings__optional_candidates">Rare characters</string>
+  <plurals name="text__settings__optional_candidates_summary">
+    <item quantity="one">May not display with system fonts; %d group allowed</item>
+    <item quantity="other">May not display with system fonts; %d groups allowed</item>
+  </plurals>
   <string name="text__main_activity__optional_candidates">
-    6. (Advanced) Allow the following candidates (which may not have system font support):
+    Allow the following candidates (which may not have system font support):
   </string>
   <string name="label__main_activity__return">Return</string>
+  <string name="label__main_activity__haoke_tools_button">Haoke Tools</string>
+  <string name="text__main_activity__edition_notice">
+    Haoke community-enhanced build, based on the open-source Stroke Input Method by Conway (GPL-3.0).
+  </string>
+  <!-- Privacy policy (upstream official version in the UI language) -->
+  <string name="uri__privacy_policy">https://github.com/stroke-input/stroke-input-android/blob/master/PRIVACY.md#privacy-policy-english-version</string>
+  <!-- Keyboard toolbar (shown above the keys while there are no candidates) -->
+  <string name="label__toolbar__quick_phrases">Phrases</string>
+  <string name="label__toolbar__hide_keyboard">Hide keyboard</string>
+  <string name="message__quick_phrases_empty">No quick phrases yet. Add them in the Stroke Input Method app.</string>
+  <string-array name="default_quick_phrases">
+    <item>OK</item>
+    <item>Thanks!</item>
+    <item>On my way.</item>
+    <item>I\'ll call you back later.</item>
+  </string-array>
+  <!-- Stroke order shown on long press of a candidate: character, stroke sequences -->
+  <string name="format__stroke_order">%1$s: %2$s</string>
   <!-- Error messages -->
   <string name="message__error__browser">Could not launch a browser and navigate to &lt;%1$s&gt;.</string>
   <string name="message__error__webview">Could not launch WebView.</string>
@@ -41,6 +121,9 @@
   <string name="stroke_3" translatable="false">㇒</string> <!-- STROKE P -->
   <string name="stroke_4" translatable="false">㇔</string> <!-- STROKE D -->
   <string name="stroke_5" translatable="false">㇖</string> <!-- STROKE HG -->
+  <!-- Wildcard stroke: U+FF0A FULLWIDTH ASTERISK in the stroke sequence bar; key label translatable -->
+  <string name="stroke_wildcard" translatable="false">＊</string>
+  <string name="display_text__stroke_wildcard">＊</string>
   <!-- Backspace: U+232B ERASE TO THE LEFT -->
   <string name="display_text__backspace" translatable="false">⌫</string>
   <!-- Switch to strokes: U+31D0, U+31D1, U+31D2 -->
@@ -70,4 +153,22 @@
   <string name="display_text__send" translatable="false">➤</string>
   <!-- Enter key "return": U+23CE RETURN SYMBOL -->
   <string name="display_text__return" translatable="false">⏎</string>
+  <string name="label__update__check">Check for Haoke updates</string>
+  <string name="text__update__privacy">Only version checks connect to Haoke. Input and voice recognition stay on this device.</string>
+  <string name="text__update__version_privacy">Version %1$s\nOnly version checks connect to Haoke. Input and voice recognition stay on this device.</string>
+  <string name="text__update__checking">Checking for updates…</string>
+  <string name="text__update__current">Current version: %1$s. No compatible newer version is available.</string>
+  <string name="text__update__failed">Could not safely check for updates. Please try again later.</string>
+  <string name="text__update__storage_failed">Could not save your update choice. Please try again.</string>
+  <string name="text__update__cancelled">Update check stopped.</string>
+  <string name="text__update__title">Haoke update %1$s</string>
+  <string name="text__update__empty_notes">A newer Haoke version is available.</string>
+  <string name="text__update__notes">%1$s\n\nThe version page opens in your browser. Nothing is downloaded or installed automatically.</string>
+  <string name="label__update__view">View version</string>
+  <string name="label__update__later">Later</string>
+  <string name="label__update__ignore">Ignore this version</string>
+  <string name="text__update__browser_failed">No browser could open the version page.</string>
+  <string name="file_name__privacy_html">privacy.html</string>
+  <string name="text__layout__standard_summary">Numbers and the five strokes</string>
+  <string name="text__layout__large_summary">Larger stroke keys</string>
 </resources>

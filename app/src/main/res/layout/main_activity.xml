@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Copyright 2021–2023, 2025 Conway
+  Modified 2026-10-28 by Haoke Tools (浩科工具站): grouped settings page
+  following design/ui-20261102/stroke-ui.haoke-ui.json (board "settings"), theme picker and themed colours
+  (design/stroke-input-theme-pages.haoke-ui.json).
   Licensed under the GNU General Public License v3.0 (GPL-3.0-only).
   This is free software with NO WARRANTY etc. etc.,
   see LICENSE or <https://www.gnu.org/licenses/>.
@@ -8,177 +11,613 @@
 <ScrollView
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/main_activity_content"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
   android:fitsSystemWindows="true"
+  android:focusableInTouchMode="true"
+  android:descendantFocusability="beforeDescendants"
 >
   <LinearLayout
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:minWidth="@dimen/max_width__main_activity"
-    android:maxWidth="@dimen/max_width__main_activity"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:padding="@dimen/padding__main_activity"
+    android:paddingLeft="@dimen/padding_horizontal__main_activity"
+    android:paddingRight="@dimen/padding_horizontal__main_activity"
+    android:paddingBottom="@dimen/padding_bottom__main_activity"
+    tools:ignore="UnusedAttribute,TooManyViews"
   >
+    <!-- Header (design: header) -->
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:gravity="center_vertical"
+      android:paddingTop="@dimen/padding_top__header"
+    >
+      <ImageView
+        android:id="@+id/app_icon"
+        android:layout_width="@dimen/size__app_icon"
+        android:layout_height="@dimen/size__app_icon"
+        android:layout_marginRight="@dimen/margin_end__app_icon"
+        android:background="@drawable/app_icon_clip"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/icon_launcher"
+        android:importantForAccessibility="no"
+        tools:ignore="RtlHardcoded"
+      />
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+      >
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/app_name"
+          android:textColor="?attr/settingsText"
+          android:textSize="?attr/settingsTitleSize"
+          android:textStyle="bold"
+          android:accessibilityHeading="true"
+        />
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/text__main_activity__subtitle"
+          android:textColor="?attr/settingsText2"
+          android:textSize="@dimen/font_size__app_subtitle"
+        />
+      </LinearLayout>
+    </LinearLayout>
+
+    <!-- Get started (design: card-setup) -->
     <TextView
-      style="@style/MainActivityText"
-      android:text="@string/text__main_activity__input_method_settings"
-      android:paddingTop="@dimen/padding_top__main_activity__text_first"
+      style="@style/SettingsSectionLabel"
+      android:text="@string/label__settings__section_setup"
+      android:accessibilityHeading="true"
     />
-    <Button
-      style="@style/MainActivityButton"
-      android:id="@+id/input_method_settings_button"
-      android:text="@string/label__main_activity__input_method_settings_button"
-    />
+    <LinearLayout style="@style/SettingsCard">
+      <!-- Step 1: enable -->
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/min_height__settings_row_two_line"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/padding_horizontal__settings_row"
+        android:paddingRight="@dimen/padding_horizontal__settings_row"
+      >
+        <FrameLayout
+          android:id="@+id/step_enable_badge"
+          android:layout_width="@dimen/size__step_badge"
+          android:layout_height="@dimen/size__step_badge"
+          android:layout_marginRight="@dimen/margin_end__step_badge"
+          android:background="@drawable/step_badge_pending"
+          tools:ignore="RtlHardcoded"
+        >
+          <TextView
+            android:id="@+id/step_enable_badge_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="?attr/settingsOnAccent"
+            android:textSize="@dimen/font_size__step_badge"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText"
+          />
+          <ImageView
+            android:id="@+id/step_enable_badge_check"
+            android:layout_width="@dimen/size__step_badge_check"
+            android:layout_height="@dimen/size__step_badge_check"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_check"
+            android:visibility="gone"
+            android:importantForAccessibility="no"
+          />
+        </FrameLayout>
+        <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:orientation="vertical"
+        >
+          <TextView
+            style="@style/SettingsRowTitleBlock"
+            android:text="@string/label__setup__enable_title"
+          />
+          <TextView
+            android:id="@+id/step_enable_status"
+            style="@style/SettingsRowSummary"
+            android:text="@string/text__setup__enable_pending"
+          />
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+          android:id="@+id/input_method_settings_button"
+          style="@style/SettingsStepButton"
+          android:text="@string/label__setup__enable_button_pending"
+        />
+      </LinearLayout>
+      <View style="@style/SettingsDivider" />
+      <!-- Step 2: switch -->
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/min_height__settings_row_two_line"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/padding_horizontal__settings_row"
+        android:paddingRight="@dimen/padding_horizontal__settings_row"
+      >
+        <FrameLayout
+          android:id="@+id/step_switch_badge"
+          android:layout_width="@dimen/size__step_badge"
+          android:layout_height="@dimen/size__step_badge"
+          android:layout_marginRight="@dimen/margin_end__step_badge"
+          android:background="@drawable/step_badge_pending"
+          tools:ignore="RtlHardcoded"
+        >
+          <TextView
+            android:id="@+id/step_switch_badge_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="?attr/settingsOnAccent"
+            android:textSize="@dimen/font_size__step_badge"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText"
+          />
+          <ImageView
+            android:id="@+id/step_switch_badge_check"
+            android:layout_width="@dimen/size__step_badge_check"
+            android:layout_height="@dimen/size__step_badge_check"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_check"
+            android:visibility="gone"
+            android:importantForAccessibility="no"
+          />
+        </FrameLayout>
+        <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:orientation="vertical"
+        >
+          <TextView
+            style="@style/SettingsRowTitleBlock"
+            android:text="@string/label__setup__switch_title"
+          />
+          <TextView
+            android:id="@+id/step_switch_status"
+            style="@style/SettingsRowSummary"
+            android:text="@string/text__setup__switch_after_enable"
+          />
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+          android:id="@+id/change_keyboard_button"
+          style="@style/SettingsStepButton"
+          android:text="@string/label__setup__switch_button_pending"
+        />
+      </LinearLayout>
+      <View style="@style/SettingsDivider" />
+      <!-- Try it -->
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/padding_horizontal__settings_row"
+        android:paddingRight="@dimen/padding_horizontal__settings_row"
+        android:paddingTop="@dimen/padding_vertical__settings_row"
+        android:paddingBottom="@dimen/margin_top__main_activity__switch"
+        android:text="@string/label__setup__test"
+        android:textColor="?attr/settingsText2"
+        android:textSize="?attr/settingsSectionSize"
+        tools:ignore="RtlHardcoded"
+      />
+      <EditText
+        android:id="@+id/test_input"
+        style="@style/SettingsField"
+        android:layout_marginLeft="@dimen/padding_horizontal__settings_row"
+        android:layout_marginRight="@dimen/padding_horizontal__settings_row"
+        android:layout_marginBottom="@dimen/padding_bottom__settings_card"
+        android:hint="@string/hint__main_activity__test_input"
+        android:importantForAutofill="no"
+        android:inputType="text"
+      />
+    </LinearLayout>
+
+    <!-- Theme (design/stroke-input-theme-pages.haoke-ui.json: card-theme) -->
     <TextView
-      style="@style/MainActivityText"
-      android:text="@string/text__main_activity__change_keyboard"
+      style="@style/SettingsSectionLabel"
+      android:text="@string/label__settings__section_theme"
+      android:accessibilityHeading="true"
     />
-    <Button
-      style="@style/MainActivityButton"
-      android:id="@+id/change_keyboard_button"
-      android:text="@string/label__main_activity__change_keyboard_button"
-    />
+    <LinearLayout
+      style="@style/SettingsCard"
+      android:paddingBottom="@dimen/padding_bottom__theme_card"
+    >
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/padding_horizontal__theme_tiles"
+        android:paddingRight="@dimen/padding_horizontal__theme_tiles"
+        android:paddingTop="@dimen/padding_top__theme_tiles"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+      >
+        <include android:id="@+id/theme_paper_tile" layout="@layout/theme_tile" />
+        <include android:id="@+id/theme_sky_tile" layout="@layout/theme_tile" />
+        <include android:id="@+id/theme_night_tile" layout="@layout/theme_tile" />
+      </LinearLayout>
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top__theme_tile_label"
+        android:paddingLeft="@dimen/padding_horizontal__settings_row"
+        android:paddingRight="@dimen/padding_horizontal__settings_row"
+        android:text="@string/text__settings__theme_note"
+        android:textColor="?attr/settingsText3"
+        android:textSize="@dimen/font_size__theme_note"
+      />
+    </LinearLayout>
+
+    <!-- Keyboard (design: card-keyboard) -->
     <TextView
-      style="@style/MainActivityText"
-      android:text="@string/text__main_activity__candidate_order"
+      style="@style/SettingsSectionLabel"
+      android:text="@string/label__settings__section_keyboard"
+      android:accessibilityHeading="true"
     />
-    <Button
-      style="@style/MainActivityButton"
-      android:id="@+id/candidate_order_button"
-      android:text="@string/label__main_activity__traditional_first"
-    />
+    <LinearLayout style="@style/SettingsCard">
+      <LinearLayout
+        android:id="@+id/keyboard_layout_button"
+        style="@style/SettingsRow"
+      >
+        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_marginEnd="16dp" android:src="@drawable/icon_settings_layout" android:importantForAccessibility="no" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:paddingTop="12dp" android:paddingBottom="12dp">
+          <TextView style="@style/SettingsRowTitleBlock" android:text="@string/label__main_activity__keyboard_layout" />
+          <TextView android:id="@+id/keyboard_layout_value" style="@style/SettingsRowDescription" />
+        </LinearLayout>
+        <ImageView style="@style/SettingsRowIcon" android:src="@drawable/icon_chevron_right" android:contentDescription="@null" />
+      </LinearLayout>
+      <View style="@style/SettingsDivider" />
+      <LinearLayout
+        android:id="@+id/candidate_size_button"
+        style="@style/SettingsRow"
+      >
+        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_marginEnd="16dp" android:src="@drawable/icon_settings_text" android:importantForAccessibility="no" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:paddingTop="12dp" android:paddingBottom="12dp">
+          <TextView style="@style/SettingsRowTitleBlock" android:text="@string/label__main_activity__candidate_size" />
+          <TextView android:id="@+id/candidate_size_value" style="@style/SettingsRowDescription" />
+        </LinearLayout>
+        <ImageView style="@style/SettingsRowIcon" android:src="@drawable/icon_chevron_right" android:contentDescription="@null" />
+      </LinearLayout>
+      <View style="@style/SettingsDivider" />
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/padding_horizontal__settings_row"
+        android:paddingRight="@dimen/padding_horizontal__settings_row"
+        android:paddingTop="@dimen/padding_vertical__settings_row"
+        android:paddingBottom="@dimen/padding_vertical__settings_row"
+      >
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+        >
+          <TextView style="@style/SettingsRowTitle" android:text="@string/label__settings__keyboard_height" />
+          <TextView
+            android:id="@+id/keyboard_height_adjustment_display"
+            style="@style/SettingsRowValue"
+          />
+        </LinearLayout>
+        <SeekBar
+          android:id="@+id/keyboard_height_adjustment_seek_bar"
+          style="@style/SettingsSeekBar"
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/height__settings_seek_bar"
+          android:layout_marginTop="@dimen/margin_top__main_activity__switch"
+          android:contentDescription="@string/label__settings__keyboard_height"
+        />
+      </LinearLayout>
+      <View style="@style/SettingsDivider" />
+      <LinearLayout
+        android:id="@+id/handwriting_on_keyboard_row"
+        style="@style/SettingsRow"
+        android:minHeight="@dimen/min_height__settings_row_two_line"
+        android:paddingTop="@dimen/padding_vertical__settings_row"
+        android:paddingBottom="@dimen/padding_vertical__settings_row"
+      >
+        <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:orientation="vertical"
+        >
+          <TextView
+            style="@style/SettingsRowTitleBlock"
+            android:text="@string/label__settings__handwriting_on_keyboard"
+          />
+          <TextView
+            style="@style/SettingsRowSummary"
+            android:text="@string/text__settings__handwriting_on_keyboard_summary"
+          />
+        </LinearLayout>
+        <com.google.android.material.switchmaterial.SwitchMaterial
+          android:id="@+id/handwriting_on_keyboard_switch"
+          style="@style/SettingsSwitch"
+          android:contentDescription="@string/label__settings__handwriting_on_keyboard"
+        />
+      </LinearLayout>
+      <View style="@style/SettingsDivider" />
+      <LinearLayout
+        android:id="@+id/candidate_order_button"
+        style="@style/SettingsRow"
+      >
+        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_marginEnd="16dp" android:src="@drawable/icon_settings_order" android:importantForAccessibility="no" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:paddingTop="12dp" android:paddingBottom="12dp">
+          <TextView style="@style/SettingsRowTitleBlock" android:text="@string/label__main_activity__candidate_order" />
+          <TextView android:id="@+id/candidate_order_value" style="@style/SettingsRowDescription" />
+        </LinearLayout>
+        <ImageView style="@style/SettingsRowIcon" android:src="@drawable/icon_chevron_right" android:contentDescription="@null" />
+      </LinearLayout>
+    </LinearLayout>
+
+    <!-- Typing aids (design: card-aids) -->
     <TextView
-      style="@style/MainActivityText"
-      android:text="@string/text__main_activity__keyboard_height_adjustment"
+      style="@style/SettingsSectionLabel"
+      android:text="@string/label__settings__section_aids"
+      android:accessibilityHeading="true"
     />
+    <LinearLayout style="@style/SettingsCard">
+      <LinearLayout
+        android:id="@+id/key_vibration_row"
+        style="@style/SettingsRow"
+        android:minHeight="@dimen/min_height__settings_row_two_line"
+        android:paddingTop="@dimen/padding_vertical__settings_row"
+        android:paddingBottom="@dimen/padding_vertical__settings_row"
+      >
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+          <TextView style="@style/SettingsRowTitleBlock" android:text="@string/label__main_activity__key_vibration" />
+          <TextView style="@style/SettingsRowSummary" android:text="@string/text__settings__key_vibration_summary" />
+        </LinearLayout>
+        <com.google.android.material.switchmaterial.SwitchMaterial
+          android:id="@+id/key_vibration_switch"
+          style="@style/SettingsSwitch"
+          android:contentDescription="@string/label__main_activity__key_vibration"
+        />
+      </LinearLayout>
+      <View style="@style/SettingsDivider" />
+      <LinearLayout
+        android:id="@+id/key_sound_row"
+        style="@style/SettingsRow"
+        android:minHeight="@dimen/min_height__settings_row_two_line"
+        android:paddingTop="@dimen/padding_vertical__settings_row"
+        android:paddingBottom="@dimen/padding_vertical__settings_row"
+      >
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+          <TextView style="@style/SettingsRowTitleBlock" android:text="@string/label__main_activity__key_sound" />
+          <TextView style="@style/SettingsRowSummary" android:text="@string/text__settings__key_sound_summary" />
+        </LinearLayout>
+        <com.google.android.material.switchmaterial.SwitchMaterial
+          android:id="@+id/key_sound_switch"
+          style="@style/SettingsSwitch"
+          android:contentDescription="@string/label__main_activity__key_sound"
+        />
+      </LinearLayout>
+      <View style="@style/SettingsDivider" />
+      <LinearLayout
+        android:id="@+id/stroke_tolerance_row"
+        style="@style/SettingsRow"
+        android:minHeight="@dimen/min_height__settings_row_two_line"
+        android:paddingTop="@dimen/padding_vertical__settings_row"
+        android:paddingBottom="@dimen/padding_vertical__settings_row"
+      >
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+          <TextView style="@style/SettingsRowTitleBlock" android:text="@string/label__main_activity__stroke_tolerance" />
+          <TextView style="@style/SettingsRowSummary" android:text="@string/text__settings__stroke_tolerance_summary" />
+        </LinearLayout>
+        <com.google.android.material.switchmaterial.SwitchMaterial
+          android:id="@+id/stroke_tolerance_switch"
+          style="@style/SettingsSwitch"
+          android:contentDescription="@string/label__main_activity__stroke_tolerance"
+        />
+      </LinearLayout>
+    </LinearLayout>
+
+    <!-- Quick phrases (design: card-phrases) -->
     <TextView
-      android:id="@+id/keyboard_height_adjustment_display"
-      android:layout_width="wrap_content"
-      android:layout_height="match_parent"
-      android:layout_gravity="end"
-      android:layout_marginEnd="@dimen/margin_end__main_activity__adjustment_text"
-      android:minEms="3"
-      android:gravity="start"
-      android:textAlignment="gravity"
+      style="@style/SettingsSectionLabel"
+      android:text="@string/label__settings__section_phrases"
+      android:accessibilityHeading="true"
     />
-    <SeekBar
-      style="@style/MainActivitySeekBar"
-      android:id="@+id/keyboard_height_adjustment_seek_bar"
-      android:layout_width="match_parent"
-      android:layout_height="@dimen/height__main_activity__seek_bar"
-      android:layout_marginHorizontal="@dimen/margin_horizontal__main_activity__seek_bar"
-    />
-    <EditText
-      style="@style/MainActivityInput"
-      android:id="@+id/test_input"
-      android:hint="@string/hint__main_activity__test_input"
-      android:importantForAutofill="no"
-      android:inputType="text"
-      android:layout_marginTop="@dimen/margin_top__main_activity__input"
-      android:layout_marginBottom="@dimen/margin_bottom__main_activity__input"
-    />
+    <LinearLayout
+      style="@style/SettingsCard"
+      android:paddingLeft="@dimen/padding_horizontal__settings_row"
+      android:paddingRight="@dimen/padding_horizontal__settings_row"
+      android:paddingTop="@dimen/padding_vertical__settings_row"
+      android:paddingBottom="@dimen/padding_bottom__settings_card"
+    >
+      <TextView
+        style="@style/SettingsRowSummary"
+        android:layout_marginTop="0dp"
+        android:lineSpacingMultiplier="1.15"
+        android:text="@string/text__main_activity__quick_phrases"
+      />
+      <EditText
+        android:id="@+id/quick_phrases_input"
+        style="@style/SettingsField"
+        android:layout_marginTop="@dimen/padding_vertical__settings_row"
+        android:paddingTop="@dimen/padding_vertical__settings_row"
+        android:paddingBottom="@dimen/padding_vertical__settings_row"
+        android:gravity="top|start"
+        android:hint="@string/hint__main_activity__quick_phrases"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:lineSpacingMultiplier="1.2"
+        android:minLines="3"
+        android:maxLines="8"
+      />
+      <com.google.android.material.button.MaterialButton
+        android:id="@+id/save_quick_phrases_button"
+        style="@style/SettingsFilledButton"
+        android:layout_marginTop="@dimen/padding_vertical__settings_row"
+        android:text="@string/label__main_activity__save_quick_phrases"
+      />
+    </LinearLayout>
+
+    <!-- Advanced: rare candidates, collapsed by default (design: card-advanced) -->
     <TextView
-      style="@style/MainActivityText"
-      android:text="@string/text__main_activity__optional_candidates"
+      style="@style/SettingsSectionLabel"
+      android:text="@string/label__settings__section_advanced"
+      android:accessibilityHeading="true"
     />
-    <!-- Tail end of CJK Unified Ideographs (1/4): U+9FD1 to U+9FD5 -->
-    <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
-      style="@style/MainActivitySwitch"
-      android:id="@+id/optional_main_tail_1_switch"
+    <LinearLayout style="@style/SettingsCard">
+      <LinearLayout
+        android:id="@+id/optional_candidates_header"
+        style="@style/SettingsRow"
+        android:minHeight="@dimen/min_height__settings_row_two_line"
+        android:paddingTop="@dimen/padding_vertical__settings_row"
+        android:paddingBottom="@dimen/padding_vertical__settings_row"
+      >
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+          <TextView style="@style/SettingsRowTitleBlock" android:text="@string/label__settings__optional_candidates" />
+          <TextView android:id="@+id/optional_candidates_summary" style="@style/SettingsRowSummary" />
+        </LinearLayout>
+        <ImageView
+          android:id="@+id/optional_candidates_chevron"
+          style="@style/SettingsRowIcon"
+          android:src="@drawable/icon_chevron_down"
+          android:contentDescription="@null"
+        />
+      </LinearLayout>
+      <LinearLayout
+        android:id="@+id/optional_candidates_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/margin_bottom__main_activity__switch_last"
+        android:visibility="gone"
+      >
+        <View style="@style/SettingsDivider" />
+        <TextView
+          style="@style/SettingsRowSummary"
+          android:paddingLeft="@dimen/padding_horizontal__settings_row"
+          android:paddingRight="@dimen/padding_horizontal__settings_row"
+          android:layout_marginTop="@dimen/padding_vertical__settings_row"
+          android:text="@string/text__main_activity__optional_candidates"
+        />
+        <!-- Tail end of CJK Unified Ideographs (1/4): U+9FD1 to U+9FD5 -->
+        <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
+          style="@style/MainActivitySwitch"
+          android:id="@+id/optional_main_tail_1_switch"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:minimumCandidate="鿑"
+          app:maximumCandidate="鿕"
+        />
+        <!-- Tail end of CJK Unified Ideographs (2/4): U+9FD6 to U+9FE9 -->
+        <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
+          style="@style/MainActivitySwitch"
+          android:id="@+id/optional_main_tail_2_switch"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:minimumCandidate="鿖"
+          app:maximumCandidate="鿩"
+        />
+        <!-- Tail end of CJK Unified Ideographs (3/4): U+9FEA to U+9FEF -->
+        <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
+          style="@style/MainActivitySwitch"
+          android:id="@+id/optional_main_tail_3_switch"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:minimumCandidate="鿪"
+          app:maximumCandidate="鿯"
+        />
+        <!-- Tail end of CJK Unified Ideographs (4/4): U+9FF0 to U+9FFF -->
+        <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
+          style="@style/MainActivitySwitch"
+          android:id="@+id/optional_main_tail_4_switch"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:minimumCandidate="鿰"
+          app:maximumCandidate="鿿"
+        />
+        <!-- Tail end of CJK Unified Ideographs Extension A: U+4DB6 to U+4DBF -->
+        <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
+          style="@style/MainActivitySwitch"
+          android:id="@+id/optional_extension_a_tail_switch"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:minimumCandidate="䶶"
+          app:maximumCandidate="䶿"
+        />
+        <!-- Selected characters from CJK Unified Ideographs Extension B (Kangxi explanatory 並): U+20024 -->
+        <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
+          style="@style/MainActivitySwitch"
+          android:id="@+id/optional_kangxi_bengx_switch"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:minimumCandidate="𠀤"
+          app:maximumCandidate="𠀤"
+        />
+        <!-- Selected characters from CJK Unified Ideographs Extension B (simplified 鉝 "livermorium"): U+2B7F7 -->
+        <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
+          style="@style/MainActivitySwitch"
+          android:id="@+id/optional_simplified_livermorium_switch"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:minimumCandidate="𫟷"
+          app:maximumCandidate="𫟷"
+        />
+        <!-- Selected characters from CJK Unified Ideographs Extension G (for biangbiang noodles): U+30EDD to U+30EDE -->
+        <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
+          style="@style/MainActivitySwitch"
+          android:id="@+id/optional_biangbiang_switch"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:minimumCandidate="𰻝"
+          app:maximumCandidate="𰻞"
+        />
+      </LinearLayout>
+    </LinearLayout>
+
+    <!-- Help and about (design: card-help) -->
+    <TextView
+      style="@style/SettingsSectionLabel"
+      android:text="@string/label__settings__section_help"
+      android:accessibilityHeading="true"
+    />
+    <LinearLayout style="@style/SettingsCard">
+      <TextView android:id="@+id/help_button" style="@style/SettingsLinkRow" android:text="@string/label__main_activity__help_button" app:drawableEndCompat="@drawable/icon_chevron_right" />
+      <View style="@style/SettingsDivider" />
+      <TextView android:id="@+id/about_button" style="@style/SettingsLinkRow" android:text="@string/label__main_activity__about_button" app:drawableEndCompat="@drawable/icon_chevron_right" />
+      <View style="@style/SettingsDivider" />
+      <TextView android:id="@+id/check_update_button" style="@style/SettingsLinkRow" android:text="@string/label__update__check" app:drawableEndCompat="@drawable/icon_chevron_right" />
+      <TextView android:id="@+id/update_status" style="@style/SettingsRowSummary" android:paddingStart="@dimen/padding_horizontal__settings_row" android:paddingEnd="@dimen/padding_horizontal__settings_row" android:paddingBottom="@dimen/padding_vertical__settings_row" android:text="@string/text__update__privacy" android:accessibilityLiveRegion="polite" />
+      <View style="@style/SettingsDivider" />
+      <TextView android:id="@+id/source_code_button" style="@style/SettingsLinkRow" android:text="@string/label__main_activity__source_code_button" app:drawableEndCompat="@drawable/icon_open_external" />
+      <View style="@style/SettingsDivider" />
+      <TextView android:id="@+id/privacy_button" style="@style/SettingsLinkRow" android:text="@string/label__main_activity__privacy_button" app:drawableEndCompat="@drawable/icon_chevron_right" />
+      <View style="@style/SettingsDivider" />
+      <TextView android:id="@+id/haoke_tools_button" style="@style/SettingsLinkRow" android:text="@string/label__main_activity__haoke_tools_button" app:drawableEndCompat="@drawable/icon_open_external" />
+    </LinearLayout>
+
+    <TextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/margin_top__main_activity__switch_first"
-      app:minimumCandidate="鿑"
-      app:maximumCandidate="鿕"
-    />
-    <!-- Tail end of CJK Unified Ideographs (2/4): U+9FD6 to U+9FE9 -->
-    <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
-      style="@style/MainActivitySwitch"
-      android:id="@+id/optional_main_tail_2_switch"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      app:minimumCandidate="鿖"
-      app:maximumCandidate="鿩"
-    />
-    <!-- Tail end of CJK Unified Ideographs (3/4): U+9FEA to U+9FEF -->
-    <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
-      style="@style/MainActivitySwitch"
-      android:id="@+id/optional_main_tail_3_switch"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      app:minimumCandidate="鿪"
-      app:maximumCandidate="鿯"
-    />
-    <!-- Tail end of CJK Unified Ideographs (4/4): U+9FF0 to U+9FFF -->
-    <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
-      style="@style/MainActivitySwitch"
-      android:id="@+id/optional_main_tail_4_switch"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      app:minimumCandidate="鿰"
-      app:maximumCandidate="鿿"
-    />
-    <!-- Tail end of CJK Unified Ideographs Extension A: U+4DB6 to U+4DBF -->
-    <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
-      style="@style/MainActivitySwitch"
-      android:id="@+id/optional_extension_a_tail_switch"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      app:minimumCandidate="䶶"
-      app:maximumCandidate="䶿"
-    />
-    <!-- Selected characters from CJK Unified Ideographs Extension B (Kangxi explanatory 並): U+20024 -->
-    <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
-      style="@style/MainActivitySwitch"
-      android:id="@+id/optional_kangxi_bengx_switch"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      app:minimumCandidate="𠀤"
-      app:maximumCandidate="𠀤"
-    />
-    <!-- Selected characters from CJK Unified Ideographs Extension B (simplified 鉝 "livermorium"): U+2B7F7 -->
-    <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
-      style="@style/MainActivitySwitch"
-      android:id="@+id/optional_simplified_livermorium_switch"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      app:minimumCandidate="𫟷"
-      app:maximumCandidate="𫟷"
-    />
-    <!-- Selected characters from CJK Unified Ideographs Extension G (for biangbiang noodles): U+30EDD to U+30EDE -->
-    <io.github.yawnoc.strokeinput.OptionalCandidatesSwitch
-      style="@style/MainActivitySwitch"
-      android:id="@+id/optional_biangbiang_switch"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="@dimen/margin_bottom__main_activity__switch_last"
-      app:minimumCandidate="𰻝"
-      app:maximumCandidate="𰻞"
-    />
-    <Button
-      style="@style/MainActivityButton"
-      android:id="@+id/help_button"
-      android:text="@string/label__main_activity__help_button"
-    />
-    <Button
-      style="@style/MainActivityButton"
-      android:id="@+id/about_button"
-      android:text="@string/label__main_activity__about_button"
-    />
-    <Button
-      style="@style/MainActivityButton"
-      android:id="@+id/source_code_button"
-      android:text="@string/label__main_activity__source_code_button"
-      android:drawableEnd="@drawable/icon_external_link"
-    />
-    <Button
-      style="@style/MainActivityButton"
-      android:id="@+id/privacy_button"
-      android:text="@string/label__main_activity__privacy_button"
-      android:drawableEnd="@drawable/icon_external_link"
+      android:layout_marginTop="@dimen/padding_vertical__settings_row"
+      android:gravity="center_horizontal"
+      android:lineSpacingMultiplier="1.2"
+      android:paddingLeft="@dimen/padding_horizontal__settings_row"
+      android:paddingRight="@dimen/padding_horizontal__settings_row"
+      android:text="@string/text__main_activity__edition_notice"
+      android:textColor="?attr/settingsText3"
+      android:textSize="@dimen/font_size__main_activity__notice"
     />
   </LinearLayout>
 </ScrollView>

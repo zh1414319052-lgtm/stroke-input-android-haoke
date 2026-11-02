@@ -1,93 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2026 Haoke Tools (浩科工具站), modified build of Stroke Input Method by Conway
+  Launcher icon foreground (white strokes, yellow dot) on @color/icon_launcher_background.
+  Five brush strokes (dot, heng, shugou, pie, na) from design/stroke-input-icon.haoke-ui.json.
+  Licensed under the GNU General Public License v3.0 (GPL-3.0-only).
+-->
 <vector
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:width="108dp"
   android:height="108dp"
   android:viewportWidth="108"
   android:viewportHeight="108"
-  android:tint="#000000"
 >
-  <group
-    android:scaleX="0.37"
-    android:scaleY="0.37"
-    android:translateX="27.4"
-    android:translateY="67.6"
-  >
-    <path
-      android:pathData="
-        M135.8,-87.9
-        Q131.9,-81,127.2,-75.3
-        Q122.1,-69.3,116.9,-64.5
-        Q112,-60.1,105.5,-55.8
-        Q99.1,-51.4,93.3,-48.7
-        Q93,-49.1,90.9,-52.6
-        Q89.6,-54.6,88,-56.5
-        Q94.9,-59.2,99.9,-62.4
-        Q105.4,-65.8,110.7,-70.5
-        Q115.8,-74.9,120.1,-80.1
-        Q124.1,-85.1,127.7,-91.3
-        L135.8,-87.9
-      "
-      android:fillColor="#000000"
-    />
-    <path
-      android:pathData="
-        M124.3,-19
-        Q123.7,-17,122,-11.1
-        Q120.8,-7.5,119.1,-2.6
-        Q117.2,2.3,115.9,5.6
-        Q114.9,8.1,113.2,12.1
-        L104.1,9.8
-        Q106.6,4,108.1,-0.1
-        Q111.3,-8.2,112.3,-12
-        L65.7,-12
-        L65.7,-20.9
-        L114.3,-20.9
-        L116.2,-21.3
-        L124.3,-19
-      "
-      android:fillColor="#000000"
-    />
-    <path
-      android:pathData="
-        M43.5,-28.4
-        Q44.5,-26.4,47,-21.6
-        Q49.5,-16.8,50.8,-14.1
-        Q51.7,-12.4,54.4,-7.1
-        Q57,-1.9,58.5,1
-        Q59.3,2.6,61.8,7.8
-        Q64.4,13.1,65.7,15.7
-        Q69.5,24,71.1,27.8
-        L61.1,31.3
-        Q58.3,23.9,56.2,19
-        Q55.2,16.7,52.8,11.7
-        Q50.5,6.8,49.4,4.3
-        Q46.5,-2.2,41.9,-11.4
-        Q40.6,-14.1,38.2,-18.9
-        Q35.9,-23.6,34.7,-25.9
-        L43.5,-28.4
-      "
-      android:fillColor="#000000"
-    />
-    <path
-      android:pathData="
-        M75.6,-98
-        L75.6,-35.5
-        L66,-35.5
-        L66,-98
-        L75.6,-98
-      "
-      android:fillColor="#000000"
-    />
-    <path
-      android:pathData="
-        M49.7,-52.2
-        L49.7,-44.1
-        L0,-44.1
-        L0,-52.2
-        L49.7,-52.2
-      "
-      android:fillColor="#000000"
-    />
-  </group>
+  <path
+    android:pathData="M 52.44 36.84 C 55.04 37.36 57.38 39.7 57.12 42.04 C 56.91 43.86 54.78 44.12 53.48 42.82 C 52.18 41.52 51.14 39.44 51.19 37.88 C 51.24 37.15 51.71 36.74 52.44 36.84 Z"
+    android:fillColor="#FFD54A"
+  />
+  <path
+    android:pathData="M 41 48.54 C 47.24 47.55 56.6 46.72 66.22 46.51 C 68.3 46.46 68.87 48.8 67 49.42 C 57.64 50.15 48.8 50.98 42.04 51.71 C 39.75 51.92 39.34 48.9 41 48.54 Z"
+    android:fillColor="#FFFFFF"
+  />
+  <path
+    android:pathData="M 52.54 49.32 L 55.77 49.32 L 55.77 67 C 55.77 70.22 53.58 71.37 51.5 69.6 L 48.7 67.21 C 47.97 66.58 48.59 65.65 49.42 65.96 L 52.54 67.21 Z"
+    android:fillColor="#FFFFFF"
+  />
+  <path
+    android:pathData="M 50.46 53.17 C 52.96 53.06 53.27 54.94 52.23 56.7 C 49.53 61.49 45.26 65.65 40.27 68.35 C 39.13 68.98 38.4 67.73 39.34 66.9 C 43.39 63.26 46.72 58.99 48.38 54.73 C 48.75 53.79 49.48 53.22 50.46 53.17 Z"
+    android:fillColor="#FFFFFF"
+  />
+  <path
+    android:pathData="M 57.33 53.58 C 58.47 53.38 59.2 54.1 59.82 55.35 C 62.01 59.62 65.13 63.36 69.29 65.75 C 70.64 66.48 70.43 68.35 68.77 68.35 C 63.57 68.04 59.2 63.78 56.7 58.26 C 56.08 56.91 55.87 53.9 57.33 53.58 Z"
+    android:fillColor="#FFFFFF"
+  />
 </vector>

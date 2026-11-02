@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Haoke settings design: colours follow the chosen theme (themes.xml) -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:state_focused="true">
+    <shape android:shape="rectangle">
+      <solid android:color="?attr/settingsField" />
+      <stroke android:width="1.5dp" android:color="?attr/settingsAccent" />
+      <corners android:radius="12dp" />
+    </shape>
+  </item>
+  <item>
+    <shape android:shape="rectangle">
+      <solid android:color="?attr/settingsField" />
+      <stroke android:width="1dp" android:color="?attr/settingsDivider" />
+      <corners android:radius="12dp" />
+    </shape>
+  </item>
+</selector>

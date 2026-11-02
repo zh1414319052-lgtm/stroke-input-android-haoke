@@ -1,7 +1,63 @@
+# Haoke optimized edition 1.7.0-haoke.13 (7513) — 2026-11-02
+
+- Based on Conway's Stroke Input Method v1.7.0; copyright and GPL-3.0-only retained.
+- Formalizes the accepted settings/keyboard UI, static font weights and selector layouts; icon resources remain unchanged.
+- Publishes the complete optimized source in a clearly attributed fork; downloads point to haoke.org.
+- Preserves offline typing/handwriting/speech, saved settings, formal signing identity and signed stable update checks.
+
 # Changelog
 
 
 ## [Unreleased]
+
+## Haoke 1.7.0-haoke.12 (7512), 2026-10-30
+
+- Enables handwriting directly over the ordinary keyboard. A tap still activates
+  its key; movement beyond the platform touch-slop threshold becomes handwriting ink.
+- Reuses the handwriting toolbar control to switch between keyboard-area and
+  full-screen writing, without changing the selected stroke/QWERTY keyboard.
+- Adds one persistent settings switch for keyboard-area handwriting. Turning it off
+  hides the handwriting action and exits full-screen handwriting safely.
+- Preserves the space-bar swipe, shift swipe, repeat/backspace, long-press and
+  dedicated gesture paths instead of stealing them for handwriting.
+- Migrates the legacy dedicated handwriting layout to the preferred stroke layout;
+  handwriting recognition remains offline and no permission or network boundary changes.
+
+## Haoke 1.7.0-haoke.11 (7511), 2026-10-29
+
+- Uses the requested filled, rounded left-facing Return silhouette consistently
+  across all Enter action states, layouts and themes, preserving action dispatch.
+- Reserves the IME navigation overlay using root-window insets and actual overlap;
+  the system keyboard switcher and gesture bar have their own space below the keys.
+  Ancestor-provided space is deducted to avoid duplicate padding.
+- Handwriting height limits account for the reserved area; offline input, saved
+  settings and the formal signing/update identity remain unchanged.
+
+
+## Haoke 1.7.0-haoke.10 (7510), 2026-10-29
+
+- Fixes the incomplete action-key icon replacement in Haoke 9: Return, Done,
+  Go, Next, Previous, Search and Send now all use a consistent rounded vector
+  stroke, tinted by the active theme. No ENTER state falls back to font glyphs.
+- Keeps editor action dispatch, multiline newlines, all 12 keyboard layouts,
+  handwriting height and offline voice behavior unchanged.
+- Isolates debug/instrumentation builds under `.haoke.qa` so tests cannot replace
+  the established formal installation or its data.
+
+
+## Haoke 1.7.0-haoke.9 (7509), 2026-10-29
+
+- First formal Haoke release with its own retained signing identity and application ID.
+- Carries forward the three themes, six symbol pages, offline handwriting/voice,
+  adjustable 180–400 dp half-screen handwriting pad, thin Return icon and real-level
+  themed microphone feedback accepted in QA builds 6–8.
+- Adds settings-only signed v2 update checks with pinned Ed25519 identity, rollback
+  protection, cancellation while editing/backgrounded, and persistent reminder choices.
+- Makes the settings container retain initial focus; entering a field still opens
+  the keyboard and height adjustment still previews the focused input field.
+- Updates local bilingual privacy/About pages and blocks remote resources in built-in pages.
+- QA uses a different certificate: back up phrases/settings before replacing QA.
+  Subsequent formal releases must retain the formal certificate and increasing versionCode.
 
 
 ## [v1.7.0] (75) Biangbiang noodles (2026-09-27)

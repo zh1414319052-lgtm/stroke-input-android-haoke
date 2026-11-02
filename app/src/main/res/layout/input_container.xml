@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Copyright 2021–2024 Conway
+  Modified 2026-10-29 by Haoke Tools (浩科工具站): candidates toolbar (quick phrases, handwriting, hide keyboard),
+  handwriting overlay (half screen and full screen), voice input tool.
   Licensed under the GNU General Public License v3.0 (GPL-3.0-only).
   This is free software with NO WARRANTY etc. etc.,
   see LICENSE or <https://www.gnu.org/licenses/>.
@@ -14,6 +16,7 @@
   android:orientation="vertical"
 >
   <FrameLayout
+    android:id="@+id/main_frame"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -39,7 +42,9 @@
         android:textSize="@dimen/font_size__stroke_sequence_bar"
         android:ellipsize="start"
         android:singleLine="true"
-        android:background="@color/stroke_sequence_bar_fill"
+        android:background="@drawable/stroke_sequence_bar_background"
+        android:layout_marginLeft="@dimen/margin_start__stroke_sequence_bar"
+        android:layout_marginBottom="@dimen/margin_bottom__stroke_sequence_bar"
         android:paddingTop="@dimen/padding_top__stroke_sequence_bar"
         android:paddingLeft="@dimen/padding_left__stroke_sequence_bar"
         android:paddingRight="@dimen/padding_right__stroke_sequence_bar"
@@ -47,12 +52,78 @@
         android:theme="@style/Theme.AppCompat"
         tools:ignore="RtlHardcoded"
       />
-      <io.github.yawnoc.strokeinput.CandidatesView
-        android:id="@+id/candidates_view"
+      <!-- Haoke: candidates, overlaid by a toolbar (quick phrases, handwriting, hide keyboard) while there are none -->
+      <FrameLayout
+        android:id="@+id/candidates_frame"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height__candidate_button"
-        android:background="@color/candidate_button_fill_unpressed"
-      />
+        android:layout_height="wrap_content"
+      >
+        <io.github.yawnoc.strokeinput.CandidatesView
+          android:id="@+id/candidates_view"
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/height__candidate_button"
+          android:background="@color/candidate_button_fill_unpressed"
+        />
+        <LinearLayout
+          android:id="@+id/candidates_toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/height__candidate_button"
+          android:orientation="horizontal"
+          android:background="@color/candidate_button_fill_unpressed"
+          android:visibility="gone"
+        >
+          <!-- the tools scroll if they do not fit (English labels, large candidates) -->
+          <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scrollbars="none"
+            android:overScrollMode="never"
+          >
+            <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:orientation="horizontal"
+            >
+              <Button
+                style="@style/CandidateButton"
+                android:id="@+id/quick_phrases_tool"
+                android:textSize="@dimen/font_size__toolbar_button"
+                android:textAllCaps="false"
+                android:drawableLeft="@drawable/icon_quick_phrases"
+                android:drawablePadding="@dimen/padding_drawable__toolbar_button"
+                tools:ignore="RtlHardcoded"
+              />
+              <Button
+                style="@style/CandidateButton"
+                android:id="@+id/handwriting_tool"
+                android:textSize="@dimen/font_size__toolbar_button"
+                android:textAllCaps="false"
+                android:drawableLeft="@drawable/icon_handwriting"
+                android:drawablePadding="@dimen/padding_drawable__toolbar_button"
+                tools:ignore="RtlHardcoded"
+              />
+              <Button
+                style="@style/CandidateButton"
+                android:id="@+id/voice_tool"
+                android:textSize="@dimen/font_size__toolbar_button"
+                android:textAllCaps="false"
+                android:drawableLeft="@drawable/icon_microphone"
+                android:drawablePadding="@dimen/padding_drawable__toolbar_button"
+                tools:ignore="RtlHardcoded"
+              />
+            </LinearLayout>
+          </HorizontalScrollView>
+          <Button
+            style="@style/CandidateButton"
+            android:id="@+id/hide_keyboard_tool"
+            android:textSize="@dimen/font_size__toolbar_button"
+            android:textAllCaps="false"
+            android:drawableRight="@drawable/icon_hide_keyboard"
+            tools:ignore="RtlHardcoded"
+          />
+        </LinearLayout>
+      </FrameLayout>
       <io.github.yawnoc.strokeinput.KeyboardView
         android:id="@+id/keyboard_view"
         android:layout_width="wrap_content"
@@ -64,6 +135,12 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_gravity="bottom"
+    />
+    <io.github.yawnoc.strokeinput.HandwritingOverlayView
+      android:id="@+id/handwriting_overlay"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:visibility="gone"
     />
   </FrameLayout>
   <View

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Haoke Tools (浩科工具站), modified build of Stroke Input Method by Conway: strokes symbols page 2 of 6, common symbols
+  Licensed under the GNU General Public License v3.0 (GPL-3.0-only).
+-->
+<Keyboard
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  app:keyHeight="@dimen/key_height__strokes"
+  app:keyWidth="@dimen/key_width__digit"
+  app:keyTextSize="@dimen/font_size__strokes"
+  app:keyTextOffsetY="@dimen/baseline_correction__strokes"
+  app:keyFillColour="@color/key_fill"
+>
+  <Row
+    app:keyHeight="@dimen/key_height__strokes_digit"
+    app:keyTextSize="@dimen/font_size__strokes_digit"
+    app:keyTextOffsetY="@dimen/baseline_correction__strokes_digit"
+  >
+    <!-- U+FF5E FULLWIDTH TILDE -->
+    <Key app:keyValueText="～" />
+    <!-- U+00B7 MIDDLE DOT -->
+    <Key app:keyValueText="·" />
+    <!-- U+FFE5 FULLWIDTH YEN SIGN -->
+    <Key app:keyValueText="￥" />
+    <!-- U+0025 PERCENT SIGN -->
+    <Key app:keyValueText="%" />
+    <!-- U+0040 COMMERCIAL AT -->
+    <Key app:keyValueText="\@" />
+    <!-- U+0023 NUMBER SIGN -->
+    <Key app:keyValueText="#" />
+    <!-- U+0026 AMPERSAND -->
+    <Key app:keyValueText="&amp;" />
+    <!-- U+002A ASTERISK -->
+    <Key app:keyValueText="*" />
+    <!-- U+002F SOLIDUS -->
+    <Key app:keyValueText="/" />
+    <!-- U+005F LOW LINE -->
+    <Key app:keyValueText="_" />
+  </Row>
+  <Row>
+    <!-- U+2014 x 2 EM DASH (Chinese dash) -->
+    <Key
+      app:keyValueText="——"
+      app:keyWidth="@dimen/key_width__strokes_stroke"
+    />
+    <!-- U+002D HYPHEN-MINUS -->
+    <Key app:keyValueText="-" />
+    <!-- U+002B PLUS SIGN -->
+    <Key app:keyValueText="+" />
+    <!-- U+003D EQUALS SIGN -->
+    <Key app:keyValueText="=" />
+    <!-- U+00B0 DEGREE SIGN -->
+    <Key app:keyValueText="°" />
+    <!-- U+2103 DEGREE CELSIUS -->
+    <Key app:keyValueText="℃" />
+    <!-- U+203B REFERENCE MARK -->
+    <Key app:keyValueText="※" />
+    <!-- Backspace -->
+    <Key
+      app:keyValueText="BACKSPACE"
+      app:keyDisplayText="@string/display_text__backspace"
+      app:keyIsRepeatable="true"
+      app:keyTextSize="@dimen/font_size__strokes_backspace"
+      app:keyIsPreviewable="false"
+      app:keyWidth="@dimen/key_width__strokes_stroke"
+      app:keyFillColour="@color/key_fill_function"
+    />
+  </Row>
+  <Row>
+    <!-- Switch to strokes symbols page 3 (numbers and shapes) -->
+    <Key
+      app:keyValueText="SWITCH_TO_STROKES_SYMBOLS_SHAPES"
+      app:keyDisplayText="2/6"
+      app:keyTextSize="@dimen/font_size__switch_key"
+      app:keyTextOffsetY="@dimen/baseline_correction__switch_key"
+      app:keyWidth="@dimen/key_width__strokes_stroke"
+      app:keyIsPreviewable="false"
+      app:keyFillColour="@color/key_fill_function"
+    />
+    <!-- U+2026 x 2 HORIZONTAL ELLIPSIS (Chinese ellipsis) -->
+    <Key
+      app:keyValueText="……"
+      app:keyWidth="@dimen/key_width__strokes_stroke"
+    />
+    <!-- U+0024 DOLLAR SIGN -->
+    <Key app:keyValueText="$" />
+    <!-- U+20AC EURO SIGN -->
+    <Key app:keyValueText="€" />
+    <!-- U+003C LESS-THAN SIGN -->
+    <Key app:keyValueText="&lt;" />
+    <!-- U+003E GREATER-THAN SIGN -->
+    <Key app:keyValueText="&gt;" />
+    <!-- U+007C VERTICAL LINE -->
+    <Key app:keyValueText="|" />
+    <!-- U+005C REVERSE SOLIDUS -->
+    <Key app:keyValueText="\\" />
+  </Row>
+  <Row
+    app:keyHeight="@dimen/key_height__strokes_space_bar"
+    app:keyWidth="@dimen/key_width__strokes_stroke"
+  >
+    <!-- Switch to strokes keyboard -->
+    <Key
+      app:keyValueText="SWITCH_TO_STROKES"
+      app:keyDisplayText="@string/display_text__switch_to_strokes"
+      app:keyTextColour="@color/stroke_key_text"
+      app:keyTextSize="@dimen/font_size__switch_key"
+      app:keyTextOffsetY="@dimen/baseline_correction__switch_key"
+      app:keyIsPreviewable="false"
+      app:keyFillColour="@color/key_fill_function"
+    />
+    <!-- Comma -->
+    <Key
+      app:keyValueText="@string/value_text__strokes_comma"
+      app:keyWidth="@dimen/key_width__digit"
+    />
+    <!-- Space bar -->
+    <Key
+      app:keyValueText="SPACE"
+      app:keyDisplayText="@string/display_text__strokes_space_bar"
+      app:keyIsLongPressable="true"
+      app:keyIsSwipeable="true"
+      app:keyTextSize="@dimen/font_size__space_bar"
+      app:keyTextOffsetY="@dimen/baseline_correction__space_bar"
+      app:keyTextColour="@color/space_bar_text"
+      app:keyWidth="@dimen/key_width__space_bar"
+      app:keyIsPreviewable="false"
+    />
+    <!-- Full stop -->
+    <Key
+      app:keyValueText="@string/value_text__strokes_full_stop"
+      app:keyWidth="@dimen/key_width__digit"
+    />
+    <!-- Enter key -->
+    <Key
+      app:keyValueText="ENTER"
+      app:keyTextSize="@dimen/font_size__enter_key"
+      app:keyTextOffsetY="@dimen/baseline_correction__strokes_enter_key"
+      app:keyFillColour="@color/enter_key_fill"
+      app:keyIsPreviewable="false"
+    />
+  </Row>
+</Keyboard>

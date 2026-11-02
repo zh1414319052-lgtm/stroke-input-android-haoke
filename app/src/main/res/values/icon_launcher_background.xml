@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="icon_launcher_background">@color/umbrella_yellow</color>
+  <!-- Haoke icon base (design/stroke-input-icon.haoke-ui.json token iconBase) -->
+  <color name="icon_launcher_background">#FF1D4ED8</color>
 </resources>

@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <!-- Theme -->
+  <!-- Upstream theme colours (keyboard XML defaults; the Haoke themes recolour keys at runtime) -->
   <color name="umbrella_yellow">#FFFFFF80</color>
-  <color name="yellow">#FFFFFF00</color>
   <color name="umbrella_orange">#FFFFCE73</color>
-  <color name="orange">#FFFFA500</color>
-  <color name="umbrella_grey">#FFCECECE</color>
-  <color name="very_dark_grey">#FF222222</color>
   <!-- Keyboard -->
   <color name="stroke_key_text">@color/umbrella_yellow</color>
-  <color name="space_bar_text">#FFA3A3A3</color>
-  <color name="key_fill">#FF181818</color>
-  <color name="enter_key_fill">#FF00CE00</color>
+  <color name="space_bar_text">#FFA6A6A6</color>
+  <color name="key_fill">#FF292929</color> <!-- $keyChar -->
+  <color name="key_fill_stroke">#FF343434</color> <!-- $keyStroke -->
+  <color name="key_fill_function">#FF1E1E1E</color> <!-- $keyFunc -->
+  <color name="enter_key_fill">#FF1FAF57</color> <!-- $keyEnter -->
   <!-- Stroke sequence bar -->
   <color name="stroke_sequence_bar_text">@color/umbrella_yellow</color>
-  <color name="stroke_sequence_bar_fill">#8D000000</color>
+  <color name="stroke_sequence_bar_fill">#D9000000</color> <!-- $pill -->
   <color name="stroke_sequence_bar_fill_fullscreen">#FF666666</color>
   <!-- Candidate button -->
   <color name="candidate_button_text_unpressed">@color/umbrella_orange</color>
   <color name="candidate_button_text_pressed">@android:color/black</color>
-  <color name="candidate_button_fill_unpressed">@android:color/black</color>
+  <color name="candidate_button_fill_unpressed">#FF151515</color> <!-- $candBg -->
   <color name="candidate_button_fill_pressed">@color/umbrella_orange</color>
   <!-- Bottom spacer -->
   <color name="bottom_spacer_fill">@android:color/black</color>

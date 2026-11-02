@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Haoke settings design: colours follow the chosen theme (themes.xml) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+  <solid android:color="?attr/settingsSurface" />
+  <stroke android:width="?attr/settingsSurfaceStrokeWidth" android:color="?attr/settingsSurfaceStroke" />
+  <corners android:radius="?attr/settingsSurfaceRadius" />
+</shape>

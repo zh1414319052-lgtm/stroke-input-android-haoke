@@ -14,3 +14,20 @@ local.properties
 app/release/
 
 *.iml
+
+# Local build/runtime data and release-only artifacts; never publish credentials.
+**/build/
+**/.gradle/
+*.apk
+*.aab
+*.jks
+*.keystore
+*.p12
+*.dpapi
+*.haoke-ui.json.lock
+*.collab.sqlite3*
+/design/**/export-*/
+/design/**/previous-source/
+/design/**/verification/
+/design/**/verification.json
+/design/**/.history/

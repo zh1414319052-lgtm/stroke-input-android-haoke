@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Haoke settings design: colours follow the chosen theme (themes.xml) -->
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+  android:insetLeft="24dp"
+  android:insetRight="24dp"
+  android:insetTop="24dp"
+  android:insetBottom="24dp"
+>
+  <shape android:shape="rectangle">
+    <solid android:color="?attr/settingsDialog" />
+    <corners android:radius="24dp" />
+  </shape>
+</inset>

@@ -27,6 +27,6 @@ public class InstrumentedTest
   public void useAppContext()
   {
     Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-    assertEquals("io.github.yawnoc.strokeinput", appContext.getPackageName());
+    assertEquals(BuildConfig.APPLICATION_ID, appContext.getPackageName()); // Includes the isolated QA suffix.
   }
 }

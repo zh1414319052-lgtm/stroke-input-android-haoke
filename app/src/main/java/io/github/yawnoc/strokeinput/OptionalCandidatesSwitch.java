@@ -1,5 +1,6 @@
 /*
   Copyright 2025 Conway
+  Modified 2026-10-28 by Haoke Tools (浩科工具站): shares OptionalCandidates.charactersForRange.
   Licensed under the GNU General Public License v3.0 (GPL-3.0-only).
   This is free software with NO WARRANTY etc. etc.,
   see LICENSE or <https://www.gnu.org/licenses/>.
@@ -12,9 +13,6 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
 import com.google.android.material.switchmaterial.SwitchMaterial;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import io.github.yawnoc.utilities.Stringy;
 
@@ -51,13 +49,7 @@ public class OptionalCandidatesSwitch
       final int minimumCodePoint = Stringy.getFirstCodePoint(minimumCandidate);
       final int maximumCodePoint = Stringy.getFirstCodePoint(maximumCandidate);
 
-      final List<String> charactersList = new ArrayList<>();
-      for (int codePoint = minimumCodePoint; codePoint <= maximumCodePoint; codePoint++)
-      {
-        charactersList.add(Stringy.toString(codePoint));
-      }
-
-      characters = String.join("", charactersList);
+      characters = OptionalCandidates.charactersForRange(minimumCodePoint, maximumCodePoint);
 
       final String unicodeRangeStart = Stringy.toUnicodeNotation(minimumCodePoint);
       final String unicodeRangeToEnd =

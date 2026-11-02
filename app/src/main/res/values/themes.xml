@@ -1,22 +1,108 @@
 <resources>
+  <!--
+    Haoke themes (design/stroke-input-styles.haoke-ui.json, boards style-a, style-b, style-c).
+    Theme.StrokeInput holds the default Sky values; Paper and Night override them.
+    The keyboard uses the matching KeyboardTheme palette.
+  -->
   <style
     name="Theme.StrokeInput"
-    parent="Theme.MaterialComponents.Light.DarkActionBar"
+    parent="Theme.MaterialComponents.Light.NoActionBar"
   >
+    <!-- Sky (晴空大字): light, large text -->
+    <item name="settingsBackground">#FFF3F6FB</item>
+    <item name="settingsSurface">#FFFFFFFF</item>
+    <item name="settingsSurfaceStroke">#00000000</item>
+    <item name="settingsSurfaceStrokeWidth">0dp</item>
+    <item name="settingsSurfaceRadius">18dp</item>
+    <item name="settingsDivider">#FFE4EAF3</item>
+    <item name="settingsText">#FF17243B</item>
+    <item name="settingsText2">#FF627089</item>
+    <item name="settingsText3">#FF627089</item>
+    <item name="settingsLabel">#FF2457D6</item>
+    <item name="settingsAccent">#FF2457D6</item>
+    <item name="settingsOnAccent">#FFFFFFFF</item>
+    <item name="settingsSuccess">#FF15803D</item>
+    <item name="settingsStatusDone">#FF15803D</item>
+    <item name="settingsField">#FFF5F8FD</item>
+    <item name="settingsDialog">#FFFFFFFF</item>
+    <item name="settingsTitleSize">@dimen/font_size__app_title_large</item>
+    <item name="settingsSectionSize">@dimen/font_size__settings_section_large</item>
+    <item name="settingsRowTitleSize">@dimen/font_size__settings_row_title_large</item>
+    <item name="settingsSummarySize">@dimen/font_size__settings_row_summary_large</item>
+    <item name="settingsButtonSize">@dimen/font_size__settings_button_large</item>
+    <!-- Noto Sans SC / SIL OFL 1.1. Shared with design/ui-20261102. -->
+    <item name="fontFamily">@font/ui_typeface</item>
+    <item name="android:fontFamily">@font/ui_typeface</item>
+    <item name="android:textViewStyle">@style/SettingsTextView</item>
+
     <!-- Base -->
-    <item name="android:textColor">@android:color/white</item>
-    <item name="android:textColorHint">@color/umbrella_grey</item>
-    <item name="android:windowBackground">@color/very_dark_grey</item>
+    <item name="android:textColor">?attr/settingsText</item>
+    <item name="android:textColorHint">?attr/settingsText3</item>
+    <item name="android:windowBackground">?attr/settingsBackground</item>
+    <item name="android:statusBarColor">?attr/settingsBackground</item>
+    <item name="android:navigationBarColor">?attr/settingsBackground</item>
+    <item name="android:windowLightStatusBar">true</item>
     <!-- Primary -->
-    <item name="colorPrimary">@color/umbrella_yellow</item>
-    <item name="colorPrimaryVariant">@color/yellow</item>
-    <item name="colorOnPrimary">@android:color/black</item>
+    <item name="colorPrimary">?attr/settingsAccent</item>
+    <item name="colorPrimaryVariant">?attr/settingsAccent</item>
+    <item name="colorOnPrimary">?attr/settingsOnAccent</item>
     <!-- Secondary -->
-    <item name="colorSecondary">@color/umbrella_orange</item>
-    <item name="colorSecondaryVariant">@color/orange</item>
-    <item name="colorOnSecondary">@android:color/black</item>
+    <item name="colorSecondary">?attr/settingsAccent</item>
+    <item name="colorSecondaryVariant">?attr/settingsAccent</item>
+    <item name="colorOnSecondary">?attr/settingsOnAccent</item>
     <!-- Components -->
     <item name="editTextStyle">@style/StrokeInputText</item>
-    <item name="toolbarStyle">@style/StrokeInputToolbar</item>
+  </style>
+
+  <style name="Theme.StrokeInput.Sky" />
+
+  <!-- Paper (宣纸朱印): light, rice paper and cinnabar -->
+  <style name="Theme.StrokeInput.Paper">
+    <item name="settingsBackground">#FFF5F0E6</item>
+    <item name="settingsSurface">#FFFFFCF6</item>
+    <item name="settingsSurfaceStroke">#FFE3D8C4</item>
+    <item name="settingsSurfaceStrokeWidth">1dp</item>
+    <item name="settingsSurfaceRadius">18dp</item>
+    <item name="settingsDivider">#FFECE3D3</item>
+    <item name="settingsText">#FF23201B</item>
+    <item name="settingsText2">#FF6E675C</item>
+    <item name="settingsText3">#FF6E675C</item>
+    <item name="settingsLabel">#FFB5362A</item>
+    <item name="settingsAccent">#FFC0392B</item>
+    <item name="settingsOnAccent">#FFFFFFFF</item>
+    <item name="settingsSuccess">#FF2E7D4F</item>
+    <item name="settingsStatusDone">#FF2E7D4F</item>
+    <item name="settingsField">#FFF3EDE1</item>
+    <item name="settingsDialog">#FFFFFCF6</item>
+    <item name="settingsTitleSize">@dimen/font_size__app_title</item>
+    <item name="settingsSectionSize">@dimen/font_size__settings_section</item>
+    <item name="settingsRowTitleSize">@dimen/font_size__settings_row_title</item>
+    <item name="settingsSummarySize">@dimen/font_size__settings_row_summary</item>
+    <item name="settingsButtonSize">@dimen/font_size__settings_button</item>
+  </style>
+
+  <!-- Night (黛青夜色): dark, eye-friendly teal -->
+  <style name="Theme.StrokeInput.Night">
+    <item name="settingsBackground">#FF0D1416</item>
+    <item name="settingsSurface">#FF152024</item>
+    <item name="settingsSurfaceRadius">18dp</item>
+    <item name="settingsDivider">#FF22323A</item>
+    <item name="settingsText">#FFE6F0EE</item>
+    <item name="settingsText2">#FF9DB3AE</item>
+    <item name="settingsText3">#FF9DB3AE</item>
+    <item name="settingsLabel">#FF2DD4BF</item>
+    <item name="settingsAccent">#FF2DD4BF</item>
+    <item name="settingsOnAccent">#FF042F2B</item>
+    <item name="settingsSuccess">#FF2DD4BF</item>
+    <item name="settingsStatusDone">#FF7FE6D6</item>
+    <item name="settingsField">#FF1C2A2F</item>
+    <item name="settingsDialog">#FF18252A</item>
+    <item name="settingsTitleSize">@dimen/font_size__app_title</item>
+    <item name="settingsSectionSize">@dimen/font_size__settings_section</item>
+    <item name="settingsRowTitleSize">@dimen/font_size__settings_row_title</item>
+    <item name="settingsSummarySize">@dimen/font_size__settings_row_summary</item>
+    <item name="settingsButtonSize">@dimen/font_size__settings_button</item>
+    <item name="android:windowLightStatusBar">false</item>
   </style>
 </resources>
+

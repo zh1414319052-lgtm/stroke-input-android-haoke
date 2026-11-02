@@ -67,6 +67,7 @@
       app:keyTextOffsetY="@dimen/baseline_correction__qwerty_backspace"
       app:keyWidth="@dimen/key_width__qwerty_shift"
       app:keyIsPreviewable="false"
+      app:keyFillColour="@color/key_fill_function"
     />
   </Row>
   <Row
@@ -79,6 +80,7 @@
       app:keyTextSize="@dimen/font_size__switch_key"
       app:keyTextOffsetY="@dimen/baseline_correction__switch_key"
       app:keyIsPreviewable="false"
+      app:keyFillColour="@color/key_fill_function"
     />
     <!-- Comma -->
     <Key

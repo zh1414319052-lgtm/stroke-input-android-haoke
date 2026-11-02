@@ -1,0 +1,70 @@
+Offline voice recognition in the Haoke build of Stroke Input Method
+Recorded: 2026-10-29
+
+This directory contains the SenseVoice-Small-Yue int8 model, not the unchanged
+SenseVoice-Small base checkpoint. The Cantonese fine-tuning is from
+ASLP-lab / WenetSpeech-Yue, converted to ONNX and quantized by the sherpa-onnx
+project. Model and token files have not been modified after extracting the
+2025-09-09 distribution.
+
+Bundled model distribution:
+  sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2025-09-09
+  https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2025-09-09.tar.bz2
+  The archive README identifies its checkpoint source as:
+  https://huggingface.co/ASLP-lab/WSYue-ASR/tree/main/sensevoice_small_yue
+
+File identity (SHA-256):
+  model.int8.onnx (237115547 bytes):
+    12ca1a2ae7ecf3e0019ef2822307ee0b5cadc9196569e379b4c4026f8205276d
+  tokens.txt (315894 bytes):
+    f449eb28dc567533d7fa59be34e2abca8784f771850c78a47fb731a31429a1dc
+
+Model attribution and licence chain:
+  1. SenseVoice-Small-Yue / WSYue-ASR
+     ASLP-lab / WenetSpeech-Yue contributors.
+     The official WSYue-ASR model card declares Apache-2.0.
+     Model card revision checked: 4a74a91430485d7456cb786f1d0ff0aba1185ded
+     https://huggingface.co/ASLP-lab/WSYue-ASR/blob/4a74a91430485d7456cb786f1d0ff0aba1185ded/README.md
+     Copy of Apache-2.0: APACHE-2.0.txt in this directory.
+
+  2. SenseVoice-Small base model
+     Copyright (C) [2023-2028] [Alibaba Group]. All rights reserved.
+     https://huggingface.co/FunAudioLLM/SenseVoiceSmall
+     Official model card revision checked: 3847d57b6bdf2dd8875cb1508d2af43d80a16bf7
+     Its metadata declares license: other, license_name: model-license,
+     and links to https://github.com/modelscope/FunASR/blob/main/MODEL_LICENSE
+     The full FunASR Model Open Source License Agreement v1.1 is included in
+     FUNASR-MODEL-LICENSE.txt. This is a separate model licence, not the MIT
+     licence of the SenseVoice source-code repository and not Apache-2.0.
+     Preserved source:
+     https://raw.githubusercontent.com/modelscope/FunASR/58830eca4012644aac0c3218c3ccc7d98f003fda/MODEL_LICENSE
+     SHA-256 of the preserved licence:
+       7dba975a2069691db4992b0592d70828b330d2f8a30a71450f4e152a554e84f8
+     The agreement covers model weights and derivatives, permits use, copying,
+     modification and sharing under its terms, and requires retaining source,
+     author and model names. Its conduct, termination and revision provisions
+     also apply; read the full agreement. The model is not relicensed under
+     the app's GPL licence.
+
+Runtime and ONNX conversion:
+  sherpa-onnx 2.0.1, copyright sherpa-onnx contributors, Apache-2.0.
+  https://github.com/k2-fsa/sherpa-onnx/tree/v2.0.1
+  https://github.com/k2-fsa/sherpa-onnx/releases/tag/v2.0.1
+  Artifact: sherpa-onnx-static-link-onnxruntime-2.0.1.aar
+  Size: 38577050 bytes
+  SHA-256: 07e042d97f3a6bd5b7fe74d4eef0513dc01a714b16c15a903250095aba43a575
+  Apache licence source: https://raw.githubusercontent.com/k2-fsa/sherpa-onnx/v2.0.1/LICENSE
+  SHA-256 of APACHE-2.0.txt:
+    cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30
+  No separate NOTICE file was present in the v2.0.1 repository tree or AAR.
+
+  ONNX Runtime is linked statically in this sherpa-onnx AAR.
+  Copyright (c) Microsoft Corporation. All rights reserved. MIT licence.
+  Licence copy: ONNXRUNTIME-LICENSE.txt.
+  Source: https://raw.githubusercontent.com/microsoft/onnxruntime/main/LICENSE
+  SHA-256: 2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c
+
+Runtime behaviour:
+  Recognition runs locally; no network service or API key is used.
+  The app requests microphone permission on first use. Recorded audio is kept
+  only in memory for recognition and is neither saved nor uploaded.

@@ -7,13 +7,22 @@ android
 {
   defaultConfig
   {
-    applicationId "io.github.yawnoc.strokeinput"
+    // Haoke build: own application ID so it can coexist with the official F-Droid/Google Play app
+    // (different signing key); the Java namespace and preference keys are unchanged.
+    applicationId "io.github.yawnoc.strokeinput.haoke"
     minSdkVersion 24
     compileSdk = 37
     targetSdkVersion 37
-    versionCode 75
-    versionName "1.7.0"
+    // Based on upstream v1.7.0 (versionCode 75); retain the established formal signing identity.
+    versionCode 7513
+    versionName "1.7.0-haoke.13"
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    ndk
+    {
+      // ONNX Runtime (handwriting) and sherpa-onnx (voice) are native:
+      // phones (64- and 32-bit ARM) and x86_64 emulators
+      abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86_64'
+    }
   }
   buildFeatures
   {
@@ -21,6 +30,12 @@ android
   }
   buildTypes
   {
+    debug
+    {
+      // Instrumentation must coexist with, and never replace, the user's formal installation.
+      applicationIdSuffix '.qa.ui20261102'
+      versionNameSuffix '-ui20261102-qa'
+    }
     release
     {
       minifyEnabled = true
@@ -33,9 +48,26 @@ android
     sourceCompatibility JavaVersion.VERSION_17
     targetCompatibility JavaVersion.VERSION_17
   }
+  bundle
+  {
+    language
+    {
+      enableSplit = false // the UI language is chosen at runtime (AppLanguage), so keep all languages
+    }
+  }
   androidResources
   {
     ignoreAssetsPattern = '*.cmd:*.cmdr'
+    noCompress 'onnx' // the handwriting model is copied out as is (HandwritingRecogniser)
+  }
+  packaging
+  {
+    jniLibs
+    {
+      // This app supports only the three ABIs above. AGP merges before applying abiFilters;
+      // sherpa's legacy x86 dynamic runtime would collide with handwriting's runtime here.
+      excludes += ['lib/x86/**']
+    }
   }
   namespace = 'io.github.yawnoc.strokeinput'
 }
@@ -43,7 +75,16 @@ android
 dependencies
 {
   implementation 'com.google.android.material:material:1.14.0'
+  // Offline handwriting recognition (MIT)
+  implementation 'com.microsoft.onnxruntime:onnxruntime-android:1.31.1'
+  // Offline voice recognition: sherpa-onnx 2.0.1 (Apache-2.0) with ONNX Runtime linked in statically,
+  // from https://github.com/k2-fsa/sherpa-onnx/releases/tag/v2.0.1; its API is in Kotlin
+  implementation files('libs/sherpa-onnx-static-link-onnxruntime-2.0.1.aar')
+  implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.4.21'
+  // Lightweight Ed25519 verification is available on minSdk 24 without replacing Android providers.
+  implementation 'org.bouncycastle:bcprov-jdk18on:1.86'
   testImplementation 'junit:junit:4.13.2'
+  testImplementation 'org.json:json:20240303'
   androidTestImplementation 'androidx.test.ext:junit:1.3.0'
   androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
 }

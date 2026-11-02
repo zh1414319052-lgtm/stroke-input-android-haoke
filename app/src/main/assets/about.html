@@ -25,11 +25,57 @@ which are:
 ©&nbsp;2020 The Android Open Source Project<br>
 Licensed under Apache-2.0, see &lt;<a href="https://www.apache.org/licenses/LICENSE-2.0.html">https://www.apache.org/licenses/LICENSE-2.0.html</a>&gt;.<br>
 </p>
+<h2>Haoke optimized edition and upstream attribution</h2>
+<p>This is the <strong>Haoke optimized edition 1.7.0-haoke.13</strong>, based on <a href="https://github.com/stroke-input/stroke-input-android">Conway’s Stroke Input Method</a> v1.7.0. The original copyright and GPL-3.0-only license are retained. Haoke changes cover themed settings/keyboards, font and control adaptation, offline handwriting/speech, and signed version checks. <a href="https://github.com/zh1414319052-lgtm/stroke-input-android-haoke">Source for this optimized edition</a> is public. <a href="https://haoke.org/software/abc5c0fe8b0eab06?platform=android">Download from Haoke</a>.</p>
+<p>The interface uses static Noto Sans SC weights 400/700 under <a href="licenses/NotoSansSC-OFL.txt">SIL OFL 1.1</a>. Bundled models, runtimes and the original keyboard font retain their separate licenses.</p>
+
+<p>The current Haoke version appears under “Check for Haoke updates” in settings. Input, handwriting and speech recognition remain on this device. Only signed version checks connect to the Haoke website, from the foreground settings screen. No input or audio is sent. Updates are never installed automatically. See the bundled <a href="privacy.html">privacy policy</a>.</p>
 <h2>Build dependencies</h2>
 <h3><a href="https://mvnrepository.com/artifact/com.google.android.material/material">Material Components For Android</a> (v1.14.0)</h3>
 <p class="notice">
 ©&nbsp;2026 The Android Open Source Project<br>
 Licensed under Apache-2.0, see &lt;<a href="https://www.apache.org/licenses/LICENSE-2.0.html">https://www.apache.org/licenses/LICENSE-2.0.html</a>&gt;.<br>
+</p>
+<h3><a href="https://github.com/microsoft/onnxruntime">ONNX Runtime</a> (v1.31.1)</h3>
+<p class="notice">
+©&nbsp;Microsoft Corporation<br>
+Licensed under MIT, see &lt;<a href="https://opensource.org/licenses/MIT">https://opensource.org/licenses/MIT</a>&gt;.<br>
+</p>
+<h3>Bouncy Castle (v1.86)</h3>
+<p class="notice">©&nbsp;The Legion of the Bouncy Castle. Licensed under the <a href="licenses/BOUNCY-CASTLE-LICENSE.txt">MIT licence</a>. Used only to verify signed version updates.</p>
+<h2>Handwriting recognition model</h2>
+<h3><a href="https://github.com/PaddlePaddle/PaddleOCR">PP-OCRv6</a> text recognition, small (PaddleOCR v3.7.0)</h3>
+<p class="notice">
+©&nbsp;PaddlePaddle Authors<br>
+Licensed under Apache-2.0, see &lt;<a href="https://www.apache.org/licenses/LICENSE-2.0.html">https://www.apache.org/licenses/LICENSE-2.0.html</a>&gt;.<br>
+</p>
+<p>
+Converted to ONNX by <a href="https://github.com/RapidAI/RapidOCR">RapidOCR</a> (v3.10.0):
+</p>
+<p class="notice">
+©&nbsp;2021 RapidOCR Authors<br>
+Licensed under Apache-2.0, see &lt;<a href="https://www.apache.org/licenses/LICENSE-2.0.html">https://www.apache.org/licenses/LICENSE-2.0.html</a>&gt;.<br>
+</p>
+<p>
+Handwriting is recognised entirely on the device; no ink or text leaves the phone.
+</p>
+<h2>Voice recognition model and runtime</h2>
+<h3><a href="https://huggingface.co/ASLP-lab/WSYue-ASR/tree/main/sensevoice_small_yue">SenseVoice-Small-Yue</a> (int8, 2025-09-09)</h3>
+<p class="notice">
+Cantonese fine-tuning: ASLP-lab / WenetSpeech-Yue contributors, Apache-2.0.<br>
+Base model: <a href="https://huggingface.co/FunAudioLLM/SenseVoiceSmall">SenseVoice-Small</a>, ©&nbsp;2023–2028 Alibaba Group,
+under <a href="voice/FUNASR-MODEL-LICENSE.txt">FunASR Model License v1.1</a>.<br>
+The model keeps its own licence terms; it is not relicensed as part of this app.
+</p>
+<h3><a href="https://github.com/k2-fsa/sherpa-onnx">sherpa-onnx</a> (v2.0.1)</h3>
+<p class="notice">
+©&nbsp;sherpa-onnx contributors; licensed under <a href="voice/APACHE-2.0.txt">Apache-2.0</a>.<br>
+The 2025-09-09 ONNX/int8 conversion of the WSYue model is bundled unchanged.
+Sources, checksums and licence details: <a href="voice/NOTICE.txt">NOTICE</a>.
+</p>
+<p>
+Speech recognition runs entirely on the device. Microphone permission is requested on first use.
+Audio stays in memory for recognition and is neither saved nor uploaded.
 </p>
 <h2>Stroke input data</h2>
 <h3><a href="https://github.com/stroke-input/stroke-input-data">Conway Stroke Data</a> (v2.1.0)</h3>

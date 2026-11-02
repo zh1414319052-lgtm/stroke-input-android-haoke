@@ -2,29 +2,134 @@
   <!-- Main activity -->
   <string name="app_name">笔画输入法</string>
   <string name="label__main_activity__welcome">欢迎使用笔画输入法！</string>
-  <string name="label__main_activity__source_code_button">源码</string>
-  <string name="label__main_activity__help_button">说明</string>
+  <string name="text__main_activity__subtitle">笔画 · 手写 · 离线语音</string>
+  <string name="label__main_activity__source_code_button">优化版源码</string>
+  <string name="label__main_activity__help_button">使用说明</string>
   <string name="label__main_activity__about_button">关于</string>
   <string name="label__main_activity__privacy_button">隐私政策</string>
-  <string name="text__main_activity__input_method_settings">1. 若新安装笔画输入法，必先在系统设置人手启动，方能使用：</string>
-  <string name="label__main_activity__input_method_settings_button">输入法设置</string>
-  <string name="text__main_activity__change_keyboard">2. 若现有的输入法没办法转键盘：</string>
-  <string name="label__main_activity__change_keyboard_button">转键盘</string>
-  <string name="text__main_activity__candidate_order">3. 字选次序：</string>
-  <string name="label__main_activity__candidate_order">字选次序</string>
-  <string name="label__main_activity__traditional_first">繁体排在前面</string>
-  <string name="label__main_activity__simplified_first">简体排在前面</string>
-  <string name="text__main_activity__keyboard_height_adjustment">4. 调整键盘高度（最多占屏幕的一半，字选栏另计）：</string>
-  <string name="hint__main_activity__test_input">5. 在此测试输入</string>
-  <string name="text__main_activity__optional_candidates">6. （高级）容许以下字选（或未得到系统字型支援）：</string>
+  <!-- Settings sections -->
+  <string name="label__settings__section_setup">开始使用</string>
+  <string name="label__settings__section_theme">外观主题</string>
+  <string name="label__toolbar__handwriting">手写</string>
+  <string name="label__toolbar__voice">语音</string>
+  <string name="status__voice_loading">正在准备语音识别…</string>
+  <string name="status__voice_ready">点一下开始说话，或按住说话</string>
+  <string name="status__voice_listening">正在听…再点一下结束</string>
+  <string name="status__voice_listening_hold">正在听…松开结束</string>
+  <string name="status__voice_recognising">正在识别…</string>
+  <string name="status__voice_no_permission">点这里允许使用麦克风</string>
+  <string name="status__voice_unavailable">语音识别无法启动</string>
+  <string name="status__voice_microphone_busy">麦克风正被占用，请稍后再试</string>
+  <string name="status__voice_nothing_heard">没听清，请再说一次</string>
+  <string name="message__voice_permission_granted">已允许使用麦克风，点说话区即可说话</string>
+  <string name="message__voice_permission_denied">语音输入需要麦克风权限</string>
+  <string name="label__toolbar__handwriting_full_screen">全屏</string>
+  <string name="label__toolbar__handwriting_half_screen">半屏</string>
+  <string name="hint__handwriting_full_screen">全屏手写：屏幕上任意位置都能写</string>
+  <string name="hint__handwriting_pad">在这里写字，可以连着写几个字</string>
+  <string name="hint__handwriting_loading">正在准备手写识别…</string>
+  <string name="hint__handwriting_unavailable">手写识别无法启动</string>
+  <string name="label__theme__paper">宣纸朱印</string>
+  <string name="label__theme__sky">晴空大字</string>
+  <string name="label__theme__night">黛青夜色</string>
+  <string name="text__settings__theme_note">键盘和设置页同时换色，立即生效</string>
+  <string name="label__settings__section_keyboard">键盘设置</string>
+  <string name="label__settings__section_aids">输入辅助</string>
+  <string name="label__settings__section_phrases">常用语</string>
+  <string name="label__settings__section_advanced">高级</string>
+  <string name="label__settings__section_help">帮助与关于</string>
+  <!-- Setup steps -->
+  <string name="label__setup__enable_title">启用笔画输入法</string>
+  <string name="text__setup__enable_done">已在系统中启用</string>
+  <string name="text__setup__enable_pending">尚未启用</string>
+  <string name="label__setup__enable_button_pending">去启用</string>
+  <string name="label__main_activity__input_method_settings_button">管理</string>
+  <string name="label__setup__switch_title">切换到笔画输入法</string>
+  <string name="text__setup__switch_done">当前正在使用</string>
+  <string name="text__setup__switch_pending">尚未切换</string>
+  <string name="text__setup__switch_after_enable">请先完成第 1 步</string>
+  <string name="label__setup__switch_button_pending">去切换</string>
+  <string name="label__main_activity__change_keyboard_button">切换</string>
+  <string name="label__setup__test">试着输入</string>
+  <string name="hint__main_activity__test_input">点击这里，试试笔画或手写</string>
+  <!-- Keyboard section -->
+  <string name="label__main_activity__candidate_order">候选字顺序</string>
+  <string name="label__main_activity__traditional_first">繁体字优先</string>
+  <string name="label__main_activity__simplified_first">简体字优先</string>
+  <string name="label__main_activity__keyboard_layout">键盘布局</string>
+  <string name="label__main_activity__layout_standard">标准笔画</string>
+  <string name="label__main_activity__layout_large">大按键笔画</string>
+  <string name="label__settings__keyboard_height">键盘高度</string>
+  <string name="label__settings__handwriting_on_keyboard">键盘区域手写</string>
+  <string name="text__settings__handwriting_on_keyboard_summary">在键盘上直接书写，点按仍然输入；工具栏可切换全屏</string>
+  <string name="label__main_activity__candidate_size">候选字大小</string>
+  <string name="label__main_activity__size_standard">标准</string>
+  <string name="label__main_activity__size_large">大</string>
+  <string name="label__main_activity__size_extra_large">特大</string>
+  <!-- Typing aids -->
+  <string name="label__main_activity__key_vibration">按键振动</string>
+  <string name="text__settings__key_vibration_summary">需先开启系统的触摸振动</string>
+  <string name="label__main_activity__key_sound">按键音</string>
+  <string name="text__settings__key_sound_summary">按键时发出提示音</string>
+  <string name="label__main_activity__stroke_tolerance">笔顺容错</string>
+  <string name="text__settings__stroke_tolerance_summary">相邻两笔顺序打反也能出字</string>
+  <!-- Quick phrases -->
+  <string name="text__main_activity__quick_phrases">每行一条，最多 50 条。\n在键盘上方点“常用语”即可选用。</string>
+  <string name="hint__main_activity__quick_phrases">例如：家庭住址、电话号码</string>
+  <string name="label__main_activity__save_quick_phrases">保存常用语</string>
+  <plurals name="message__main_activity__quick_phrases_saved">
+    <item quantity="other">已保存 %d 条常用语。</item>
+  </plurals>
+  <!-- Advanced: optional (rare) candidates -->
+  <string name="label__settings__optional_candidates">生僻字候选</string>
+  <plurals name="text__settings__optional_candidates_summary">
+    <item quantity="other">系统字体可能显示不了，已允许 %d 组</item>
+  </plurals>
+  <string name="text__main_activity__optional_candidates">允许以下候选字（系统字体可能无法显示）：</string>
   <string name="label__main_activity__return">返回</string>
+  <string name="label__main_activity__haoke_tools_button">浩科工具站</string>
+  <string name="text__main_activity__edition_notice">浩科社区优化版，基于 Conway 的开源项目 Stroke Input Method（GPL-3.0）。</string>
+  <!-- Privacy policy (upstream official Chinese version) -->
+  <string name="uri__privacy_policy">https://github.com/stroke-input/stroke-input-android/blob/master/PRIVACY-zh.md</string>
+  <!-- Keyboard toolbar (shown above the keys while there are no candidates) -->
+  <string name="label__toolbar__quick_phrases">常用语</string>
+  <string name="label__toolbar__hide_keyboard">收起键盘</string>
+  <string name="message__quick_phrases_empty">还没有常用语，请在笔画输入法的设置页添加。</string>
+  <string-array name="default_quick_phrases">
+    <item>好的</item>
+    <item>谢谢！</item>
+    <item>我马上到。</item>
+    <item>稍后给你回电话。</item>
+  </string-array>
+  <!-- Stroke order shown on long press of a candidate: character, stroke sequences -->
+  <string name="format__stroke_order">%1$s：%2$s</string>
+  <!-- Wildcard stroke key label -->
+  <string name="display_text__stroke_wildcard">通配</string>
   <!-- Error messages -->
-  <string name="message__error__browser">无法开启浏览器前往&lt;%1$s&gt;。</string>
-  <string name="message__error__webview">无法开启 WebView.</string>
+  <string name="message__error__browser">无法打开浏览器访问&lt;%1$s&gt;。</string>
+  <string name="message__error__webview">无法打开 WebView。</string>
   <!-- Asset file names for localisation -->
   <string name="file_name__help_html">help-zh-Hans-CN.html</string>
   <string name="file_name__about_html">about-zh-Hans-CN.html</string>
   <!-- Space bar display text (triangles: U+25C0, U+25B6) -->
   <string name="display_text__qwerty_space_bar">◀ 英文 ▶</string>
   <string name="display_text__strokes_space_bar">◀ 中文 ▶</string>
+  <string name="label__update__check">检查浩科版更新</string>
+  <string name="text__update__privacy">仅检查版本时连接浩科网站。输入和语音识别均在本机完成。</string>
+  <string name="text__update__version_privacy">版本 %1$s\n仅检查版本时连接浩科网站。输入和语音识别均在本机完成。</string>
+  <string name="text__update__checking">正在检查更新…</string>
+  <string name="text__update__current">当前版本：%1$s，暂无兼容的新版本。</string>
+  <string name="text__update__failed">暂时无法安全检查更新，请稍后重试。</string>
+  <string name="text__update__storage_failed">未能保存更新提醒选择，请重试。</string>
+  <string name="text__update__cancelled">已停止检查更新。</string>
+  <string name="text__update__title">浩科版更新 %1$s</string>
+  <string name="text__update__empty_notes">有新的浩科版本可用。</string>
+  <string name="text__update__notes">%1$s\n\n版本页面将在浏览器中打开，不会自动下载安装。</string>
+  <string name="label__update__view">查看版本</string>
+  <string name="label__update__later">稍后提醒</string>
+  <string name="label__update__ignore">忽略此版本</string>
+  <string name="text__update__browser_failed">没有可打开版本页面的浏览器。</string>
+  <string name="file_name__privacy_html">privacy-zh.html</string>
+  <string name="text__layout__standard_summary">数字与五笔画完整排列</string>
+  <string name="text__layout__large_summary">更大的笔画按键</string>
 </resources>

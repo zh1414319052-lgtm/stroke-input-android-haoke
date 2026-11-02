@@ -1,5 +1,6 @@
 /*
   Copyright 2021, 2023--2025 Conway
+  Modified 2026-10-28 by Haoke Tools (浩科工具站): locale-independent shifted text, key hint text.
   Licensed under the GNU General Public License v3.0 (GPL-3.0-only).
   This is free software with NO WARRANTY etc. etc.,
   see LICENSE or <https://www.gnu.org/licenses/>.
@@ -25,6 +26,8 @@ import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.util.Xml;
 
+import java.util.Locale;
+
 import io.github.yawnoc.utilities.Valuey;
 
 /*
@@ -43,6 +46,8 @@ public class Key
   public String valueText;
   public String displayText; // overrides valueText drawn
   public String valueTextShifted; // overrides displayText drawn when shifted
+  public String hintText; // small corner label, if any
+  public EnterKeyIcon enterIcon = EnterKeyIcon.RETURN; // shared action key, never a font glyph
 
   // Key dimensions
   public int width, naturalWidth;
@@ -104,10 +109,12 @@ public class Key
       displayText = valueText;
     }
 
+    hintText = attributesArray.getString(R.styleable.Key_keyHintText);
+
     valueTextShifted = attributesArray.getString(R.styleable.Key_keyValueTextShifted);
     if (isShiftable && valueTextShifted == null)
     {
-      valueTextShifted = displayText.toUpperCase();
+      valueTextShifted = displayText.toUpperCase(Locale.ROOT); // QWERTY keys are English (i -> I even if Turkish)
     }
     else if (valueTextShifted == null)
     {

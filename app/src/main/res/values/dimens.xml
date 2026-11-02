@@ -1,26 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <!-- Main activity -->
-  <dimen name="max_width__main_activity">488dp</dimen>
+  <!-- Main activity (Haoke settings design, board "settings", 360 dp wide) -->
+  <dimen name="padding_horizontal__main_activity">20dp</dimen>
+  <dimen name="padding_bottom__main_activity">24dp</dimen>
   <dimen name="font_size__main_activity">16sp</dimen>
-  <dimen name="font_size__main_activity__button">13sp</dimen>
-  <dimen name="height__main_activity__seek_bar">24dp</dimen>
-  <dimen name="padding__main_activity">12dp</dimen>
-  <dimen name="padding_top__main_activity__text_first">0dp</dimen>
-  <dimen name="padding_top__main_activity__text">12dp</dimen>
-  <dimen name="padding_horizontal__main_activity__text">4dp</dimen>
-  <dimen name="padding_bottom__main_activity__text">4dp</dimen>
-  <dimen name="margin_end__main_activity__adjustment_text">36dp</dimen>
-  <dimen name="margin_horizontal__main_activity__seek_bar">24dp</dimen>
-  <dimen name="margin_top__main_activity__input">8dp</dimen>
-  <dimen name="margin_bottom__main_activity__input">12dp</dimen>
-  <dimen name="margin_top__main_activity__switch_first">14dp</dimen>
+  <dimen name="font_size__main_activity__notice">12sp</dimen>
   <dimen name="margin_top__main_activity__switch">10dp</dimen>
-  <dimen name="margin_horizontal__main_activity__switch">48dp</dimen>
-  <dimen name="margin_bottom__main_activity__switch_last">24dp</dimen>
-  <dimen name="inset_vertical__main_activity__button">4dp</dimen>
-  <dimen name="min_height__main_activity__button">48dp</dimen>
-  <dimen name="min_height__main_activity__input">48dp</dimen>
+  <dimen name="margin_bottom__main_activity__switch_last">16dp</dimen>
+  <dimen name="size__app_icon">48dp</dimen>
+  <dimen name="margin_end__app_icon">12dp</dimen>
+  <dimen name="padding_top__header">16dp</dimen>
+  <dimen name="font_size__app_title">23sp</dimen>
+  <dimen name="font_size__app_subtitle">13sp</dimen>
+  <dimen name="font_size__settings_section">14sp</dimen>
+  <dimen name="padding_horizontal__settings_section">4dp</dimen>
+  <dimen name="padding_top__settings_section">22dp</dimen>
+  <dimen name="padding_bottom__settings_section">10dp</dimen>
+  <dimen name="min_height__settings_row">64dp</dimen>
+  <dimen name="min_height__settings_row_two_line">76dp</dimen>
+  <dimen name="min_height__settings_row_link">56dp</dimen>
+  <dimen name="padding_horizontal__settings_row">16dp</dimen>
+  <dimen name="padding_horizontal__settings_row_end">12dp</dimen>
+  <dimen name="padding_vertical__settings_row">12dp</dimen>
+  <dimen name="font_size__settings_row_title">17sp</dimen>
+  <dimen name="font_size__settings_row_value">15sp</dimen>
+  <dimen name="font_size__settings_row_summary">13.5sp</dimen>
+  <dimen name="margin_top__settings_row_summary">2dp</dimen>
+  <dimen name="max_width__settings_row_value">220dp</dimen>
+  <dimen name="size__settings_row_icon">24dp</dimen>
+  <dimen name="margin_start__settings_row_icon">8dp</dimen>
+  <dimen name="size__step_badge">28dp</dimen>
+  <dimen name="size__step_badge_check">18dp</dimen>
+  <dimen name="margin_end__step_badge">12dp</dimen>
+  <dimen name="font_size__step_badge">15sp</dimen>
+  <dimen name="height__settings_step_button">48dp</dimen>
+  <dimen name="min_width__settings_step_button">76dp</dimen>
+  <dimen name="radius__settings_step_button">12dp</dimen>
+  <dimen name="height__settings_filled_button">48dp</dimen>
+  <dimen name="radius__settings_filled_button">12dp</dimen>
+  <dimen name="padding_horizontal__settings_button">12dp</dimen>
+  <dimen name="font_size__settings_button">15sp</dimen>
+  <dimen name="stroke__settings_button">1.5dp</dimen>
+  <dimen name="min_height__settings_field">58dp</dimen>
+  <dimen name="font_size__settings_field">16sp</dimen>
+  <dimen name="height__settings_seek_bar">48dp</dimen>
+  <dimen name="padding_bottom__settings_card">16dp</dimen>
+  <!-- Sky theme (晴空大字): larger settings text -->
+  <dimen name="font_size__app_title_large">24sp</dimen>
+  <dimen name="font_size__settings_section_large">14sp</dimen>
+  <dimen name="font_size__settings_row_title_large">18sp</dimen>
+  <dimen name="font_size__settings_row_summary_large">14sp</dimen>
+  <dimen name="font_size__settings_button_large">16sp</dimen>
+  <!-- Theme picker (design/stroke-input-theme-pages.haoke-ui.json, card-theme) -->
+  <dimen name="padding_top__theme_tiles">18dp</dimen>
+  <dimen name="padding_horizontal__theme_tiles">12dp</dimen>
+  <dimen name="padding_bottom__theme_card">14dp</dimen>
+  <dimen name="margin_horizontal__theme_tile">4dp</dimen>
+  <dimen name="radius__theme_tile">12dp</dimen>
+  <dimen name="size__theme_tile_badge">22dp</dimen>
+  <dimen name="margin_top__theme_tile_badge">-6dp</dimen>
+  <dimen name="margin_end__theme_tile_badge">-4dp</dimen>
+  <dimen name="margin_top__theme_tile_label">6dp</dimen>
+  <dimen name="font_size__theme_tile_label">13sp</dimen>
+  <dimen name="font_size__theme_note">13sp</dimen>
   <!-- Candidate order dialog -->
   <dimen name="padding__candidate_order_dialog">12dp</dimen>
   <dimen name="font_size__dialog_button">18sp</dimen>
@@ -33,12 +75,21 @@
   <dimen name="key_height__strokes_digit">60dp</dimen>
   <dimen name="key_height__strokes">70dp</dimen>
   <dimen name="key_height__strokes_space_bar">60dp</dimen>
+  <dimen name="key_height__strokes_large">76dp</dimen>
   <dimen name="key_height__qwerty">52dp</dimen>
+  <!-- Handwriting pad: as tall as the strokes keyboard above its space bar row -->
+  <dimen name="key_height__handwriting_pad">200dp</dimen>
   <!-- Key width -->
   <dimen name="key_width__digit">10%</dimen>
   <dimen name="key_width__space_bar">40%</dimen>
   <dimen name="key_width__strokes_stroke">20%</dimen>
+  <dimen name="key_width__strokes_large">25%</dimen>
+  <dimen name="key_width__strokes_large_half">12.5%</dimen>
+  <dimen name="key_width__strokes_large_switch">15%</dimen>
+  <dimen name="key_width__strokes_large_space_bar">35%</dimen>
   <dimen name="key_width__qwerty_shift">15%</dimen>
+  <dimen name="key_width__full">100%</dimen>
+  <dimen name="key_width__handwriting_function">15%</dimen>
   <!-- Key text font size -->
   <dimen name="font_size__switch_key">20dp</dimen>
   <dimen name="font_size__space_bar">18dp</dimen>
@@ -46,6 +97,9 @@
   <dimen name="font_size__strokes">24dp</dimen>
   <dimen name="font_size__strokes_digit">22dp</dimen>
   <dimen name="font_size__strokes_stroke">30dp</dimen>
+  <dimen name="font_size__strokes_stroke_large">36dp</dimen>
+  <dimen name="font_size__strokes_wildcard">22dp</dimen>
+  <dimen name="font_size__strokes_wildcard_large">26dp</dimen>
   <dimen name="font_size__strokes_ditto_key">24dp</dimen>
   <dimen name="font_size__strokes_backspace">32dp</dimen>
   <dimen name="font_size__qwerty">22dp</dimen>
@@ -64,14 +118,27 @@
   <!-- Popup recess -->
   <dimen name="height__popup_recess">30dp</dimen>
   <!-- Stroke sequence bar -->
-  <dimen name="font_size__stroke_sequence_bar">15sp</dimen>
+  <dimen name="font_size__stroke_sequence_bar">16sp</dimen>
   <dimen name="padding_top__stroke_sequence_bar">3dp</dimen>
-  <dimen name="padding_left__stroke_sequence_bar">5dp</dimen>
-  <dimen name="padding_right__stroke_sequence_bar">7dp</dimen>
-  <dimen name="padding_bottom__stroke_sequence_bar">2dp</dimen>
+  <dimen name="padding_left__stroke_sequence_bar">12dp</dimen>
+  <dimen name="padding_right__stroke_sequence_bar">12dp</dimen>
+  <dimen name="padding_bottom__stroke_sequence_bar">3dp</dimen>
+  <dimen name="margin_start__stroke_sequence_bar">8dp</dimen>
+  <dimen name="margin_bottom__stroke_sequence_bar">6dp</dimen>
   <!-- Candidates -->
   <dimen name="font_size__candidate_button">21sp</dimen>
   <dimen name="height__candidate_button">40dp</dimen>
+  <dimen name="font_size__toolbar_button">17sp</dimen>
+  <dimen name="padding_drawable__toolbar_button">6dp</dimen>
+  <!-- Keys (Haoke design: rounded keys with gaps) -->
+  <dimen name="inset__key">2dp</dimen>
+  <dimen name="radius__key">6dp</dimen>
+  <dimen name="shadow_offset__key">1.5dp</dimen>
+  <dimen name="width__handwriting_ink">5dp</dimen>
+  <dimen name="width__handwriting_ink_halo">3dp</dimen>
+  <dimen name="size__handwriting_tap">8dp</dimen>
+  <!-- Voice pad -->
+  <dimen name="font_size__handwriting_hint">17sp</dimen>
   <dimen name="min_width__candidate_button">0dp</dimen>
   <dimen name="padding_horizontal__candidate_button">16dp</dimen>
 </resources>

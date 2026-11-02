@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Haoke settings design: rounded app icon in the header, filled with the icon background -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+  <corners android:radius="12dp" />
+  <solid android:color="@color/icon_launcher_background" />
+</shape>

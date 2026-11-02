@@ -1,5 +1,6 @@
 /*
   Copyright 2021--2025 Conway
+  Modified 2026-10-28 by Haoke Tools (浩科工具站): theme colours by key role.
   Licensed under the GNU General Public License v3.0 (GPL-3.0-only).
   This is free software with NO WARRANTY etc. etc.,
   see LICENSE or <https://www.gnu.org/licenses/>.
@@ -210,6 +211,20 @@ public class Keyboard
     }
   }
 
+  /*
+    Colour the keyboard and its keys by key role (also used by the key previews).
+  */
+  public void applyTheme(final KeyboardTheme theme)
+  {
+    fillColour = theme.keyboardFill;
+    for (final Key key : keys)
+    {
+      key.fillColour = theme.fillForKey(key.valueText);
+      key.borderColour = key.fillColour; // no visible border
+      key.textColour = theme.textForKey(key.valueText);
+    }
+  }
+
   public void correctKeyboardWidth(int inputContainerWidth)
   {
     final float correctionFactor = ((float) inputContainerWidth) / screenWidth;
@@ -235,6 +250,45 @@ public class Keyboard
       key.previewMarginY = (int) (key.naturalPreviewMarginY * actualAdjustmentFactor);
     }
     height = (int) (naturalHeight * actualAdjustmentFactor);
+  }
+
+  /*
+    Only half-screen handwriting uses its own pad height. Keep the normal function-row size and
+    change the actual Key geometry, shared by drawing, hit-testing and handwriting recognition.
+  */
+  public boolean adjustHalfScreenHandwritingHeight(final int maxKeyboardHeightPx)
+  {
+    Key pad = null;
+    for (final Key key : keys)
+    {
+      if (StrokeInputService.HANDWRITING_PAD_VALUE_TEXT.equals(key.valueText))
+      {
+        pad = key;
+        break;
+      }
+    }
+    if (pad == null)
+    {
+      return false;
+    }
+    final int previousHeight = height;
+    adjustKeyboardHeight(); // start from natural geometry, never compound an earlier resize
+    final int requestedPx = Math.round(Valuey.pxFromDp(
+      TypingSettings.loadHandwritingHeightDp(applicationContext), applicationContext.getResources().getDisplayMetrics()
+    ));
+    final int padHeight = HandwritingHeight.fitPadPx(requestedPx, maxKeyboardHeightPx, height - pad.height);
+    final int oldPadBottom = pad.y + pad.height;
+    final int difference = padHeight - pad.height;
+    for (final Key key : keys)
+    {
+      if (key != pad && key.y >= oldPadBottom)
+      {
+        key.y += difference;
+      }
+    }
+    pad.height = padHeight;
+    height += difference;
+    return height != previousHeight;
   }
 
   private void parseKeyboardAttributes(final Resources resources, final XmlResourceParser xmlResourceParser)

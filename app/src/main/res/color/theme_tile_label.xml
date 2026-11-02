@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Theme picker tile label: the selected theme's name stands out -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:state_selected="true" android:color="?attr/settingsText" />
+  <item android:color="?attr/settingsText2" />
+</selector>

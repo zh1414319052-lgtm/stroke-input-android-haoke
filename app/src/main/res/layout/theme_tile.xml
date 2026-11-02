@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2026 Haoke Tools (浩科工具站), modified build of Stroke Input Method by Conway
+  Theme picker tile (design/stroke-input-theme-pages.haoke-ui.json, card-theme):
+  preview, outline and check badge follow the tile's selected state.
+  Licensed under the GNU General Public License v3.0 (GPL-3.0-only).
+  This is free software with NO WARRANTY etc. etc.,
+  see LICENSE or <https://www.gnu.org/licenses/>.
+-->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="0dp"
+  android:layout_height="wrap_content"
+  android:layout_weight="1"
+  android:layout_marginLeft="@dimen/margin_horizontal__theme_tile"
+  android:layout_marginRight="@dimen/margin_horizontal__theme_tile"
+  android:orientation="vertical"
+  android:clipChildren="false"
+  android:foreground="?attr/selectableItemBackground"
+  android:clickable="true"
+  android:focusable="true"
+>
+  <!-- The preview keeps its design size (96 x 72 dp) on wide screens and shrinks in proportion on narrow ones -->
+  <FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:foreground="@drawable/theme_tile_outline"
+    android:clipChildren="false"
+  >
+    <ImageView
+      android:id="@+id/theme_tile_preview"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:adjustViewBounds="true"
+      android:scaleType="fitCenter"
+      android:importantForAccessibility="no"
+    />
+    <ImageView
+      android:layout_width="@dimen/size__theme_tile_badge"
+      android:layout_height="@dimen/size__theme_tile_badge"
+      android:layout_gravity="top|end"
+      android:layout_marginTop="@dimen/margin_top__theme_tile_badge"
+      android:layout_marginEnd="@dimen/margin_end__theme_tile_badge"
+      android:src="@drawable/theme_tile_badge"
+      android:importantForAccessibility="no"
+    />
+  </FrameLayout>
+  <TextView
+    android:id="@+id/theme_tile_label"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_top__theme_tile_label"
+    android:minHeight="36dp"
+    android:maxLines="2"
+    android:gravity="center"
+    android:textColor="@color/theme_tile_label"
+    android:textSize="@dimen/font_size__theme_tile_label"
+  />
+</LinearLayout>

@@ -11,6 +11,10 @@ OrdinaryDictionaryReplacement: #.links.license-links
 * [apache-2] --> b<https://www.apache.org/licenses/LICENSE-2.0.html>
 * [cc-by-4] --> b<https://creativecommons.org/licenses/by/4.0/>
 * [cc0] --> b<https://creativecommons.org/publicdomain/zero/1.0/>
+* [mit] --> b<https://opensource.org/licenses/MIT>
+* [funasr-model-license] --> [FunASR Model License v1.1](voice/FUNASR-MODEL-LICENSE.txt)
+* [voice-apache-license] --> [Apache-2.0](voice/APACHE-2.0.txt)
+* [voice-notice] --> [NOTICE](voice/NOTICE.txt)
 
 OrdinaryDictionaryReplacement: #.links.software-properties
 - queue_position: BEFORE #explicit-links
@@ -19,6 +23,11 @@ OrdinaryDictionaryReplacement: #.links.software-properties
 * \stroke-input-years --> 2021--2026
 * \material-version --> v1.14.0
 * \material-years --> 2026
+* \onnxruntime-version --> v1.31.1
+* \sherpa-onnx-version --> v2.0.1
+* \sensevoice-yue-version --> int8, 2025-09-09
+* \paddleocr-version --> v3.7.0
+* \rapidocr-version --> v3.10.0
 * \stroke-data-version --> v2.1.0
 * \sequence-characters-years --> 2021--2026
 * \stroke-font-version --> v2.0.1
@@ -36,6 +45,12 @@ OrdinaryDictionaryReplacement: #.links.link-definitions
     [`Keyboard.java`]: https://android.googlesource.com/platform/frameworks/base/+/33f921769531968a3ba9bc73fb2410f95868cb8d/core/java/android/inputmethodservice/Keyboard.java
     [`KeyboardView.java`]: https://android.googlesource.com/platform/frameworks/base/+/33f921769531968a3ba9bc73fb2410f95868cb8d/core/java/android/inputmethodservice/KeyboardView.java
     [Material Components For Android]: https://mvnrepository.com/artifact/com.google.android.material/material
+    [ONNX Runtime]: https://github.com/microsoft/onnxruntime
+    [sherpa-onnx]: https://github.com/k2-fsa/sherpa-onnx
+    [SenseVoice-Small-Yue]: https://huggingface.co/ASLP-lab/WSYue-ASR/tree/main/sensevoice_small_yue
+    [SenseVoice-Small]: https://huggingface.co/FunAudioLLM/SenseVoiceSmall
+    [PP-OCRv6]: https://github.com/PaddlePaddle/PaddleOCR
+    [RapidOCR]: https://github.com/RapidAI/RapidOCR
     [Conway Stroke Data]: https://github.com/stroke-input/stroke-input-data
     [Stroke Input Font]: https://github.com/stroke-input/stroke-input-font
     [2015 version of Noto Sans CJK TC]: \noto-cjk-url

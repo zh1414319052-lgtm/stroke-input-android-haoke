@@ -1,0 +1,782 @@
+{
+ "format": "haoke-ui-design",
+ "version": 1,
+ "id": "stroke-input-icon",
+ "name": "笔画输入法 · 新图标",
+ "revision": 0,
+ "tokens": {
+  "iconBase": "#1D4ED8",
+  "iconStroke": "#FFFFFF",
+  "iconDot": "#FFD54A"
+ },
+ "components": {},
+ "boards": [
+  {
+   "id": "icon-preview",
+   "name": "新图标 · 预览（大图与三种主题背景上的桌面尺寸）",
+   "width": 720,
+   "height": 420,
+   "background": "#E5E7EB",
+   "unit": "px",
+   "scale": 1,
+   "state": "icon preview sheet",
+   "children": [
+    {
+     "id": "pv-bg",
+     "type": "rect",
+     "x": 0,
+     "y": 0,
+     "width": 720,
+     "height": 420,
+     "fill": "#E5E7EB"
+    },
+    {
+     "id": "pv-master",
+     "type": "group",
+     "x": 30,
+     "y": 60,
+     "width": 300,
+     "height": 300,
+     "children": [
+      {
+       "id": "pv-master-icon-base",
+       "type": "rect",
+       "x": 0,
+       "y": 0,
+       "width": 300,
+       "height": 300,
+       "fill": "#1D4ED8",
+       "radius": 66.0
+      },
+      {
+       "id": "pv-master-icon-dot",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 300,
+       "height": 300,
+       "d": "M 143.50 78.50 C 154.33 80.67 164.08 90.42 163.00 100.17 C 162.13 107.75 153.25 108.83 147.83 103.42 C 142.42 98.00 138.08 89.33 138.30 82.83 C 138.52 79.80 140.47 78.07 143.50 78.50 Z",
+       "fill": "#FFD54A",
+       "code": "drawable/icon_launcher_foreground #dot"
+      },
+      {
+       "id": "pv-master-icon-heng",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 300,
+       "height": 300,
+       "d": "M 95.83 127.25 C 121.83 123.13 160.83 119.67 200.92 118.80 C 209.58 118.58 211.97 128.33 204.17 130.93 C 165.17 133.97 128.33 137.43 100.17 140.47 C 90.63 141.33 88.90 128.77 95.83 127.25 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #heng"
+      },
+      {
+       "id": "pv-master-icon-shugou",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 300,
+       "height": 300,
+       "d": "M 143.93 130.50 L 157.37 130.50 L 157.37 204.17 C 157.37 217.60 148.27 222.37 139.60 215.00 L 127.90 205.03 C 124.87 202.43 127.47 198.53 130.93 199.83 L 143.93 205.03 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #shugou"
+      },
+      {
+       "id": "pv-master-icon-pie",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 300,
+       "height": 300,
+       "d": "M 135.27 146.53 C 145.67 146.10 146.97 153.90 142.63 161.27 C 131.37 181.20 113.60 198.53 92.80 209.80 C 88.03 212.40 85.00 207.20 88.90 203.73 C 105.80 188.57 119.67 170.80 126.60 153.03 C 128.12 149.13 131.15 146.75 135.27 146.53 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #pie"
+      },
+      {
+       "id": "pv-master-icon-na",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 300,
+       "height": 300,
+       "d": "M 163.87 148.27 C 168.63 147.40 171.67 150.43 174.27 155.63 C 183.37 173.40 196.37 189.00 213.70 198.97 C 219.33 202.00 218.47 209.80 211.53 209.80 C 189.87 208.50 171.67 190.73 161.27 167.77 C 158.67 162.13 157.80 149.57 163.87 148.27 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #na"
+      }
+     ]
+    },
+    {
+     "id": "pv-tile-0",
+     "type": "rect",
+     "x": 360,
+     "y": 30,
+     "width": 330,
+     "height": 110,
+     "fill": "#F5F0E6",
+     "radius": 18
+    },
+    {
+     "id": "pv-icon-0",
+     "type": "group",
+     "x": 384,
+     "y": 49,
+     "width": 72,
+     "height": 72,
+     "children": [
+      {
+       "id": "pv-icon-0-n-base",
+       "type": "rect",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "fill": "#1D4ED8",
+       "radius": 15.84
+      },
+      {
+       "id": "pv-icon-0-n-dot",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "d": "M 34.44 18.84 C 37.04 19.36 39.38 21.70 39.12 24.04 C 38.91 25.86 36.78 26.12 35.48 24.82 C 34.18 23.52 33.14 21.44 33.19 19.88 C 33.24 19.15 33.71 18.74 34.44 18.84 Z",
+       "fill": "#FFD54A",
+       "code": "drawable/icon_launcher_foreground #dot"
+      },
+      {
+       "id": "pv-icon-0-n-heng",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "d": "M 23.00 30.54 C 29.24 29.55 38.60 28.72 48.22 28.51 C 50.30 28.46 50.87 30.80 49.00 31.42 C 39.64 32.15 30.80 32.98 24.04 33.71 C 21.75 33.92 21.34 30.90 23.00 30.54 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #heng"
+      },
+      {
+       "id": "pv-icon-0-n-shugou",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "d": "M 34.54 31.32 L 37.77 31.32 L 37.77 49.00 C 37.77 52.22 35.58 53.37 33.50 51.60 L 30.70 49.21 C 29.97 48.58 30.59 47.65 31.42 47.96 L 34.54 49.21 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #shugou"
+      },
+      {
+       "id": "pv-icon-0-n-pie",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "d": "M 32.46 35.17 C 34.96 35.06 35.27 36.94 34.23 38.70 C 31.53 43.49 27.26 47.65 22.27 50.35 C 21.13 50.98 20.40 49.73 21.34 48.90 C 25.39 45.26 28.72 40.99 30.38 36.73 C 30.75 35.79 31.48 35.22 32.46 35.17 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #pie"
+      },
+      {
+       "id": "pv-icon-0-n-na",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "d": "M 39.33 35.58 C 40.47 35.38 41.20 36.10 41.82 37.35 C 44.01 41.62 47.13 45.36 51.29 47.75 C 52.64 48.48 52.43 50.35 50.77 50.35 C 45.57 50.04 41.20 45.78 38.70 40.26 C 38.08 38.91 37.87 35.90 39.33 35.58 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #na"
+      }
+     ]
+    },
+    {
+     "id": "pv-icon-small-0",
+     "type": "group",
+     "x": 474,
+     "y": 61,
+     "width": 48,
+     "height": 48,
+     "children": [
+      {
+       "id": "pv-icon-small-0-n-base",
+       "type": "ellipse",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "fill": "#1D4ED8"
+      },
+      {
+       "id": "pv-icon-small-0-n-dot",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "d": "M 22.96 12.56 C 24.69 12.91 26.25 14.47 26.08 16.03 C 25.94 17.24 24.52 17.41 23.65 16.55 C 22.79 15.68 22.09 14.29 22.13 13.25 C 22.16 12.77 22.47 12.49 22.96 12.56 Z",
+       "fill": "#FFD54A",
+       "code": "drawable/icon_launcher_foreground #dot"
+      },
+      {
+       "id": "pv-icon-small-0-n-heng",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "d": "M 15.33 20.36 C 19.49 19.70 25.73 19.15 32.15 19.01 C 33.53 18.97 33.91 20.53 32.67 20.95 C 26.43 21.43 20.53 21.99 16.03 22.47 C 14.50 22.61 14.22 20.60 15.33 20.36 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #heng"
+      },
+      {
+       "id": "pv-icon-small-0-n-shugou",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "d": "M 23.03 20.88 L 25.18 20.88 L 25.18 32.67 C 25.18 34.82 23.72 35.58 22.34 34.40 L 20.46 32.81 C 19.98 32.39 20.39 31.77 20.95 31.97 L 23.03 32.81 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #shugou"
+      },
+      {
+       "id": "pv-icon-small-0-n-pie",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "d": "M 21.64 23.45 C 23.31 23.38 23.51 24.62 22.82 25.80 C 21.02 28.99 18.18 31.77 14.85 33.57 C 14.09 33.98 13.60 33.15 14.22 32.60 C 16.93 30.17 19.15 27.33 20.26 24.49 C 20.50 23.86 20.98 23.48 21.64 23.45 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #pie"
+      },
+      {
+       "id": "pv-icon-small-0-n-na",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "d": "M 26.22 23.72 C 26.98 23.58 27.47 24.07 27.88 24.90 C 29.34 27.74 31.42 30.24 34.19 31.83 C 35.09 32.32 34.95 33.57 33.85 33.57 C 30.38 33.36 27.47 30.52 25.80 26.84 C 25.39 25.94 25.25 23.93 26.22 23.72 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #na"
+      }
+     ]
+    },
+    {
+     "id": "pv-label-0",
+     "type": "text",
+     "x": 540,
+     "y": 60,
+     "width": 140,
+     "height": 50,
+     "text": "笔画输入法\n宣纸朱印",
+     "fontSize": 15,
+     "fontWeight": 500,
+     "fill": "#23201B",
+     "lineHeight": 1.45
+    },
+    {
+     "id": "pv-tile-1",
+     "type": "rect",
+     "x": 360,
+     "y": 155,
+     "width": 330,
+     "height": 110,
+     "fill": "#EEF3FA",
+     "radius": 18
+    },
+    {
+     "id": "pv-icon-1",
+     "type": "group",
+     "x": 384,
+     "y": 174,
+     "width": 72,
+     "height": 72,
+     "children": [
+      {
+       "id": "pv-icon-1-n-base",
+       "type": "rect",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "fill": "#1D4ED8",
+       "radius": 15.84
+      },
+      {
+       "id": "pv-icon-1-n-dot",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "d": "M 34.44 18.84 C 37.04 19.36 39.38 21.70 39.12 24.04 C 38.91 25.86 36.78 26.12 35.48 24.82 C 34.18 23.52 33.14 21.44 33.19 19.88 C 33.24 19.15 33.71 18.74 34.44 18.84 Z",
+       "fill": "#FFD54A",
+       "code": "drawable/icon_launcher_foreground #dot"
+      },
+      {
+       "id": "pv-icon-1-n-heng",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "d": "M 23.00 30.54 C 29.24 29.55 38.60 28.72 48.22 28.51 C 50.30 28.46 50.87 30.80 49.00 31.42 C 39.64 32.15 30.80 32.98 24.04 33.71 C 21.75 33.92 21.34 30.90 23.00 30.54 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #heng"
+      },
+      {
+       "id": "pv-icon-1-n-shugou",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "d": "M 34.54 31.32 L 37.77 31.32 L 37.77 49.00 C 37.77 52.22 35.58 53.37 33.50 51.60 L 30.70 49.21 C 29.97 48.58 30.59 47.65 31.42 47.96 L 34.54 49.21 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #shugou"
+      },
+      {
+       "id": "pv-icon-1-n-pie",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "d": "M 32.46 35.17 C 34.96 35.06 35.27 36.94 34.23 38.70 C 31.53 43.49 27.26 47.65 22.27 50.35 C 21.13 50.98 20.40 49.73 21.34 48.90 C 25.39 45.26 28.72 40.99 30.38 36.73 C 30.75 35.79 31.48 35.22 32.46 35.17 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #pie"
+      },
+      {
+       "id": "pv-icon-1-n-na",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "d": "M 39.33 35.58 C 40.47 35.38 41.20 36.10 41.82 37.35 C 44.01 41.62 47.13 45.36 51.29 47.75 C 52.64 48.48 52.43 50.35 50.77 50.35 C 45.57 50.04 41.20 45.78 38.70 40.26 C 38.08 38.91 37.87 35.90 39.33 35.58 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #na"
+      }
+     ]
+    },
+    {
+     "id": "pv-icon-small-1",
+     "type": "group",
+     "x": 474,
+     "y": 186,
+     "width": 48,
+     "height": 48,
+     "children": [
+      {
+       "id": "pv-icon-small-1-n-base",
+       "type": "ellipse",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "fill": "#1D4ED8"
+      },
+      {
+       "id": "pv-icon-small-1-n-dot",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "d": "M 22.96 12.56 C 24.69 12.91 26.25 14.47 26.08 16.03 C 25.94 17.24 24.52 17.41 23.65 16.55 C 22.79 15.68 22.09 14.29 22.13 13.25 C 22.16 12.77 22.47 12.49 22.96 12.56 Z",
+       "fill": "#FFD54A",
+       "code": "drawable/icon_launcher_foreground #dot"
+      },
+      {
+       "id": "pv-icon-small-1-n-heng",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "d": "M 15.33 20.36 C 19.49 19.70 25.73 19.15 32.15 19.01 C 33.53 18.97 33.91 20.53 32.67 20.95 C 26.43 21.43 20.53 21.99 16.03 22.47 C 14.50 22.61 14.22 20.60 15.33 20.36 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #heng"
+      },
+      {
+       "id": "pv-icon-small-1-n-shugou",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "d": "M 23.03 20.88 L 25.18 20.88 L 25.18 32.67 C 25.18 34.82 23.72 35.58 22.34 34.40 L 20.46 32.81 C 19.98 32.39 20.39 31.77 20.95 31.97 L 23.03 32.81 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #shugou"
+      },
+      {
+       "id": "pv-icon-small-1-n-pie",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "d": "M 21.64 23.45 C 23.31 23.38 23.51 24.62 22.82 25.80 C 21.02 28.99 18.18 31.77 14.85 33.57 C 14.09 33.98 13.60 33.15 14.22 32.60 C 16.93 30.17 19.15 27.33 20.26 24.49 C 20.50 23.86 20.98 23.48 21.64 23.45 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #pie"
+      },
+      {
+       "id": "pv-icon-small-1-n-na",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "d": "M 26.22 23.72 C 26.98 23.58 27.47 24.07 27.88 24.90 C 29.34 27.74 31.42 30.24 34.19 31.83 C 35.09 32.32 34.95 33.57 33.85 33.57 C 30.38 33.36 27.47 30.52 25.80 26.84 C 25.39 25.94 25.25 23.93 26.22 23.72 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #na"
+      }
+     ]
+    },
+    {
+     "id": "pv-label-1",
+     "type": "text",
+     "x": 540,
+     "y": 185,
+     "width": 140,
+     "height": 50,
+     "text": "笔画输入法\n晴空大字",
+     "fontSize": 15,
+     "fontWeight": 500,
+     "fill": "#0F172A",
+     "lineHeight": 1.45
+    },
+    {
+     "id": "pv-tile-2",
+     "type": "rect",
+     "x": 360,
+     "y": 280,
+     "width": 330,
+     "height": 110,
+     "fill": "#0D1416",
+     "radius": 18
+    },
+    {
+     "id": "pv-icon-2",
+     "type": "group",
+     "x": 384,
+     "y": 299,
+     "width": 72,
+     "height": 72,
+     "children": [
+      {
+       "id": "pv-icon-2-n-base",
+       "type": "rect",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "fill": "#1D4ED8",
+       "radius": 15.84
+      },
+      {
+       "id": "pv-icon-2-n-dot",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "d": "M 34.44 18.84 C 37.04 19.36 39.38 21.70 39.12 24.04 C 38.91 25.86 36.78 26.12 35.48 24.82 C 34.18 23.52 33.14 21.44 33.19 19.88 C 33.24 19.15 33.71 18.74 34.44 18.84 Z",
+       "fill": "#FFD54A",
+       "code": "drawable/icon_launcher_foreground #dot"
+      },
+      {
+       "id": "pv-icon-2-n-heng",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "d": "M 23.00 30.54 C 29.24 29.55 38.60 28.72 48.22 28.51 C 50.30 28.46 50.87 30.80 49.00 31.42 C 39.64 32.15 30.80 32.98 24.04 33.71 C 21.75 33.92 21.34 30.90 23.00 30.54 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #heng"
+      },
+      {
+       "id": "pv-icon-2-n-shugou",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "d": "M 34.54 31.32 L 37.77 31.32 L 37.77 49.00 C 37.77 52.22 35.58 53.37 33.50 51.60 L 30.70 49.21 C 29.97 48.58 30.59 47.65 31.42 47.96 L 34.54 49.21 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #shugou"
+      },
+      {
+       "id": "pv-icon-2-n-pie",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "d": "M 32.46 35.17 C 34.96 35.06 35.27 36.94 34.23 38.70 C 31.53 43.49 27.26 47.65 22.27 50.35 C 21.13 50.98 20.40 49.73 21.34 48.90 C 25.39 45.26 28.72 40.99 30.38 36.73 C 30.75 35.79 31.48 35.22 32.46 35.17 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #pie"
+      },
+      {
+       "id": "pv-icon-2-n-na",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 72,
+       "height": 72,
+       "d": "M 39.33 35.58 C 40.47 35.38 41.20 36.10 41.82 37.35 C 44.01 41.62 47.13 45.36 51.29 47.75 C 52.64 48.48 52.43 50.35 50.77 50.35 C 45.57 50.04 41.20 45.78 38.70 40.26 C 38.08 38.91 37.87 35.90 39.33 35.58 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #na"
+      }
+     ]
+    },
+    {
+     "id": "pv-icon-small-2",
+     "type": "group",
+     "x": 474,
+     "y": 311,
+     "width": 48,
+     "height": 48,
+     "children": [
+      {
+       "id": "pv-icon-small-2-n-base",
+       "type": "ellipse",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "fill": "#1D4ED8"
+      },
+      {
+       "id": "pv-icon-small-2-n-dot",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "d": "M 22.96 12.56 C 24.69 12.91 26.25 14.47 26.08 16.03 C 25.94 17.24 24.52 17.41 23.65 16.55 C 22.79 15.68 22.09 14.29 22.13 13.25 C 22.16 12.77 22.47 12.49 22.96 12.56 Z",
+       "fill": "#FFD54A",
+       "code": "drawable/icon_launcher_foreground #dot"
+      },
+      {
+       "id": "pv-icon-small-2-n-heng",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "d": "M 15.33 20.36 C 19.49 19.70 25.73 19.15 32.15 19.01 C 33.53 18.97 33.91 20.53 32.67 20.95 C 26.43 21.43 20.53 21.99 16.03 22.47 C 14.50 22.61 14.22 20.60 15.33 20.36 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #heng"
+      },
+      {
+       "id": "pv-icon-small-2-n-shugou",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "d": "M 23.03 20.88 L 25.18 20.88 L 25.18 32.67 C 25.18 34.82 23.72 35.58 22.34 34.40 L 20.46 32.81 C 19.98 32.39 20.39 31.77 20.95 31.97 L 23.03 32.81 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #shugou"
+      },
+      {
+       "id": "pv-icon-small-2-n-pie",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "d": "M 21.64 23.45 C 23.31 23.38 23.51 24.62 22.82 25.80 C 21.02 28.99 18.18 31.77 14.85 33.57 C 14.09 33.98 13.60 33.15 14.22 32.60 C 16.93 30.17 19.15 27.33 20.26 24.49 C 20.50 23.86 20.98 23.48 21.64 23.45 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #pie"
+      },
+      {
+       "id": "pv-icon-small-2-n-na",
+       "type": "path",
+       "x": 0,
+       "y": 0,
+       "width": 48,
+       "height": 48,
+       "d": "M 26.22 23.72 C 26.98 23.58 27.47 24.07 27.88 24.90 C 29.34 27.74 31.42 30.24 34.19 31.83 C 35.09 32.32 34.95 33.57 33.85 33.57 C 30.38 33.36 27.47 30.52 25.80 26.84 C 25.39 25.94 25.25 23.93 26.22 23.72 Z",
+       "fill": "#FFFFFF",
+       "code": "drawable/icon_launcher_foreground #na"
+      }
+     ]
+    },
+    {
+     "id": "pv-label-2",
+     "type": "text",
+     "x": 540,
+     "y": 310,
+     "width": 140,
+     "height": 50,
+     "text": "笔画输入法\n黛青夜色",
+     "fontSize": 15,
+     "fontWeight": 500,
+     "fill": "#E6F0EE",
+     "lineHeight": 1.45
+    }
+   ]
+  },
+  {
+   "id": "icon-square-512",
+   "name": "图标 · 方形 512",
+   "width": 512,
+   "height": 512,
+   "background": "#FFFFFF",
+   "unit": "px",
+   "scale": 1,
+   "state": "app icon (square)",
+   "code": "mipmap/icon_launcher",
+   "children": [
+    {
+     "id": "icon-square-512-base",
+     "type": "rect",
+     "x": 0,
+     "y": 0,
+     "width": 512,
+     "height": 512,
+     "fill": "#1D4ED8",
+     "radius": 112.64
+    },
+    {
+     "id": "icon-square-512-dot",
+     "type": "path",
+     "x": 0,
+     "y": 0,
+     "width": 512,
+     "height": 512,
+     "d": "M 244.91 133.97 C 263.40 137.67 280.04 154.31 278.19 170.95 C 276.71 183.89 261.55 185.74 252.30 176.50 C 243.06 167.25 235.66 152.46 236.03 141.37 C 236.40 136.19 239.73 133.23 244.91 133.97 Z",
+     "fill": "#FFD54A",
+     "code": "drawable/icon_launcher_foreground #dot"
+    },
+    {
+     "id": "icon-square-512-heng",
+     "type": "path",
+     "x": 0,
+     "y": 0,
+     "width": 512,
+     "height": 512,
+     "d": "M 163.56 217.17 C 207.93 210.15 274.49 204.23 342.90 202.75 C 357.69 202.38 361.76 219.02 348.44 223.46 C 281.88 228.64 219.02 234.55 170.95 239.73 C 154.68 241.21 151.72 219.76 163.56 217.17 Z",
+     "fill": "#FFFFFF",
+     "code": "drawable/icon_launcher_foreground #heng"
+    },
+    {
+     "id": "icon-square-512-shugou",
+     "type": "path",
+     "x": 0,
+     "y": 0,
+     "width": 512,
+     "height": 512,
+     "d": "M 245.65 222.72 L 268.57 222.72 L 268.57 348.44 C 268.57 371.37 253.04 379.51 238.25 366.93 L 218.28 349.92 C 213.11 345.49 217.54 338.83 223.46 341.05 L 245.65 349.92 Z",
+     "fill": "#FFFFFF",
+     "code": "drawable/icon_launcher_foreground #shugou"
+    },
+    {
+     "id": "icon-square-512-pie",
+     "type": "path",
+     "x": 0,
+     "y": 0,
+     "width": 512,
+     "height": 512,
+     "d": "M 230.86 250.08 C 248.60 249.34 250.82 262.66 243.43 275.23 C 224.20 309.25 193.88 338.83 158.38 358.06 C 150.24 362.50 145.07 353.62 151.72 347.70 C 180.57 321.82 204.23 291.50 216.06 261.18 C 218.65 254.52 223.83 250.45 230.86 250.08 Z",
+     "fill": "#FFFFFF",
+     "code": "drawable/icon_launcher_foreground #pie"
+    },
+    {
+     "id": "icon-square-512-na",
+     "type": "path",
+     "x": 0,
+     "y": 0,
+     "width": 512,
+     "height": 512,
+     "d": "M 279.67 253.04 C 287.80 251.56 292.98 256.74 297.42 265.61 C 312.95 295.94 335.13 322.56 364.71 339.57 C 374.33 344.75 372.85 358.06 361.02 358.06 C 324.04 355.84 292.98 325.52 275.23 286.32 C 270.79 276.71 269.31 255.26 279.67 253.04 Z",
+     "fill": "#FFFFFF",
+     "code": "drawable/icon_launcher_foreground #na"
+    }
+   ]
+  },
+  {
+   "id": "icon-round-512",
+   "name": "图标 · 圆形 512",
+   "width": 512,
+   "height": 512,
+   "background": "#FFFFFF",
+   "unit": "px",
+   "scale": 1,
+   "state": "app icon (circle)",
+   "code": "mipmap/icon_launcher",
+   "children": [
+    {
+     "id": "icon-round-512-base",
+     "type": "ellipse",
+     "x": 0,
+     "y": 0,
+     "width": 512,
+     "height": 512,
+     "fill": "#1D4ED8"
+    },
+    {
+     "id": "icon-round-512-dot",
+     "type": "path",
+     "x": 0,
+     "y": 0,
+     "width": 512,
+     "height": 512,
+     "d": "M 244.91 133.97 C 263.40 137.67 280.04 154.31 278.19 170.95 C 276.71 183.89 261.55 185.74 252.30 176.50 C 243.06 167.25 235.66 152.46 236.03 141.37 C 236.40 136.19 239.73 133.23 244.91 133.97 Z",
+     "fill": "#FFD54A",
+     "code": "drawable/icon_launcher_foreground #dot"
+    },
+    {
+     "id": "icon-round-512-heng",
+     "type": "path",
+     "x": 0,
+     "y": 0,
+     "width": 512,
+     "height": 512,
+     "d": "M 163.56 217.17 C 207.93 210.15 274.49 204.23 342.90 202.75 C 357.69 202.38 361.76 219.02 348.44 223.46 C 281.88 228.64 219.02 234.55 170.95 239.73 C 154.68 241.21 151.72 219.76 163.56 217.17 Z",
+     "fill": "#FFFFFF",
+     "code": "drawable/icon_launcher_foreground #heng"
+    },
+    {
+     "id": "icon-round-512-shugou",
+     "type": "path",
+     "x": 0,
+     "y": 0,
+     "width": 512,
+     "height": 512,
+     "d": "M 245.65 222.72 L 268.57 222.72 L 268.57 348.44 C 268.57 371.37 253.04 379.51 238.25 366.93 L 218.28 349.92 C 213.11 345.49 217.54 338.83 223.46 341.05 L 245.65 349.92 Z",
+     "fill": "#FFFFFF",
+     "code": "drawable/icon_launcher_foreground #shugou"
+    },
+    {
+     "id": "icon-round-512-pie",
+     "type": "path",
+     "x": 0,
+     "y": 0,
+     "width": 512,
+     "height": 512,
+     "d": "M 230.86 250.08 C 248.60 249.34 250.82 262.66 243.43 275.23 C 224.20 309.25 193.88 338.83 158.38 358.06 C 150.24 362.50 145.07 353.62 151.72 347.70 C 180.57 321.82 204.23 291.50 216.06 261.18 C 218.65 254.52 223.83 250.45 230.86 250.08 Z",
+     "fill": "#FFFFFF",
+     "code": "drawable/icon_launcher_foreground #pie"
+    },
+    {
+     "id": "icon-round-512-na",
+     "type": "path",
+     "x": 0,
+     "y": 0,
+     "width": 512,
+     "height": 512,
+     "d": "M 279.67 253.04 C 287.80 251.56 292.98 256.74 297.42 265.61 C 312.95 295.94 335.13 322.56 364.71 339.57 C 374.33 344.75 372.85 358.06 361.02 358.06 C 324.04 355.84 292.98 325.52 275.23 286.32 C 270.79 276.71 269.31 255.26 279.67 253.04 Z",
+     "fill": "#FFFFFF",
+     "code": "drawable/icon_launcher_foreground #na"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Haoke settings design: switch on = accent track, off = divider track -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:state_checked="true" android:color="?attr/settingsOnAccent" />
+  <item android:color="?attr/settingsText3" />
+</selector>
